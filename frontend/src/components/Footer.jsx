@@ -1,85 +1,88 @@
 import React from 'react';
-import { Phone, MapPin, Mail, Clock, ShieldCheck, HelpCircle, FileText } from 'lucide-react';
+import { Share2, MapPin } from 'lucide-react';
 
 export default function Footer() {
   return (
-    <footer className="bg-slate-900 text-slate-350 border-t border-slate-800">
+    <footer className="bg-[#0B2265] text-slate-350 border-t border-slate-900 text-[14px]">
       {/* Top Footer Section */}
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+      <div className="max-w-7xl mx-auto px-6 py-16">
+        <div className="grid grid-cols-1 md:grid-cols-4 gap-12">
           
-          {/* Column 1: Brand details */}
-          <div className="space-y-4">
-            <h3 className="text-white font-extrabold text-lg tracking-wider bg-gradient-to-r from-red-500 to-amber-500 bg-clip-text text-transparent">
-              IN ẤN XUÂN NHI
+          {/* Column 1: Brand & Desc */}
+          <div className="space-y-6">
+            <h3 className="text-white font-serif text-xl font-bold tracking-tight">
+              Xuan Nhi Printing
             </h3>
-            <p className="text-sm text-slate-405 leading-relaxed max-w-sm">
-              Chuyên thiết kế và in ấn các ấn phẩm quảng cáo, bao bì giấy, túi giấy, hộp giấy, name card chuyên nghiệp chất lượng cao, giao hàng toàn quốc.
+            <p className="text-[#A2B3D5] leading-relaxed max-w-sm">
+              Leading the print industry with artisan craftsmanship and advanced CMYK precision. Based in the heart of design innovation.
             </p>
-            <div className="flex items-center space-x-3 pt-2 text-xs text-slate-400">
-              <span className="flex items-center gap-1"><ShieldCheck className="h-4 w-4 text-emerald-500" /> Uy tín</span>
-              <span className="flex items-center gap-1"><HelpCircle className="h-4 w-4 text-blue-500" /> Hỗ trợ 24/7</span>
+            <div className="flex items-center space-x-3 pt-2">
+              <button 
+                className="p-2 rounded-full bg-[#18347E] text-white hover:bg-[#20429C] transition-colors"
+                aria-label="Share"
+              >
+                <Share2 className="h-4.5 w-4.5" />
+              </button>
+              <button 
+                className="p-2 rounded-full bg-[#18347E] text-white hover:bg-[#20429C] transition-colors"
+                aria-label="Location"
+              >
+                <MapPin className="h-4.5 w-4.5" />
+              </button>
             </div>
           </div>
 
-          {/* Column 2: Contact info */}
+          {/* Column 2: Services */}
           <div className="space-y-4">
-            <h4 className="text-white font-bold text-sm uppercase tracking-wider">Thông Tin Liên Hệ</h4>
-            <ul className="space-y-3 text-sm">
-              <li className="flex items-start space-x-2.5">
-                <MapPin className="h-5 w-5 text-red-500 shrink-0 mt-0.5" />
-                <span>58/7A Đường Tân Lập 1, Phường Tăng Nhơn Phú, TP Hồ Chí Minh</span>
-              </li>
-              <li className="flex items-start space-x-2.5">
-                <Phone className="h-4.5 w-4.5 text-red-500 shrink-0 mt-0.5" />
-                <span className="font-semibold text-white">Hotline: 0943 126 406</span>
-              </li>
-              <li className="flex items-start space-x-2.5">
-                <Mail className="h-4.5 w-4.5 text-red-500 shrink-0 mt-0.5" />
-                <span>Email: inanxuannhi@gmail.com</span>
-              </li>
-              <li className="flex items-start space-x-2.5">
-                <Clock className="h-4.5 w-4.5 text-red-500 shrink-0 mt-0.5" />
-                <span>Thứ 2 - Thứ 7: 8:00 - 20:30 (CN Nghỉ)</span>
-              </li>
+            <h4 className="text-white font-semibold text-xs tracking-widest uppercase">Services</h4>
+            <ul className="space-y-3">
+              <li><a href="#wedding" className="text-[#A2B3D5] hover:text-white transition-colors">Wedding Stationery</a></li>
+              <li><a href="#commercial" className="text-[#A2B3D5] hover:text-white transition-colors">Commercial Printing</a></li>
+              <li><a href="#packaging" className="text-[#A2B3D5] hover:text-white transition-colors">Packaging Design</a></li>
+              <li><a href="#identity" className="text-[#A2B3D5] hover:text-white transition-colors">Brand Identity</a></li>
             </ul>
           </div>
 
-          {/* Column 3: Policy links */}
+          {/* Column 3: Quick Links */}
           <div className="space-y-4">
-            <h4 className="text-white font-bold text-sm uppercase tracking-wider">Chính Sách & Hướng Dẫn</h4>
-            <ul className="space-y-2.5 text-sm">
-              <li>
-                <a href="#payment-policy" className="hover:text-red-500 transition-colors flex items-center gap-1.5">
-                  <FileText className="h-3.5 w-3.5" /> Chính sách thanh toán & giao hàng
-                </a>
-              </li>
-              <li>
-                <a href="#refund-policy" className="hover:text-red-500 transition-colors flex items-center gap-1.5">
-                  <FileText className="h-3.5 w-3.5" /> Hướng dẫn đặt in & đổi trả hàng
-                </a>
-              </li>
-              <li>
-                <a href="#privacy-policy" className="hover:text-red-500 transition-colors flex items-center gap-1.5">
-                  <FileText className="h-3.5 w-3.5" /> Chính sách bảo mật thông tin
-                </a>
-              </li>
-              <li>
-                <a href="#tos" className="hover:text-red-500 transition-colors flex items-center gap-1.5">
-                  <FileText className="h-3.5 w-3.5" /> Điều khoản sử dụng dịch vụ
-                </a>
-              </li>
+            <h4 className="text-white font-semibold text-xs tracking-widest uppercase">Quick Links</h4>
+            <ul className="space-y-3">
+              <li><a href="#services" className="text-amber-500 font-medium hover:underline">Services</a></li>
+              <li><a href="#portfolio" className="text-[#A2B3D5] hover:text-white transition-colors">Portfolio</a></li>
+              <li><a href="#about" className="text-[#A2B3D5] hover:text-white transition-colors">About Us</a></li>
+              <li><a href="#contact" className="text-[#A2B3D5] hover:text-white transition-colors">Contact</a></li>
             </ul>
+          </div>
+
+          {/* Column 4: Newsletter */}
+          <div className="space-y-4">
+            <h4 className="text-white font-semibold text-xs tracking-widest uppercase">Newsletter</h4>
+            <p className="text-[#A2B3D5] leading-relaxed">
+              Subscribe for printing tips and exclusive template releases.
+            </p>
+            <div className="flex items-center space-x-1 bg-[#18347E] rounded-lg p-1">
+              <input 
+                type="email" 
+                placeholder="Your email" 
+                className="bg-transparent text-white placeholder-[#7890C0] text-sm px-3 py-1.5 focus:outline-none w-full"
+              />
+              <button className="bg-[#FFEADA] text-[#A85810] font-semibold text-sm px-4 py-1.5 rounded-md hover:bg-white transition-colors">
+                Join
+              </button>
+            </div>
           </div>
 
         </div>
       </div>
 
       {/* Bottom Copyright Section */}
-      <div className="border-t border-slate-800 py-6 bg-slate-950">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row items-center justify-between text-xs text-slate-500">
-          <p>&copy; {new Date().getFullYear()} In Ấn Xuân Nhi. Bản quyền thuộc về inanxuannhi.com.</p>
-          <p className="mt-2 sm:mt-0">Thiết kế tinh tế & chuyên nghiệp</p>
+      <div className="border-t border-[#18347E] py-6 bg-[#081B52]">
+        <div className="max-w-7xl mx-auto px-6 flex flex-col sm:flex-row items-center justify-between text-xs text-[#7890C0]">
+          <p>&copy; 2026 Xuan Nhi Printing & Design. All rights reserved. Precision in Every Print.</p>
+          <div className="flex space-x-6 mt-2 sm:mt-0">
+            <a href="#privacy" className="hover:text-white transition-colors">Privacy Policy</a>
+            <a href="#terms" className="hover:text-white transition-colors">Terms of Service</a>
+          </div>
         </div>
       </div>
     </footer>

@@ -9,12 +9,12 @@ import Login from './pages/Login';
 function App() {
   return (
     <Router>
-      <div className="min-h-screen flex flex-col bg-slate-50">
+      <div className="min-h-screen flex flex-col bg-[#F8F9FD]">
         {/* Header hiển thị cố định ở đầu trang */}
         <Header />
         
         {/* Phần nội dung thay đổi theo Route */}
-        <main className="flex-grow max-w-7xl w-full mx-auto px-4 sm:px-6 lg:px-8 py-10">
+        <main className="flex-grow">
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/admin" element={<Admin />} />
