@@ -1,0 +1,172 @@
+
+CREATE DATABASE IF NOT EXISTS inanxuannhi_db CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
+USE inanxuannhi_db;
+
+-- =========================================================
+-- 1. BẢNG USERS (Người dùng hệ thống)
+-- =========================================================
+CREATE TABLE users (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    username VARCHAR(50) NOT NULL,
+    email VARCHAR(100) NOT NULL UNIQUE,
+    password_hash VARCHAR(255) NOT NULL,
+    phone VARCHAR(20),
+    -- Tích hợp chung các vai trò để admin có thể linh hoạt thao tác các nghiệp vụ của staff
+    role ENUM('admin', 'staff', 'customer') DEFAULT 'customer',
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
+) ENGINE=InnoDB;
+
+-- =========================================================
+-- 2. BẢNG CATEGORIES (Danh mục sản phẩm/dịch vụ)
+-- =========================================================
+CREATE TABLE categories (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    name VARCHAR(100) NOT NULL,
+    slug VARCHAR(100) NOT NULL UNIQUE,
+    parent_id INT DEFAULT NULL,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+    FOREIGN KEY (parent_id) REFERENCES categories(id) ON DELETE SET NULL
+) ENGINE=InnoDB;
+
+-- =========================================================
+-- 3. BẢNG PRODUCTS (Sản phẩm in ấn)
+-- =========================================================
+CREATE TABLE products (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    category_id INT,
+    title VARCHAR(255) NOT NULL,
+    description TEXT,
+    price DECIMAL(10, 2) DEFAULT 0.00,
+    image_url VARCHAR(255),
+    is_featured BOOLEAN DEFAULT FALSE,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+    FOREIGN KEY (category_id) REFERENCES categories(id) ON DELETE SET NULL
+) ENGINE=InnoDB;
+
+-- =========================================================
+-- 4. BẢNG ORDERS (Đơn hàng)
+-- =========================================================
+CREATE TABLE orders (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    user_id INT COMMENT 'Có thể NULL nếu khách mua không cần đăng nhập',
+    customer_name VARCHAR(100) NOT NULL,
+    customer_phone VARCHAR(20) NOT NULL,
+    shipping_address TEXT NOT NULL,
+    total_amount DECIMAL(12, 2) NOT NULL,
+    status ENUM('pending', 'processing', 'shipping', 'completed', 'cancelled') DEFAULT 'pending',
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+    FOREIGN KEY (user_id) REFERENCES users(id) ON DELETE SET NULL
+) ENGINE=InnoDB;
+
+-- =========================================================
+-- 5. BẢNG ORDER_DETAILS (Chi tiết đơn hàng)
+-- =========================================================
+CREATE TABLE order_details (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    order_id INT NOT NULL,
+    product_id INT,
+    quantity INT NOT NULL DEFAULT 1,
+    print_options JSON COMMENT 'Lưu các tùy chọn gia công như loại giấy, cán màng (định dạng JSON)',
+    price DECIMAL(10, 2) NOT NULL COMMENT 'Đơn giá lưu cứng tại thời điểm đặt hàng',
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    FOREIGN KEY (order_id) REFERENCES orders(id) ON DELETE CASCADE,
+    FOREIGN KEY (product_id) REFERENCES products(id) ON DELETE SET NULL
+) ENGINE=InnoDB;
+
+-- =========================================================
+-- 6. BẢNG POSTS (Bài viết / Tin tức)
+-- =========================================================
+CREATE TABLE posts (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    author_id INT,
+    title VARCHAR(255) NOT NULL,
+    slug VARCHAR(255) NOT NULL UNIQUE,
+    content LONGTEXT,
+    thumbnail VARCHAR(255),
+    published_at DATETIME,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+    FOREIGN KEY (author_id) REFERENCES users(id) ON DELETE SET NULL
+) ENGINE=InnoDB;
+
+-- =========================================================
+-- 7. BẢNG SETTINGS (Cấu hình hệ thống)
+-- =========================================================
+CREATE TABLE settings (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    setting_key VARCHAR(100) NOT NULL UNIQUE,
+    setting_value TEXT,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
+) ENGINE=InnoDB;
+
+-- =========================================================
+-- 1. THÊM DỮ LIỆU BẢNG USERS
+-- Thiết lập 3 tài khoản: Admin (chủ web), Staff (nhân viên kinh doanh), và Customer (khách hàng)
+-- =========================================================
+INSERT INTO users (username, email, password_hash, phone, role) VALUES
+('admin_xuannhi', 'inanxuannhi@gmail.com', '$2y$10$SampleHashString1234567890', '0943126406', 'admin'),
+('nhanvien_sale', 'sale@inanxuannhi.com', '$2y$10$SampleHashString0987654321', '0901000111', 'staff'),
+('khachhang01', 'nguyenvana@gmail.com', '$2y$10$SampleHashStringCustomer12', '0912345678', 'customer');
+
+-- =========================================================
+-- 2. THÊM DỮ LIỆU BẢNG CATEGORIES (Danh mục từ website)
+-- =========================================================
+INSERT INTO categories (name, slug, parent_id) VALUES
+('Túi giấy', 'tui-giay', NULL),
+('Hộp giấy', 'hop-giay', NULL),
+('Nhãn Decal', 'nhan-decal', NULL),
+('In name card', 'in-name-card', NULL),
+('In tờ gấp', 'in-to-gap', NULL),
+('Thiệp cưới', 'thiep-cuoi', NULL);
+
+-- =========================================================
+-- 3. THÊM DỮ LIỆU BẢNG PRODUCTS (Sản phẩm hot từ website)
+-- =========================================================
+INSERT INTO products (category_id, title, description, price, image_url, is_featured) VALUES
+(1, 'In túi giấy mỹ phẩm dược phẩm', 'Túi giấy cao cấp, thiết kế trang nhã phù hợp cho ngành mỹ phẩm và dược phẩm.', 12000.00, 'tui-giay-my-pham.jpg', TRUE),
+(1, 'In túi giấy quà tặng', 'Túi giấy sang trọng dành cho các sự kiện, có hỗ trợ ép kim và bế nổi logo.', 15000.00, 'tui-giay-qua-tang.jpg', TRUE),
+(4, 'In name card giấy mỹ thuật', 'Danh thiếp sử dụng giấy mỹ thuật cao cấp, dập nổi, sang trọng.', 120000.00, 'name-card-my-thuat.jpg', FALSE),
+(5, 'In tờ gấp 3 (Brochure A4)', 'In tờ gấp chất lượng cao, công nghệ in offset sắc nét, cấn 2 đường chuẩn.', 4500.00, 'to-gap-a4.jpg', TRUE);
+
+-- =========================================================
+-- 4. THÊM DỮ LIỆU BẢNG ORDERS
+-- Đơn 1: Khách hàng tự đặt trực tiếp trên web.
+-- Đơn 2: Admin trực tiếp tạo đơn cho một khách vãng lai (áp dụng quyền hạn tích hợp).
+-- =========================================================
+INSERT INTO orders (user_id, customer_name, customer_phone, shipping_address, total_amount, status) VALUES
+(3, 'Nguyễn Văn A', '0912345678', '1 Võ Văn Ngân, P. Linh Chiểu, Thủ Đức, TP.HCM', 1200000.00, 'processing'),
+(1, 'Trần Thị B (Khách vãng lai)', '0988777666', '58/7A Đường Tân Lập 1, P. Tăng Nhơn Phú, TP.HCM', 450000.00, 'completed');
+
+-- =========================================================
+-- 5. THÊM DỮ LIỆU BẢNG ORDER_DETAILS
+-- Sử dụng JSON để lưu các tuỳ chọn in ấn phức tạp
+-- =========================================================
+INSERT INTO order_details (order_id, product_id, quantity, print_options, price) VALUES
+-- Chi tiết đơn 1 (In 200 tờ gấp và 4 hộp name card)
+(1, 4, 200, '{"paper_type": "Couche 150gsm", "lamination": "Cán mờ 2 mặt", "fold": "Cấn 2 đường"}', 4500.00),
+(1, 3, 4, '{"paper_type": "Giấy Econoshield", "technique": "Ép kim vàng logo"}', 120000.00),
+-- Chi tiết đơn 2 (In 30 túi giấy quà tặng)
+(2, 2, 30, '{"paper_type": "Ivory 250gsm", "handle": "Dây lụa ruy băng", "bottom": "Lót đáy bìa cứng"}', 15000.00);
+
+-- =========================================================
+-- 6. THÊM DỮ LIỆU BẢNG POSTS (Mục Câu chuyện in ấn)
+-- =========================================================
+INSERT INTO posts (author_id, title, slug, content, thumbnail, published_at) VALUES
+(1, 'Những chất liệu và quy cách gia công cơ bản cho namecard', 'chat-lieu-va-quy-cach-gia-cong-namecard', 'Việc chọn chất liệu và gia công namecard (danh thiếp) đóng vai trò quan trọng trong việc thể hiện đẳng cấp...', 'thumb-namecard.jpg', '2026-01-07 09:00:00'),
+(1, 'Gợi ý cách chọn xưởng in túi giấy giá rẻ, chất lượng tốt', 'cach-chon-xuong-in-tui-giay', 'Để chọn xưởng in túi giấy đạt tiêu chí giá rẻ và chất lượng tốt, bạn cần lưu ý đến công nghệ in...', 'thumb-xuong-in.jpg', '2026-01-07 10:30:00'),
+(2, 'Nên dùng tờ rơi hay tờ gấp trong truyền thông và marketing?', 'nen-dung-to-roi-hay-to-gap', 'In tờ rơi hiện đang là một hình thức quảng bá sản phẩm, dịch vụ cực kỳ hiệu quả...', 'thumb-to-roi.jpg', '2026-01-07 14:00:00');
+
+-- =========================================================
+-- 7. THÊM DỮ LIỆU BẢNG SETTINGS (Cấu hình Footer)
+-- =========================================================
+INSERT INTO settings (setting_key, setting_value) VALUES
+('company_name', 'CÔNG TY TNHH THƯƠNG MẠI DỊCH VỤ IN ẤN XUÂN NHI'),
+('address', '58/7A Đường Tân Lập 1, Phường Tăng Nhơn Phú, TP Hồ Chí Minh, Việt Nam'),
+('hotline', '0943126406'),
+('email', 'inanxuannhi@gmail.com'),
+('work_hours', 'Thứ 2 - thứ 7: 8h00 - 20h30 | Chủ nhật: Nghỉ');
