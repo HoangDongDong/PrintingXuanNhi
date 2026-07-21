@@ -1,89 +1,87 @@
 import React from 'react';
-import { Share2, MapPin } from 'lucide-react';
+import { Link } from 'react-router-dom';
 
 export default function Footer() {
   return (
-    <footer className="bg-[#0B2265] text-slate-350 border-t border-slate-900 text-[14px]">
-      {/* Top Footer Section */}
-      <div className="max-w-7xl mx-auto px-6 py-16">
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-12">
-          
-          {/* Column 1: Brand & Desc */}
-          <div className="space-y-6">
-            <h3 className="text-white font-serif text-xl font-bold tracking-tight">
-              Xuan Nhi Printing
-            </h3>
-            <p className="text-[#A2B3D5] leading-relaxed max-w-sm">
-              Leading the print industry with artisan craftsmanship and advanced CMYK precision. Based in the heart of design innovation.
-            </p>
-            <div className="flex items-center space-x-3 pt-2">
-              <button 
-                className="p-2 rounded-full bg-[#18347E] text-white hover:bg-[#20429C] transition-colors"
-                aria-label="Share"
-              >
-                <Share2 className="h-4.5 w-4.5" />
-              </button>
-              <button 
-                className="p-2 rounded-full bg-[#18347E] text-white hover:bg-[#20429C] transition-colors"
-                aria-label="Location"
-              >
-                <MapPin className="h-4.5 w-4.5" />
-              </button>
+    <footer className="bg-ink-black text-paper-white border-t border-white/5">
+      <div className="grid grid-cols-1 md:grid-cols-4 gap-gutter px-margin-mobile md:px-margin-desktop py-16 max-w-[1200px] mx-auto">
+        {/* Brand Column */}
+        <div className="space-y-6">
+          <Link to="/" className="font-display-lg text-2xl font-bold text-paper-white block">
+            PrintPro
+          </Link>
+          <p className="text-surface-variant text-sm opacity-80 leading-relaxed max-w-xs">
+            Đơn vị cung cấp giải pháp in ấn hàng đầu Việt Nam. Cam kết chất lượng, tiến độ và sự hài lòng tuyệt đối của khách hàng.
+          </p>
+          <div className="flex gap-4">
+            <a className="w-10 h-10 rounded-full border border-surface-variant flex items-center justify-center hover:bg-vibrant-orange hover:border-vibrant-orange transition-all" href="#">
+              <span className="material-symbols-outlined text-sm">public</span>
+            </a>
+            <a className="w-10 h-10 rounded-full border border-surface-variant flex items-center justify-center hover:bg-vibrant-orange hover:border-vibrant-orange transition-all" href="#">
+              <span className="material-symbols-outlined text-sm">share</span>
+            </a>
+          </div>
+        </div>
+
+        {/* Links Column 1 */}
+        <div className="space-y-6 text-sm">
+          <h4 className="font-bold text-lg text-white">Thông tin liên hệ</h4>
+          <ul className="space-y-4 text-surface-variant">
+            <li className="flex items-start gap-3 hover:text-primary-fixed transition-colors">
+              <span className="material-symbols-outlined text-vibrant-orange">location_on</span>
+              <span>58/7A Đường Tân Lập 1, Phường Tăng Nhơn Phú, TP Hồ Chí Minh</span>
+            </li>
+            <li className="flex items-start gap-3 hover:text-primary-fixed transition-colors">
+              <span className="material-symbols-outlined text-vibrant-orange">call</span>
+              <span>0943 126 406</span>
+            </li>
+            <li className="flex items-start gap-3 hover:text-primary-fixed transition-colors">
+              <span className="material-symbols-outlined text-vibrant-orange">mail</span>
+              <span>inanxuannhi@gmail.com</span>
+            </li>
+          </ul>
+        </div>
+
+        {/* Links Column 2 */}
+        <div className="space-y-6 text-sm">
+          <h4 className="font-bold text-lg text-white">Chính sách</h4>
+          <ul className="space-y-4 text-surface-variant">
+            <li><a className="hover:text-vibrant-orange transition-colors" href="#privacy">Chính sách bảo mật</a></li>
+            <li><a className="hover:text-vibrant-orange transition-colors" href="#return">Chính sách đổi trả</a></li>
+            <li><a className="hover:text-vibrant-orange transition-colors" href="#payment">Hướng dẫn thanh toán</a></li>
+            <li><a className="hover:text-vibrant-orange transition-colors" href="#shipping">Vận chuyển &amp; Giao hàng</a></li>
+          </ul>
+        </div>
+
+        {/* Links Column 3 */}
+        <div className="space-y-6">
+          <h4 className="font-bold text-lg text-white">Bản đồ</h4>
+          <div className="w-full aspect-video rounded-lg overflow-hidden bg-surface-variant">
+            <div className="w-full h-full grayscale opacity-50 flex items-center justify-center bg-zinc-800">
+              <span className="material-symbols-outlined text-4xl text-paper-white">map</span>
             </div>
           </div>
-
-          {/* Column 2: Services */}
-          <div className="space-y-4">
-            <h4 className="text-white font-semibold text-xs tracking-widest uppercase">Services</h4>
-            <ul className="space-y-3">
-              <li><a href="#wedding" className="text-[#A2B3D5] hover:text-white transition-colors">Wedding Stationery</a></li>
-              <li><a href="#commercial" className="text-[#A2B3D5] hover:text-white transition-colors">Commercial Printing</a></li>
-              <li><a href="#packaging" className="text-[#A2B3D5] hover:text-white transition-colors">Packaging Design</a></li>
-              <li><a href="#identity" className="text-[#A2B3D5] hover:text-white transition-colors">Brand Identity</a></li>
-            </ul>
-          </div>
-
-          {/* Column 3: Quick Links */}
-          <div className="space-y-4">
-            <h4 className="text-white font-semibold text-xs tracking-widest uppercase">Quick Links</h4>
-            <ul className="space-y-3">
-              <li><a href="#services" className="text-amber-500 font-medium hover:underline">Services</a></li>
-              <li><a href="#portfolio" className="text-[#A2B3D5] hover:text-white transition-colors">Portfolio</a></li>
-              <li><a href="#about" className="text-[#A2B3D5] hover:text-white transition-colors">About Us</a></li>
-              <li><a href="#contact" className="text-[#A2B3D5] hover:text-white transition-colors">Contact</a></li>
-            </ul>
-          </div>
-
-          {/* Column 4: Newsletter */}
-          <div className="space-y-4">
-            <h4 className="text-white font-semibold text-xs tracking-widest uppercase">Newsletter</h4>
-            <p className="text-[#A2B3D5] leading-relaxed">
-              Subscribe for printing tips and exclusive template releases.
-            </p>
-            <div className="flex items-center space-x-1 bg-[#18347E] rounded-lg p-1">
-              <input 
-                type="email" 
-                placeholder="Your email" 
-                className="bg-transparent text-white placeholder-[#7890C0] text-sm px-3 py-1.5 focus:outline-none w-full"
-              />
-              <button className="bg-[#FFEADA] text-[#A85810] font-semibold text-sm px-4 py-1.5 rounded-md hover:bg-white transition-colors">
-                Join
-              </button>
-            </div>
-          </div>
-
         </div>
       </div>
+      
+      <div className="border-t border-surface-variant/20 px-margin-mobile md:px-margin-desktop py-8 max-w-[1200px] mx-auto text-center md:text-left text-xs">
+        <p className="text-surface-variant opacity-60">© 2026 PrintPro Service. All rights reserved.</p>
+      </div>
 
-      {/* Bottom Copyright Section */}
-      <div className="border-t border-[#18347E] py-6 bg-[#081B52]">
-        <div className="max-w-7xl mx-auto px-6 flex flex-col sm:flex-row items-center justify-between text-xs text-[#7890C0]">
-          <p>&copy; 2026 Xuan Nhi Printing & Design. All rights reserved. Precision in Every Print.</p>
-          <div className="flex space-x-6 mt-2 sm:mt-0">
-            <a href="#privacy" className="hover:text-white transition-colors">Privacy Policy</a>
-            <a href="#terms" className="hover:text-white transition-colors">Terms of Service</a>
+      {/* Floating Action Buttons */}
+      <div className="fixed bottom-8 right-8 flex flex-col items-center gap-4 z-[100]">
+        <a className="group relative flex items-center" href="https://zalo.me" target="_blank" rel="noopener noreferrer">
+          <span className="absolute right-full mr-4 px-3 py-1 bg-deep-navy text-white text-xs rounded opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap shadow-lg">Chat Zalo</span>
+          <div className="bg-vibrant-orange text-white rounded-full p-4 shadow-lg hover:scale-110 transition-transform animate-bounce hover:animate-none">
+            <span className="material-symbols-outlined text-2xl">chat</span>
           </div>
-        </div>
+        </a>
+        <a className="group relative flex items-center" href="tel:0943126406">
+          <span className="absolute right-full mr-4 px-3 py-1 bg-deep-navy text-white text-xs rounded opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap shadow-lg">Gọi Hotline</span>
+          <div className="bg-deep-navy text-white rounded-full p-4 shadow-lg hover:scale-110 transition-transform">
+            <span className="material-symbols-outlined text-2xl">call</span>
+          </div>
+        </a>
       </div>
     </footer>
   );

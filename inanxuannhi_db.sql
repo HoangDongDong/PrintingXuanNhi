@@ -1,8 +1,8 @@
--- SQL Script to initialize and seed 'inanxuannhi_db' database manually
+-- SQL Script to initialize and seed 'defaultdb' database manually
 -- Run this in phpMyAdmin, MySQL Command Line, or any database client
 
-CREATE DATABASE IF NOT EXISTS `inanxuannhi_db` CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
-USE `inanxuannhi_db`;
+CREATE DATABASE IF NOT EXISTS `defaultdb` CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
+USE `defaultdb`;
 
 -- Drop tables if they exist (handling foreign keys)
 SET FOREIGN_KEY_CHECKS = 0;

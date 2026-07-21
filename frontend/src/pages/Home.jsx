@@ -1,255 +1,254 @@
-import React, { useState, useEffect } from 'react';
-import axios from 'axios';
-import { ChevronRight, Award, RotateCw, ChevronDown, Check } from 'lucide-react';
-
-const mockData = [
-  {
-    id: 1,
-    title: 'Premium Cosmetic Boxes',
-    category: 'Packaging',
-    tag: 'PACKAGING',
-    tagBg: 'bg-[#FCE8E6] text-[#A8201A]',
-    description: 'High-end medicinal and cosmetic packaging with soft-touch finish and minimalist embossed detailing.',
-    priceText: 'From $2.50 / pc',
-    imageUrl: 'https://images.unsplash.com/photo-1612817288484-6f916006741a?w=600&auto=format&fit=crop&q=60',
-    cmyk: true
-  },
-  {
-    id: 2,
-    title: 'Wedding Invitations',
-    category: 'Wedding Cards',
-    tag: 'WEDDING',
-    tagBg: 'bg-[#FEF6E9] text-[#A85810]',
-    description: 'Traditional elegance meets modern craftsmanship. Features premium letterpress, gold foiling, and luxurious textures.',
-    priceText: 'Custom Quote',
-    imageUrl: 'https://images.unsplash.com/photo-1607190074257-dd4b7af0309f?w=600&auto=format&fit=crop&q=60',
-    cmyk: false
-  },
-  {
-    id: 3,
-    title: 'Corporate Brochures',
-    category: 'Brochures',
-    tag: 'MARKETING',
-    tagBg: 'bg-[#EBF7FC] text-[#0A7399]',
-    description: 'Tri-fold and multi-page brochures with vibrant color reproduction and professional spot-UV finish.',
-    priceText: 'From $0.85 / pc',
-    imageUrl: 'https://images.unsplash.com/photo-1586075010923-2dd4570fb338?w=600&auto=format&fit=crop&q=60',
-    cmyk: false
-  },
-  {
-    id: 4,
-    title: 'Luxury Retail Bags',
-    category: 'Paper Bags',
-    tag: 'FASHION',
-    tagBg: 'bg-[#FEF6E9] text-[#A85810]',
-    description: 'Reinforced luxury paper bags with silk ribbon handles and custom logo embossing for premium branding.',
-    priceText: 'Bulk Pricing',
-    imageUrl: 'https://images.unsplash.com/photo-1549465220-1a8b9238cd48?w=600&auto=format&fit=crop&q=60',
-    cmyk: false,
-    hasOrangeTag: true
-  }
-];
-
-const categories = [
-  'All Products',
-  'Wedding Cards',
-  'Paper Bags',
-  'Brochures',
-  'Stationery',
-  'Packaging'
-];
+import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 
 export default function Home() {
-  const [selectedCategory, setSelectedCategory] = useState('All Products');
-  const [products, setProducts] = useState(mockData);
-  const [sortOpen, setSortOpen] = useState(false);
-  const [sortBy, setSortBy] = useState('Featured');
+  const [name, setName] = useState('');
+  const [phone, setPhone] = useState('');
+  const [service, setService] = useState('In Namecard');
+  const [message, setMessage] = useState('');
+  const [formSubmitted, setFormSubmitted] = useState(false);
 
-  const filteredProducts = selectedCategory === 'All Products'
-    ? products
-    : products.filter(p => p.category === selectedCategory);
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    setFormSubmitted(true);
+    setTimeout(() => {
+      setFormSubmitted(false);
+      setName('');
+      setPhone('');
+      setService('In Namecard');
+      setMessage('');
+      alert('Cảm ơn bạn đã gửi yêu cầu! Chúng tôi sẽ liên hệ lại sớm nhất.');
+    }, 1000);
+  };
+
+  const featuredServices = [
+    {
+      title: 'In Namecard',
+      desc: 'Ấn tượng đầu tiên chuyên nghiệp với chất liệu giấy cao cấp.',
+      img: 'https://lh3.googleusercontent.com/aida-public/AB6AXuBGa0WMAZLWfMgfca4TnGg6xUTTkb0GH1q7bDa6Qa16KdSMjMqA9GrXmDLcW9-ED9G7g1Xbxp67pycG8Zifl7AyCpJe8vIesED9ta5EnBfxI0wVdanNnngxzGMPLCkgLLhWTKJx7V8TWL66o4K6B0BjHf56oo2mj9lqjcQhwpmOpSnvyOc18-DDayF2MUh5Ozkxl6fQZE_3yLWj342pMAFkjiH3jTS4gKEdjQ3DHjYlD7-2rG1V0K6WeA',
+      link: '/san-pham/namecard-my-thuat'
+    },
+    {
+      title: 'In Tờ rơi',
+      desc: 'Giải pháp quảng bá nhanh chóng, hiệu quả với chi phí tối ưu.',
+      img: 'https://lh3.googleusercontent.com/aida-public/AB6AXuDZdEahQ0-23k4f-4o0reYzuJtIj7rW95QhJKxlOUAkVEjMYeK-CSsvuZZRpAt4-JzYihq7WgR6lHcon2UPyxgS7nUvlvntTJbn0gMDidQJBIIRTFsDRNJXbT_QXkbgcbImxeayfCDyn_zc2di5NnvQJVYMTmt97qiJOW9ERBXog4JCnCXjtTMraLDXEmGAC8z9DZ-0fMBmlcNl3gDQC1uFEVSJKr9lp9wFmFxXFxEaZ1Hmc4bfNkDjeA',
+      link: '/san-pham'
+    },
+    {
+      title: 'In Tem nhãn',
+      desc: 'Tem nhãn decal chống thấm, bám dính cực tốt trên mọi bề mặt.',
+      img: 'https://lh3.googleusercontent.com/aida-public/AB6AXuC4y7Zb6SopzcVHgr7ywTvxIIW62pfCnx-t2yiN8y49WAW00pwrWkpRMouSqBpgEoQLgWIQ_vrP5n-diPT1p9u3h9TM6Or-7yDM-tqSJo5U_XQ2sCGA8nLwebJCuFojbM0CZEFbJ6mbY7sCsaKNCGjcdKavNraAAYUgy-3oXZT1hBquvsbQ7Q0LN_7ocBiLWwWX9Yy4UUCC-iCCxkRv1DVyR_Yhwn8ARGehKw9hQL0nV5FwH9vSNwwvyw',
+      link: '/san-pham'
+    },
+    {
+      title: 'In Bao bì',
+      desc: 'Nâng tầm giá trị sản phẩm với hộp giấy và túi giấy cao cấp.',
+      img: 'https://lh3.googleusercontent.com/aida-public/AB6AXuDxSOpm6BuOL-UR5yjE0iCiApVFZQIyQ8_U7VXIMD6fJTwLqpIfc5KzuZdKZrRks5V52D1mV6mYP0NUDF9gsIVr9KZUVhQoCjJSannQFSRv0fKiyKWghqk9oaIBS-9QKBTZZLeJCdp0zAsWtRB5xa70NYHVl8KnG7uOCrzRmkfjEt9Wanrfl1KP5ay3ijIhK3hS2myR3xC-mQtU02FCWJ_bbyMzGmCJJ1bRpblJhLMvR-haNdnhNfRuUA',
+      link: '/san-pham'
+    },
+    {
+      title: 'In Catalogue',
+      desc: 'Trình bày sản phẩm chuyên nghiệp, đóng cuốn sang trọng.',
+      img: 'https://lh3.googleusercontent.com/aida-public/AB6AXuDrxc14am2Sukr4TipRlTLXmUDzuQ5AGGri5KXT_DLnFoVJnrlcRfiG6J3LpaSTjAvRSSCPI5s-clg9Xtgr_Uqf2YzU4qb50x4mrOKjAsK050KRDtU8V47RwBAWIY98UUd1WOZ30_jFg5zPnkzyAyyEUHDc_s0a6gF8J5NmRIJpneQromYi7Lr0a-EYkKdxH9tAnhDkA7jnaW2AMrLuTQK9yg0GOXXlrBxyf6CdLV0z-p834Jxhgo062g',
+      link: '/san-pham'
+    }
+  ];
 
   return (
-    <div className="max-w-7xl mx-auto px-6 py-12">
-      <div className="grid grid-cols-12 gap-10">
-        
-        {/* LEFT SIDEBAR: Categories & Quality Card */}
-        <aside className="col-span-12 lg:col-span-3 space-y-8">
-          <div>
-            <h3 className="text-[12px] font-bold tracking-wider text-slate-400 uppercase mb-4">
-              Categories
-            </h3>
-            <ul className="space-y-1.5">
-              {categories.map((cat) => {
-                const isActive = selectedCategory === cat;
-                return (
-                  <li key={cat}>
-                    <button
-                      onClick={() => setSelectedCategory(cat)}
-                      className={`w-full text-left px-4 py-3 rounded-lg text-[15px] font-medium transition-all flex items-center justify-between group ${
-                        isActive
-                          ? 'bg-[#EDF2FA] text-[#1E40AF]'
-                          : 'text-slate-650 hover:bg-slate-50 hover:text-slate-900'
-                      }`}
-                    >
-                      <span>{cat}</span>
-                      {isActive && <ChevronRight className="h-4 w-4 text-[#1E40AF]" />}
-                    </button>
-                  </li>
-                );
-              })}
-            </ul>
-          </div>
-
-          {/* Premium Quality Card */}
-          <div className="bg-[#0B2265] text-white p-6 rounded-xl space-y-4 relative overflow-hidden">
-            <div className="absolute top-0 right-0 w-24 h-24 bg-gradient-to-br from-[#1E3A8A] to-transparent opacity-40 rounded-full blur-xl" />
-            <div className="bg-[#18347E] inline-flex p-2.5 rounded-lg">
-              <Award className="h-5 w-5 text-amber-400" />
-            </div>
-            <div className="space-y-2">
-              <h4 className="text-lg font-bold tracking-tight">Premium Quality</h4>
-              <p className="text-[#A2B3D5] text-[13px] leading-relaxed">
-                Precision in every print. From gold foiling to custom die-cuts.
-              </p>
-            </div>
-            <a 
-              href="#portfolio" 
-              className="inline-block text-[13px] font-semibold text-white underline hover:text-amber-300 transition-colors"
-            >
-              Explore Portfolio
-            </a>
-          </div>
-        </aside>
-
-        {/* RIGHT CONTENT: Services List */}
-        <main className="col-span-12 lg:col-span-9 space-y-8">
-          
-          {/* Header section */}
-          <div className="space-y-3">
-            <h1 className="font-serif text-3xl md:text-4xl font-bold tracking-tight text-[#0F2253]">
-              Our Printing Services
+    <div className="bg-background text-on-surface font-body-md overflow-x-hidden min-h-screen">
+      {/* Hero Section */}
+      <section className="relative h-[550px] md:h-[650px] flex items-center overflow-hidden">
+        <div className="absolute inset-0 z-0">
+          <div 
+            className="w-full h-full bg-cover bg-center brightness-[0.6]" 
+            style={{ backgroundImage: "url('https://lh3.googleusercontent.com/aida-public/AB6AXuA0Y-MoJFJd_PW8t38ObfuhHZCGvwEhkI3TV-FNYyI8_W_MdsWGFMvjidPmLldC00FgFuTauzh95mcumnZt2jsxaYqyGZxlFio0XwOJ5GH0xl-z-oBQ6G4OJo42HOM7Lp2--GfOj32-7Guw3i6jx5sd3kXqhpeSuZVVArlJ_TThL9nDDDNiRJODYgF9JfyEyEkiOV577VznK4jHuNgq-olVLD7O4DU46IomwWVmJwwvTIQHEqKPVbX43A')" }}
+          />
+          <div className="absolute inset-0 bg-gradient-to-r from-deep-navy/80 to-transparent"></div>
+        </div>
+        <div className="relative z-10 w-full max-w-[1200px] mx-auto px-margin-mobile md:px-margin-desktop text-paper-white">
+          <div className="max-w-2xl">
+            <h1 className="font-display-lg text-4xl md:text-6xl mb-6 leading-tight font-bold text-white">
+              Giải pháp in ấn <br/><span className="text-vibrant-orange">chất lượng cao</span>
             </h1>
-            <p className="text-slate-500 text-[15px] leading-relaxed max-w-3xl">
-              Discover our curated collection of premium print solutions designed for brands that value excellence and tactile precision.
+            <p className="font-body-lg text-md md:text-lg mb-10 text-surface-variant leading-relaxed opacity-90">
+              Từ thiết kế sáng tạo đến thành phẩm hoàn hảo. PrintPro đồng hành cùng thương hiệu của bạn qua từng chi tiết bản in với công nghệ hiện đại nhất.
             </p>
+            <div className="flex flex-wrap gap-4">
+              <Link to="/san-pham" className="bg-vibrant-orange text-white px-8 py-4 rounded-lg font-bold hover:brightness-110 hover:-translate-y-0.5 transition-all duration-300 shadow-lg text-sm">
+                Khám phá dịch vụ
+              </Link>
+              <Link to="/tinh-gia" className="bg-transparent border-2 border-white text-white px-8 py-4 rounded-lg font-bold hover:bg-white hover:text-deep-navy transition-all duration-300 text-sm">
+                Xem báo giá
+              </Link>
+            </div>
           </div>
+        </div>
+      </section>
 
-          {/* Filter / Sort bar */}
-          <div className="flex items-center justify-between border-b border-slate-100 pb-5 text-[14px]">
-            <span className="text-slate-400">
-              Showing {filteredProducts.length} results
-            </span>
-            <div className="relative">
-              <button 
-                onClick={() => setSortOpen(!sortOpen)}
-                className="flex items-center space-x-1.5 text-slate-800 font-medium hover:text-slate-900 focus:outline-none"
-              >
-                <span className="text-slate-400 font-normal">Sort by:</span>
-                <span>{sortBy}</span>
-                <ChevronDown className="h-4 w-4 text-slate-500" />
-              </button>
-
-              {sortOpen && (
-                <div className="absolute right-0 mt-2 w-40 bg-white border border-slate-100 rounded-lg shadow-lg py-1 z-20">
-                  {['Featured', 'Newest', 'Price: Low to High', 'Price: High to Low'].map((option) => (
-                    <button
-                      key={option}
-                      onClick={() => {
-                        setSortBy(option);
-                        setSortOpen(false);
-                      }}
-                      className="w-full text-left px-4 py-2 hover:bg-slate-50 text-slate-700 text-xs font-medium flex items-center justify-between"
-                    >
-                      <span>{option}</span>
-                      {sortBy === option && <Check className="h-3.5 w-3.5 text-blue-600" />}
-                    </button>
-                  ))}
+      {/* Product Categories Grid */}
+      <section className="py-20 bg-background">
+        <div className="max-w-[1200px] mx-auto px-margin-mobile md:px-margin-desktop">
+          <div className="flex justify-between items-end mb-12">
+            <div>
+              <h2 className="font-display-lg text-2xl md:text-3xl font-bold text-deep-navy mb-2">Dịch vụ nổi bật</h2>
+              <div className="w-20 h-1 bg-vibrant-orange rounded-full"></div>
+            </div>
+            <Link to="/san-pham" className="text-deep-navy font-bold hover:text-vibrant-orange transition-colors flex items-center gap-2 text-sm">
+              Tất cả dịch vụ <span className="material-symbols-outlined text-sm">arrow_forward</span>
+            </Link>
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-gutter">
+            {featuredServices.map((service, idx) => (
+              <div key={idx} className="product-card bg-paper-white p-6 rounded-xl shadow-sm hover:shadow-lg transition-all duration-300 flex flex-col group h-full border border-surface-container">
+                <div className="aspect-square mb-6 overflow-hidden rounded-lg bg-slate-100">
+                  <img className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" src={service.img} alt={service.title}/>
                 </div>
-              )}
+                <h3 className="font-bold text-deep-navy mb-2 text-md leading-tight">{service.title}</h3>
+                <p className="text-on-surface-variant font-body-md text-xs mb-6 flex-grow">{service.desc}</p>
+                <Link to={service.link} className="w-full text-center border border-deep-navy text-deep-navy hover:bg-deep-navy hover:text-white py-2 rounded-lg font-semibold text-xs transition-all">
+                  Xem chi tiết
+                </Link>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Working Process */}
+      <section className="py-20 bg-surface-container">
+        <div className="max-w-[1200px] mx-auto px-margin-mobile md:px-margin-desktop text-center">
+          <h2 className="font-display-lg text-2xl md:text-3xl font-bold text-deep-navy mb-16">Quy trình làm việc chuyên nghiệp</h2>
+          <div className="relative flex flex-col md:flex-row justify-between items-start gap-12 md:gap-4">
+            {/* Progress Line */}
+            <div className="hidden md:block absolute top-12 left-12 right-12 h-0.5 bg-outline-variant z-0"></div>
+            
+            {/* Step 1 */}
+            <div className="relative z-10 flex flex-col items-center flex-1">
+              <div className="w-24 h-24 bg-paper-white rounded-full flex items-center justify-center border-4 border-deep-navy mb-6 shadow-md transition-transform hover:scale-105">
+                <span className="material-symbols-outlined text-deep-navy text-3xl">contact_support</span>
+              </div>
+              <h4 className="font-bold text-deep-navy mb-2 text-sm">1. Liên hệ</h4>
+              <p className="text-on-surface-variant text-xs px-4">Gửi yêu cầu hoặc gọi hotline để được tư vấn dịch vụ.</p>
+            </div>
+            {/* Step 2 */}
+            <div className="relative z-10 flex flex-col items-center flex-1">
+              <div className="w-24 h-24 bg-paper-white rounded-full flex items-center justify-center border-4 border-deep-navy mb-6 shadow-md transition-transform hover:scale-105">
+                <span className="material-symbols-outlined text-deep-navy text-3xl">request_quote</span>
+              </div>
+              <h4 className="font-bold text-deep-navy mb-2 text-sm">2. Báo giá</h4>
+              <p className="text-on-surface-variant text-xs px-4">Nhận báo giá chi tiết và tối ưu nhất cho ngân sách của bạn.</p>
+            </div>
+            {/* Step 3 */}
+            <div className="relative z-10 flex flex-col items-center flex-1">
+              <div className="w-24 h-24 bg-paper-white rounded-full flex items-center justify-center border-4 border-deep-navy mb-6 shadow-md transition-transform hover:scale-105">
+                <span className="material-symbols-outlined text-deep-navy text-3xl">print</span>
+              </div>
+              <h4 className="font-bold text-deep-navy mb-2 text-sm">3. Thiết kế &amp; In ấn</h4>
+              <p className="text-on-surface-variant text-xs px-4">Xác nhận mẫu thiết kế và tiến hành in ấn với công nghệ hiện đại.</p>
+            </div>
+            {/* Step 4 */}
+            <div className="relative z-10 flex flex-col items-center flex-1">
+              <div className="w-24 h-24 bg-paper-white rounded-full flex items-center justify-center border-4 border-deep-navy mb-6 shadow-md transition-transform hover:scale-105">
+                <span className="material-symbols-outlined text-deep-navy text-3xl">local_shipping</span>
+              </div>
+              <h4 className="font-bold text-deep-navy mb-2 text-sm">4. Giao hàng</h4>
+              <p className="text-on-surface-variant text-xs px-4">Kiểm tra chất lượng và giao hàng tận nơi nhanh chóng.</p>
             </div>
           </div>
+        </div>
+      </section>
 
-          {/* Grid list */}
-          {filteredProducts.length === 0 ? (
-            <div className="bg-white border border-slate-100 rounded-2xl p-12 text-center">
-              <p className="text-slate-400">No products found in this category.</p>
-            </div>
-          ) : (
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-              {filteredProducts.map((product) => (
-                <div 
-                  key={product.id} 
-                  className="bg-white border border-slate-100/80 rounded-2xl overflow-hidden hover:shadow-lg transition-shadow duration-300 relative group flex flex-col justify-between"
-                >
+      {/* Quick Contact Form */}
+      <section className="py-20 bg-paper-white">
+        <div className="max-w-[1200px] mx-auto px-margin-mobile md:px-margin-desktop">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
+            <div>
+              <h2 className="font-display-lg text-3xl md:text-4xl font-bold text-deep-navy mb-6">Liên hệ nhanh để nhận ưu đãi</h2>
+              <p className="text-on-surface-variant mb-8 leading-relaxed text-sm">
+                Đội ngũ chuyên viên của PrintPro luôn sẵn sàng lắng nghe và tư vấn giải pháp in ấn phù hợp nhất cho doanh nghiệp của bạn. Hãy để lại thông tin, chúng tôi sẽ liên hệ lại trong vòng 15 phút.
+              </p>
+              <div className="space-y-6">
+                <div className="flex items-center gap-4">
+                  <div className="w-12 h-12 rounded-full bg-surface-container flex items-center justify-center text-deep-navy">
+                    <span className="material-symbols-outlined">call</span>
+                  </div>
                   <div>
-                    {/* Color Dots CMYK (if enabled) */}
-                    {product.cmyk && (
-                      <div className="absolute top-4 left-4 flex space-x-1 z-10">
-                        <span className="w-2.5 h-2.5 rounded-full bg-[#00E5FF]" title="Cyan" />
-                        <span className="w-2.5 h-2.5 rounded-full bg-[#FF007F]" title="Magenta" />
-                        <span className="w-2.5 h-2.5 rounded-full bg-[#FFEA00]" title="Yellow" />
-                        <span className="w-2.5 h-2.5 rounded-full bg-[#1A1A1A]" title="Black" />
-                      </div>
-                    )}
-
-                    {/* Tag badge / Stamp on the right side if retail bag */}
-                    {product.hasOrangeTag && (
-                      <div className="absolute right-4 top-1/2 -translate-y-1/2 bg-[#F38E36] text-white p-3 rounded-full shadow-md z-10 flex items-center justify-center transform hover:scale-105 transition-transform cursor-pointer">
-                        <span className="font-bold text-[15px]">$</span>
-                      </div>
-                    )}
-
-                    {/* Image */}
-                    <div className="aspect-[1.5] w-full overflow-hidden bg-slate-50 border-b border-slate-100">
-                      <img 
-                        src={product.imageUrl} 
-                        alt={product.title} 
-                        className="w-full h-full object-cover group-hover:scale-[1.02] transition-transform duration-500"
-                      />
-                    </div>
-
-                    {/* Text Details */}
-                    <div className="p-6 space-y-3">
-                      <div className="flex items-center justify-between">
-                        <h2 className="text-xl font-bold tracking-tight text-[#0F2253] group-hover:text-amber-600 transition-colors">
-                          {product.title}
-                        </h2>
-                        <span className={`text-[11px] font-bold px-2.5 py-1 rounded-md tracking-wider ${product.tagBg}`}>
-                          {product.tag}
-                        </span>
-                      </div>
-                      <p className="text-slate-500 text-[14px] leading-relaxed">
-                        {product.description}
-                      </p>
-                    </div>
-                  </div>
-
-                  {/* Pricing / Details Footer */}
-                  <div className="px-6 pb-6 pt-2 flex items-center justify-between mt-auto">
-                    <span className="font-semibold text-slate-800 text-[15px]">
-                      {product.priceText}
-                    </span>
-                    <button className="flex items-center space-x-1.5 px-4 py-2 border border-slate-200 hover:border-slate-800 rounded-lg text-slate-700 hover:text-slate-900 text-sm font-medium transition-colors">
-                      <span>View Details</span>
-                      <span>&rarr;</span>
-                    </button>
+                    <p className="text-xs text-on-surface-variant font-semibold">Hotline 24/7</p>
+                    <p className="font-bold text-deep-navy text-md">0943 126 406</p>
                   </div>
                 </div>
-              ))}
+                <div className="flex items-center gap-4">
+                  <div className="w-12 h-12 rounded-full bg-surface-container flex items-center justify-center text-deep-navy">
+                    <span className="material-symbols-outlined">mail</span>
+                  </div>
+                  <div>
+                    <p className="text-xs text-on-surface-variant font-semibold">Email hỗ trợ</p>
+                    <p className="font-bold text-deep-navy text-md">inanxuannhi@gmail.com</p>
+                  </div>
+                </div>
+              </div>
             </div>
-          )}
-
-          {/* Load More Button */}
-          <div className="flex justify-center pt-6">
-            <button className="flex items-center space-x-2 px-6 py-3 bg-[#EEF2F6] hover:bg-[#E2E8F0] text-slate-700 rounded-full font-medium text-sm transition-colors">
-              <RotateCw className="h-4 w-4 text-slate-500" />
-              <span>Load More Designs</span>
-            </button>
+            
+            <div className="bg-background p-8 md:p-12 rounded-2xl shadow-sm border border-outline-variant">
+              <form className="space-y-6" onSubmit={handleSubmit}>
+                <div className="space-y-2">
+                  <label className="text-xs text-on-surface-variant font-semibold block">Họ và tên</label>
+                  <input 
+                    type="text" 
+                    required
+                    value={name}
+                    onChange={(e) => setName(e.target.value)}
+                    className="w-full bg-paper-white border border-outline-variant focus:border-deep-navy focus:ring-1 focus:ring-deep-navy rounded-lg p-3 outline-none text-sm transition-all" 
+                    placeholder="Nhập họ và tên của bạn" 
+                  />
+                </div>
+                <div className="space-y-2">
+                  <label className="text-xs text-on-surface-variant font-semibold block">Số điện thoại</label>
+                  <input 
+                    type="tel" 
+                    required
+                    value={phone}
+                    onChange={(e) => setPhone(e.target.value)}
+                    className="w-full bg-paper-white border border-outline-variant focus:border-deep-navy focus:ring-1 focus:ring-deep-navy rounded-lg p-3 outline-none text-sm transition-all" 
+                    placeholder="Nhập số điện thoại liên hệ" 
+                  />
+                </div>
+                <div className="space-y-2">
+                  <label className="text-xs text-on-surface-variant font-semibold block">Dịch vụ cần in</label>
+                  <select 
+                    value={service}
+                    onChange={(e) => setService(e.target.value)}
+                    className="w-full bg-paper-white border border-outline-variant focus:border-deep-navy focus:ring-1 focus:ring-deep-navy rounded-lg p-3 outline-none text-sm transition-all"
+                  >
+                    <option>In Namecard</option>
+                    <option>In Tờ rơi</option>
+                    <option>In Tem nhãn</option>
+                    <option>In Bao bì</option>
+                    <option>In Catalogue</option>
+                    <option>Dịch vụ khác</option>
+                  </select>
+                </div>
+                <div className="space-y-2">
+                  <label className="text-xs text-on-surface-variant font-semibold block">Ghi chú yêu cầu</label>
+                  <textarea 
+                    value={message}
+                    onChange={(e) => setMessage(e.target.value)}
+                    className="w-full bg-paper-white border border-outline-variant focus:border-deep-navy focus:ring-1 focus:ring-deep-navy rounded-lg p-3 outline-none text-sm transition-all" 
+                    placeholder="Mô tả ngắn gọn yêu cầu của bạn..." 
+                    rows="3"
+                  />
+                </div>
+                <button 
+                  type="submit" 
+                  className="w-full bg-vibrant-orange text-white py-4 rounded-lg font-bold hover:brightness-110 active:scale-95 transition-all shadow-lg text-sm"
+                >
+                  Gửi yêu cầu ngay
+                </button>
+              </form>
+            </div>
           </div>
-
-        </main>
-      </div>
+        </div>
+      </section>
     </div>
   );
 }

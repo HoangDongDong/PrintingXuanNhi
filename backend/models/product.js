@@ -20,14 +20,23 @@ const Product = sequelize.define('Product', {
     defaultValue: 0.00
   },
   imageUrl: {
-    type: DataTypes.STRING(255),
+    type: DataTypes.TEXT,
     allowNull: true,
-    field: 'image_url' // Maps camelCase in Sequelize to snake_case in Database
+    field: 'image_url'
   },
   isFeatured: {
     type: DataTypes.BOOLEAN,
     defaultValue: false,
     field: 'is_featured'
+  },
+  categoryId: {
+    type: DataTypes.INTEGER,
+    field: 'category_id',
+    allowNull: true,
+    references: {
+      model: 'categories',
+      key: 'id'
+    }
   }
 }, {
   tableName: 'products'
