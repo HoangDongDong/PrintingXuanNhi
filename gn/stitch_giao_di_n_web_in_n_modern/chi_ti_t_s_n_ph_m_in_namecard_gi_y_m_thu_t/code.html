@@ -1,0 +1,482 @@
+<!DOCTYPE html>
+
+<html class="light" lang="vi"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>In Namecard Giấy Mỹ Thuật Cao Cấp - PrintPro</title>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&amp;family=Hanken+Grotesk:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "outline": "#777683",
+                    "on-error-container": "#93000a",
+                    "surface-variant": "#e1e3e4",
+                    "on-error": "#ffffff",
+                    "on-background": "#191c1d",
+                    "primary-container": "#2e3192",
+                    "on-secondary-fixed-variant": "#7a3000",
+                    "vibrant-orange": "#FF6B00",
+                    "inverse-primary": "#c0c1ff",
+                    "error": "#ba1a1a",
+                    "surface-container-high": "#e7e8e9",
+                    "inverse-on-surface": "#f0f1f2",
+                    "on-tertiary-fixed-variant": "#00504b",
+                    "on-primary-fixed": "#04006d",
+                    "on-secondary-fixed": "#351000",
+                    "outline-variant": "#c7c5d4",
+                    "on-secondary-container": "#572000",
+                    "surface-tint": "#4f54b4",
+                    "error-container": "#ffdad6",
+                    "background": "#f8f9fa",
+                    "primary": "#15157d",
+                    "surface": "#f8f9fa",
+                    "on-primary": "#ffffff",
+                    "on-surface-variant": "#464652",
+                    "surface-dim": "#d9dadb",
+                    "tertiary-fixed": "#76f7eb",
+                    "on-tertiary-fixed": "#00201e",
+                    "ink-black": "#1A1A1A",
+                    "secondary-container": "#fe6b00",
+                    "paper-white": "#FFFFFF",
+                    "on-surface": "#191c1d",
+                    "primary-fixed-dim": "#c0c1ff",
+                    "on-tertiary-container": "#2fbdb2",
+                    "on-tertiary": "#ffffff",
+                    "tertiary": "#002f2b",
+                    "tertiary-container": "#004742",
+                    "deep-navy": "#2E3192",
+                    "on-primary-fixed-variant": "#373a9b",
+                    "surface-container-lowest": "#ffffff",
+                    "secondary-fixed-dim": "#ffb693",
+                    "tertiary-fixed-dim": "#56dacf",
+                    "surface-container-highest": "#e1e3e4",
+                    "surface-bright": "#f8f9fa",
+                    "primary-fixed": "#e1e0ff",
+                    "surface-container-low": "#f3f4f5",
+                    "on-primary-container": "#9da1ff",
+                    "surface-container": "#edeeef",
+                    "secondary-fixed": "#ffdbcc",
+                    "error-red": "#DD3333",
+                    "inverse-surface": "#2e3132",
+                    "secondary": "#a04100",
+                    "on-secondary": "#ffffff"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.125rem",
+                    "lg": "0.25rem",
+                    "xl": "0.5rem",
+                    "full": "0.75rem"
+            },
+            "spacing": {
+                    "container-max": "1200px",
+                    "margin-desktop": "64px",
+                    "base": "8px",
+                    "margin-mobile": "16px",
+                    "gutter": "24px"
+            },
+            "fontFamily": {
+                    "headline-md": ["Montserrat"],
+                    "headline-lg-mobile": ["Montserrat"],
+                    "headline-lg": ["Montserrat"],
+                    "label-lg": ["Hanken Grotesk"],
+                    "display-lg": ["Montserrat"],
+                    "body-md": ["Hanken Grotesk"],
+                    "body-lg": ["Hanken Grotesk"],
+                    "label-sm": ["Hanken Grotesk"]
+            },
+            "fontSize": {
+                    "headline-md": ["24px", {"lineHeight": "32px", "fontWeight": "600"}],
+                    "headline-lg-mobile": ["24px", {"lineHeight": "32px", "fontWeight": "600"}],
+                    "headline-lg": ["32px", {"lineHeight": "40px", "fontWeight": "600"}],
+                    "label-lg": ["14px", {"lineHeight": "20px", "letterSpacing": "0.05em", "fontWeight": "600"}],
+                    "display-lg": ["48px", {"lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                    "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                    "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
+                    "label-sm": ["12px", {"lineHeight": "16px", "fontWeight": "500"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .product-card-shadow {
+            box-shadow: 0 8px 20px rgba(46, 49, 146, 0.04);
+        }
+        .active-tab {
+            color: #FF6B00;
+            border-bottom: 2px solid #FF6B00;
+        }
+        .glass-blur {
+            backdrop-filter: blur(8px);
+        }
+    </style>
+</head>
+<body class="bg-background text-on-background font-body-md overflow-x-hidden">
+<!-- Header (TopNavBar) -->
+<header class="docked full-width top-0 shadow-sm bg-paper-white dark:bg-ink-black z-50">
+<div class="flex justify-between items-center px-margin-desktop w-full max-w-container-max mx-auto h-20">
+<div class="font-display-lg text-headline-md font-bold text-deep-navy dark:text-primary-fixed">PrintPro</div>
+<nav class="hidden md:flex items-center gap-8">
+<a class="text-on-surface-variant dark:text-surface-variant hover:text-vibrant-orange transition-colors duration-200 font-body-md text-body-md" href="#">Trang chủ</a>
+<a class="text-on-surface-variant dark:text-surface-variant hover:text-vibrant-orange transition-colors duration-200 font-body-md text-body-md" href="#">Giới thiệu</a>
+<a class="text-vibrant-orange font-bold border-b-2 border-vibrant-orange pb-1 font-body-md text-body-md" href="#">Sản phẩm In ấn</a>
+<a class="text-on-surface-variant dark:text-surface-variant hover:text-vibrant-orange transition-colors duration-200 font-body-md text-body-md" href="#">Bảng giá</a>
+<a class="text-on-surface-variant dark:text-surface-variant hover:text-vibrant-orange transition-colors duration-200 font-body-md text-body-md" href="#">Tin tức</a>
+<a class="text-on-surface-variant dark:text-surface-variant hover:text-vibrant-orange transition-colors duration-200 font-body-md text-body-md" href="#">Liên hệ</a>
+</nav>
+<div class="flex items-center gap-6">
+<div class="flex gap-4">
+<button class="scale-95 active:opacity-80 transition-transform text-deep-navy">
+<span class="material-symbols-outlined" data-icon="person">person</span>
+</button>
+<button class="scale-95 active:opacity-80 transition-transform text-deep-navy relative">
+<span class="material-symbols-outlined" data-icon="shopping_cart">shopping_cart</span>
+<span class="absolute -top-2 -right-2 bg-vibrant-orange text-white text-[10px] w-4 h-4 rounded-full flex items-center justify-center">2</span>
+</button>
+</div>
+<button class="bg-deep-navy text-white px-6 py-2 rounded-lg font-label-lg scale-95 active:opacity-80 transition-transform hover:bg-opacity-90">Nhận báo giá</button>
+</div>
+</div>
+</header>
+<main class="max-w-container-max mx-auto px-margin-desktop py-20 space-y-24">
+<!-- Product Section Upper -->
+<section class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
+<!-- Left Column: Imagery -->
+<div class="space-y-6">
+<div class="product-card-shadow rounded-xl overflow-hidden bg-white aspect-[4/3] group cursor-zoom-in">
+<img class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" data-alt="A high-end, close-up photograph of luxury business cards made from thick, textured off-white art paper. The cards feature elegant minimalist typography and a subtle metallic gold foil stamping on the edges. They are artfully arranged on a clean, bright white marble surface with soft natural light creating gentle shadows. The aesthetic is sophisticated and professional, reflecting a premium minimalist design language." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBOMEKclyUeLU8PnCBK5SoP8JMD5l7VUzJjlZU_m_jtY2GgDBvX-Q7jRo1cpnVEjWJOKaF-fp62bDVyiww3y0Bc_Cjtj8z0Rp2WWBHt3AnOuI2wQCWPGmF2Y5KWM4uYvEKgbV77VH_XcmqMGwMqKaIneXhmfqUsOVK2Zwcc91VujbmWr6KjXV72dAeADKWR3joCO392RTA7vXZrjimMFNQhF8TVMBh9g34ohRxw2CMUVE3C9aFwr4YncQ"/>
+</div>
+<div class="grid grid-cols-4 gap-4">
+<button class="border-2 border-vibrant-orange rounded-lg overflow-hidden bg-white aspect-square">
+<img class="w-full h-full object-cover" data-alt="A macro shot of a stack of business cards on premium Conqueror art paper, showing the deep fibrous texture of the paper and the precision of the letterpress printing. Soft daylight highlights the subtle variations in the off-white paper surface." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDSAXhz6nY9CLbeqVDfN90cyB0bl5mzhQFPeC4XaYIGVogjrfjhHaMIPCYmcTvIR-DXW5wzYiF6Lex98GfXY41uRpbPd12FUbAkfL4flWRZRMlqq18uDEDlbbVha1l5A-eEt47CexjAyS7C2o0xcvhmUdV98Wf1GTYFQUC1wOvQbmTdK0EitU9LLGlLVj1ekctw0G76N5pOmtTkl-WfhHh6jnOi1WTtQ2ABq1pz7UNz9n1sLeHJXPXLAg"/>
+</button>
+<button class="border border-outline-variant rounded-lg overflow-hidden bg-white aspect-square hover:border-deep-navy transition-colors">
+<img class="w-full h-full object-cover" data-alt="Detailed photograph of business card corners being finished with a precise rounded edge. The image showcases the thickness of the multi-layered art paper and the clean, professional cut against a blurred industrial background." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDKG4yMSBC_s0jvmTAuHk66-wk1Nrprn-aTZrXSgGdya4sQl-fEQEJXmiOzWgs5HVe9Cs39IUwd-mpUHmAQPwE8o7DIa4AEX04C0OD8ROVpuDhj3nP3WgLDS9FldfS6DcDsXsabvL5BzdSp3PkXvts6pUWLUSjeQlZPIwDeNu5HBlhJvGJwmJZHbrTo-dHkaGY3N27KebaIMeWUGqxf81YNQOxOaxEXx1Je77G6_Hj_lGlXK_DCAmQ65Q"/>
+</button>
+<button class="border border-outline-variant rounded-lg overflow-hidden bg-white aspect-square hover:border-deep-navy transition-colors">
+<img class="w-full h-full object-cover" data-alt="A close-up view of gold foil stamping being applied to a minimalist business card design. The light reflects brilliantly off the metallic foil, contrasting against the matte, textured charcoal grey art paper." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBCWqOZZhz-n-P5gMfaU83A7rzWTiw7pzBMOdI5qboek6GDZPSesPCtlWrRvyEkhC10wS2sBeC899NWNhBFNB5MLCAxmpDpEVXS81J_OOwMNQtIwZQbvIc-VmGUGlj1-ey7IBcUB-mVqiLdYQQcsTB49gko81Xuuvn88V3i8HTsB96cWVQm1MY52g92Vo5DkKAfP4PN5xv6q0IxfSxrPJwpp8hzgTyGzGtfUpk6Jc4SQKMTV0ylGOAO4g"/>
+</button>
+<button class="border border-outline-variant rounded-lg overflow-hidden bg-white aspect-square hover:border-deep-navy transition-colors">
+<img class="w-full h-full object-cover" data-alt="A person holding a stack of luxury business cards between their fingers, demonstrating the rigid, high-quality feel and weight of the premium art paper stock in a brightly lit, modern office setting." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAHWtiPv7J8Qdxq-IYm_NWbwwY3IhQ0GDS4kZp7msXZcGD1zSrUHzLZxZJp-jfBMAZzwnsY_F89znyGG6ZCXfL0aZLM0YqPGbZks30VHYrIAxoWF7w7TZAqx5Xr3PRF7vEg-k2_m7dfsHvFerMH8HLbggJgqBEmMSW_AqHCITt9-3E_Wlf5UYoNBXusDhzCwPANMA6EQMsuUnMvq0zDZ9YPDc8tYl9UaTovuJCYGu0NiZCxetM9h_tOvQ"/>
+</button>
+</div>
+</div>
+<!-- Right Column: Details & Configuration -->
+<div class="space-y-8">
+<div class="space-y-4 border-b border-surface-variant pb-8">
+<div class="flex items-center gap-2">
+<span class="bg-primary-fixed text-primary px-3 py-1 rounded-full text-label-sm font-label-lg">Sản phẩm Cao cấp</span>
+<div class="flex text-vibrant-orange">
+<span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">star</span>
+</div>
+</div>
+<h1 class="font-headline-lg text-headline-lg text-deep-navy leading-tight">In Namecard Giấy Mỹ Thuật Cao Cấp</h1>
+<p class="text-body-lg text-on-surface-variant max-w-lg">Nâng tầm thương hiệu cá nhân với dòng namecard in trên các loại giấy mỹ thuật nhập khẩu từ Châu Âu, Nhật Bản. Phù hợp cho doanh nhân, kiến trúc sư và các chuyên gia sáng tạo.</p>
+</div>
+<!-- Dropdowns Configuration -->
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+<div class="space-y-2">
+<label class="font-label-sm text-label-sm text-outline uppercase tracking-wider">Số lượng (Hộp)</label>
+<select class="w-full border-outline-variant rounded-lg py-3 px-4 bg-white focus:border-deep-navy focus:ring-deep-navy transition-colors">
+<option>2 Hộp (200 chiếc)</option>
+<option>5 Hộp (500 chiếc)</option>
+<option>10 Hộp (1000 chiếc)</option>
+<option>Số lượng khác (Báo giá riêng)</option>
+</select>
+</div>
+<div class="space-y-2">
+<label class="font-label-sm text-label-sm text-outline uppercase tracking-wider">Chất liệu giấy</label>
+<select class="w-full border-outline-variant rounded-lg py-3 px-4 bg-white focus:border-deep-navy focus:ring-deep-navy transition-colors">
+<option>Conqueror Laid 220gsm</option>
+<option>Koehler Canvas 250gsm</option>
+<option>Monnalisa Smooth 300gsm</option>
+<option>Giấy ánh kim Stardream</option>
+</select>
+</div>
+<div class="space-y-2">
+<label class="font-label-sm text-label-sm text-outline uppercase tracking-wider">Kích thước</label>
+<select class="w-full border-outline-variant rounded-lg py-3 px-4 bg-white focus:border-deep-navy focus:ring-deep-navy transition-colors">
+<option>Chuẩn (90 x 54 mm)</option>
+<option>Châu Âu (85 x 55 mm)</option>
+<option>Vuông (50 x 50 mm)</option>
+</select>
+</div>
+<div class="space-y-2">
+<label class="font-label-sm text-label-sm text-outline uppercase tracking-wider">Gia công sau in</label>
+<select class="w-full border-outline-variant rounded-lg py-3 px-4 bg-white focus:border-deep-navy focus:ring-deep-navy transition-colors">
+<option>Cắt xén thẳng (Mặc định)</option>
+<option>Ép kim (Vàng/Bạc)</option>
+<option>Bo tròn 4 góc</option>
+<option>Dập chìm/Dập nổi logo</option>
+</select>
+</div>
+</div>
+<div class="pt-8 space-y-4">
+<button class="w-full bg-vibrant-orange text-white py-4 px-8 rounded-xl font-headline-md text-headline-md shadow-lg hover:translate-y-[-4px] active:scale-95 transition-all duration-200">
+                        Nhận báo giá chính xác
+                    </button>
+<p class="text-center text-label-sm text-on-surface-variant flex items-center justify-center gap-2">
+<span class="material-symbols-outlined text-sm">schedule</span>
+                        Thời gian hoàn thành dự kiến: 2-3 ngày làm việc
+                    </p>
+</div>
+</div>
+</section>
+<!-- Tabs Section -->
+<section class="space-y-12">
+<div class="border-b border-surface-variant">
+<div class="flex gap-12 overflow-x-auto scrollbar-hide">
+<button class="pb-4 font-label-lg text-body-lg active-tab whitespace-nowrap transition-all duration-200" id="tab-desc" onclick="switchTab('desc')">Mô tả chi tiết</button>
+<button class="pb-4 font-label-lg text-body-lg text-on-surface-variant hover:text-vibrant-orange whitespace-nowrap transition-all duration-200" id="tab-spec" onclick="switchTab('spec')">Quy cách kỹ thuật</button>
+<button class="pb-4 font-label-lg text-body-lg text-on-surface-variant hover:text-vibrant-orange whitespace-nowrap transition-all duration-200" id="tab-review" onclick="switchTab('review')">Đánh giá của khách hàng</button>
+</div>
+</div>
+<div class="tab-content grid grid-cols-1 md:grid-cols-3 gap-12 animate-fadeIn" id="content-desc">
+<div class="md:col-span-2 space-y-6">
+<h3 class="font-headline-md text-headline-md text-deep-navy">Đẳng cấp trong từng chi tiết</h3>
+<p class="text-body-lg leading-relaxed text-on-surface-variant">In Namecard giấy mỹ thuật là lựa chọn hàng đầu cho những ai tìm kiếm sự khác biệt và đẳng cấp. Khác với các loại giấy thông thường được cán màng bóng hay mờ, giấy mỹ thuật giữ nguyên được vẻ đẹp tự nhiên của bề mặt giấy với các đường vân nổi, độ sần hoặc ánh kim tinh tế.</p>
+<p class="text-body-lg leading-relaxed text-on-surface-variant">Tại PrintPro, chúng tôi sử dụng công nghệ in kỹ thuật số HP Indigo hiện đại nhất, đảm bảo màu sắc sắc nét, độ phủ mực hoàn hảo ngay cả trên các bề mặt giấy có vân sâu. Sự kết hợp giữa chất liệu cao cấp và kỹ thuật in chuẩn xác tạo nên một chiếc danh thiếp không chỉ để trao đổi thông tin mà còn là một tác phẩm nghệ thuật nhỏ bé.</p>
+<ul class="space-y-3 pt-4">
+<li class="flex items-start gap-3 text-body-md">
+<span class="material-symbols-outlined text-vibrant-orange">check_circle</span>
+<span>Hơn 100 loại giấy mỹ thuật nhập khẩu có sẵn tại showroom.</span>
+</li>
+<li class="flex items-start gap-3 text-body-md">
+<span class="material-symbols-outlined text-vibrant-orange">check_circle</span>
+<span>Hỗ trợ thiết kế tối giản, tập trung vào chất liệu và typo.</span>
+</li>
+<li class="flex items-start gap-3 text-body-md">
+<span class="material-symbols-outlined text-vibrant-orange">check_circle</span>
+<span>Kỹ thuật gia công thủ công tỉ mỉ: ép kim, dập nổi, bồi dày.</span>
+</li>
+</ul>
+</div>
+<div class="bg-surface-container p-8 rounded-xl space-y-6">
+<h4 class="font-label-lg text-deep-navy uppercase">Ưu điểm nổi bật</h4>
+<div class="space-y-4">
+<div class="flex gap-4">
+<div class="w-10 h-10 rounded-full bg-white flex items-center justify-center text-vibrant-orange shrink-0 shadow-sm">
+<span class="material-symbols-outlined">touch_app</span>
+</div>
+<div>
+<p class="font-bold text-body-md">Cảm giác xúc giác</p>
+<p class="text-label-sm text-on-surface-variant">Bề mặt vân giấy tạo ấn tượng mạnh khi chạm vào.</p>
+</div>
+</div>
+<div class="flex gap-4">
+<div class="w-10 h-10 rounded-full bg-white flex items-center justify-center text-vibrant-orange shrink-0 shadow-sm">
+<span class="material-symbols-outlined">palette</span>
+</div>
+<div>
+<p class="font-bold text-body-md">Màu sắc trung thực</p>
+<p class="text-label-sm text-on-surface-variant">Màu in thẩm thấu vào sợi giấy tạo vẻ đẹp tự nhiên.</p>
+</div>
+</div>
+<div class="flex gap-4">
+<div class="w-10 h-10 rounded-full bg-white flex items-center justify-center text-vibrant-orange shrink-0 shadow-sm">
+<span class="material-symbols-outlined">verified</span>
+</div>
+<div>
+<p class="font-bold text-body-md">Độ bền cao</p>
+<p class="text-label-sm text-on-surface-variant">Giấy mỹ thuật có độ dai và bền màu theo thời gian.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="tab-content hidden animate-fadeIn" id="content-spec">
+<div class="overflow-hidden border border-outline-variant rounded-xl">
+<table class="w-full text-left border-collapse">
+<thead class="bg-surface-container">
+<tr>
+<th class="p-6 font-label-lg text-deep-navy border-b border-outline-variant">Đặc tính</th>
+<th class="p-6 font-label-lg text-deep-navy border-b border-outline-variant">Thông số kỹ thuật</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-outline-variant">
+<tr>
+<td class="p-6 font-bold text-body-md w-1/3">Công nghệ in</td>
+<td class="p-6 text-body-md">In kỹ thuật số Laser / Offset / Letterpress tùy số lượng</td>
+</tr>
+<tr>
+<td class="p-6 font-bold text-body-md">Định lượng giấy</td>
+<td class="p-6 text-body-md">200gsm - 400gsm (Có thể bồi nhiều lớp lên đến 700gsm)</td>
+</tr>
+<tr>
+<td class="p-6 font-bold text-body-md">Màu sắc</td>
+<td class="p-6 text-body-md">Hệ màu CMYK chuẩn / Màu pha Pantone theo yêu cầu</td>
+</tr>
+<tr>
+<td class="p-6 font-bold text-body-md">Kỹ thuật gia công</td>
+<td class="p-6 text-body-md">Ép kim nhiệt, Phủ UV định hình, Dập chìm chìm (Deboss), Bồi form</td>
+</tr>
+<tr>
+<td class="p-6 font-bold text-body-md">Quy cách đóng gói</td>
+<td class="p-6 text-body-md">Hộp nhựa mica cao cấp (100 chiếc/hộp)</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="tab-content hidden animate-fadeIn" id="content-review">
+<div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+<div class="product-card-shadow p-8 rounded-xl bg-white space-y-4">
+<div class="flex justify-between items-center">
+<div class="flex items-center gap-4">
+<div class="w-12 h-12 rounded-full bg-surface-container overflow-hidden">
+<img class="w-full h-full object-cover" data-alt="A clean, professional headshot of a middle-aged male architect in a creative studio, looking confident and smiling slightly. The background is a soft-focus architectural model shop with warm, ambient lighting." src="https://lh3.googleusercontent.com/aida-public/AB6AXuADsIGqUFdsUCShqSHSJLj7LOzehiG5KVPq7ct10_36U0tx3VR__hhY95EuEscHkouobzeqJHAZGUBnooI2XkbdvKDPA_rsAAxQSzWz7HHNpDQK4o2Z-ouTY8YCGAy0RQevEDpTYRPuHfZioihb9u7ndKPvAwXF175Po0m4k7_ftuQbAvzb0QI-HDNCCvMrey4PyNpYNndXH7LtUS0eQjeuaqdTfmGcP_OY2y5gux0BI-TJTB6fl14QPw"/>
+</div>
+<div>
+<p class="font-bold text-body-md">KTS. Minh Hoàng</p>
+<p class="text-label-sm text-outline">GĐ Sáng tạo - MH Studio</p>
+</div>
+</div>
+<div class="flex text-vibrant-orange">
+<span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">star</span>
+</div>
+</div>
+<p class="text-body-md text-on-surface-variant italic">"Chất lượng in tuyệt vời, vân giấy Conqueror hiện lên rất rõ nét. Tôi rất hài lòng với kỹ thuật ép kim mờ mà các bạn tư vấn. Chắc chắn sẽ quay lại."</p>
+</div>
+<div class="product-card-shadow p-8 rounded-xl bg-white space-y-4">
+<div class="flex justify-between items-center">
+<div class="flex items-center gap-4">
+<div class="w-12 h-12 rounded-full bg-surface-container overflow-hidden">
+<img class="w-full h-full object-cover" data-alt="A portrait of a young professional woman in a bright, modern co-working space. She has a friendly expression and is dressed in contemporary business casual attire. The lighting is soft and flattering, emphasizing a bright, creative atmosphere." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDTIk-xj5ddow67A_9scP3sJmwpp-Amn5_q4TbSSAefV3Nn7XlGCZMmtcKKVmw6DhvFHlve6VWQOt0rs733lm147_3IEcM2YF3kxsGp810aFIyQiNVjykTTaVMxZxEvE0heuenYRlSFg-lhcpo5a-GaiyNSJ7mUsRFsztZMQCCUGDI14AI2AXNb-It6Hjc_mXGAPV1Qm5IwbVqT9rMjRWTcAIZLmNXyCT6nqBjFBV7CuyLm1YAIITHRRw"/>
+</div>
+<div>
+<p class="font-bold text-body-md">Thanh Hằng</p>
+<p class="text-label-sm text-outline">Freelancer Marketing</p>
+</div>
+</div>
+<div class="flex text-vibrant-orange">
+<span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">star</span>
+</div>
+</div>
+<p class="text-body-md text-on-surface-variant italic">"Dịch vụ khách hàng rất tận tâm. Các bạn đã gửi mẫu giấy cho mình chọn trước khi in. Namecard in xong nhận được rất nhiều lời khen từ đối tác."</p>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- Support Buttons (SideNavBar) -->
+<div class="fixed bottom-8 right-8 flex flex-col items-center gap-4 z-50">
+<div class="group relative flex items-center justify-end">
+<span class="absolute right-16 bg-deep-navy text-white px-4 py-2 rounded-lg text-label-sm opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap pointer-events-none">Zalo Chat</span>
+<button class="bg-deep-navy text-white rounded-full p-4 shadow-lg hover:scale-110 transition-transform animate-bounce hover:animate-none">
+<span class="material-symbols-outlined" data-icon="chat">chat</span>
+</button>
+</div>
+<div class="group relative flex items-center justify-end">
+<span class="absolute right-16 bg-vibrant-orange text-white px-4 py-2 rounded-lg text-label-sm opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap pointer-events-none">Hotline: 1900 1234</span>
+<button class="bg-vibrant-orange text-white rounded-full p-4 shadow-lg hover:scale-110 transition-transform">
+<span class="material-symbols-outlined" data-icon="call">call</span>
+</button>
+</div>
+</div>
+<!-- Footer -->
+<footer class="bg-ink-black dark:bg-black text-paper-white full-width">
+<div class="grid grid-cols-1 md:grid-cols-4 gap-gutter px-margin-desktop py-20 max-w-container-max mx-auto">
+<div class="space-y-6">
+<div class="font-display-lg text-headline-md text-paper-white">PrintPro</div>
+<p class="font-body-md text-body-md opacity-70">Giải pháp in ấn chuyên nghiệp cho doanh nghiệp và cá nhân. Chất lượng dẫn đầu, dịch vụ tận tâm.</p>
+</div>
+<div class="space-y-6">
+<h4 class="font-label-lg uppercase tracking-widest text-vibrant-orange">Liên hệ</h4>
+<ul class="space-y-4 font-body-md text-body-md">
+<li class="flex items-start gap-2 text-surface-variant hover:text-primary-fixed transition-colors cursor-pointer">
+<span class="material-symbols-outlined text-sm">location_on</span>
+                        123 Đường In Ấn, Quận 1, TP. Hồ Chí Minh
+                    </li>
+<li class="flex items-center gap-2 text-surface-variant hover:text-primary-fixed transition-colors cursor-pointer">
+<span class="material-symbols-outlined text-sm">call</span>
+                        028 3844 5678
+                    </li>
+<li class="flex items-center gap-2 text-surface-variant hover:text-primary-fixed transition-colors cursor-pointer">
+<span class="material-symbols-outlined text-sm">mail</span>
+                        contact@printpro.vn
+                    </li>
+</ul>
+</div>
+<div class="space-y-6">
+<h4 class="font-label-lg uppercase tracking-widest text-vibrant-orange">Chính sách</h4>
+<ul class="space-y-4 font-body-md text-body-md">
+<li><a class="text-surface-variant hover:text-primary-fixed transition-colors" href="#">Chính sách bảo mật</a></li>
+<li><a class="text-surface-variant hover:text-primary-fixed transition-colors" href="#">Chính sách đổi trả</a></li>
+<li><a class="text-surface-variant hover:text-primary-fixed transition-colors" href="#">Hướng dẫn thanh toán</a></li>
+<li><a class="text-surface-variant hover:text-primary-fixed transition-colors" href="#">Vận chuyển &amp; Giao hàng</a></li>
+</ul>
+</div>
+<div class="space-y-6">
+<h4 class="font-label-lg uppercase tracking-widest text-vibrant-orange">Bản tin</h4>
+<p class="text-label-sm text-surface-variant">Đăng ký để nhận ưu đãi in ấn hàng tháng.</p>
+<div class="flex gap-2">
+<input class="bg-white/10 border-none rounded-lg px-4 py-2 text-white w-full focus:ring-1 focus:ring-vibrant-orange" placeholder="Email của bạn" type="email"/>
+<button class="bg-vibrant-orange px-4 py-2 rounded-lg hover:opacity-90 transition-opacity">
+<span class="material-symbols-outlined">send</span>
+</button>
+</div>
+</div>
+</div>
+<div class="border-t border-white/10 py-8 px-margin-desktop max-w-container-max mx-auto flex flex-col md:flex-row justify-between items-center gap-4">
+<p class="font-body-md text-body-md text-surface-variant opacity-70">© 2024 PrintPro Service. All rights reserved.</p>
+<div class="flex gap-6 text-surface-variant">
+<a class="hover:text-vibrant-orange transition-colors" href="#"><span class="material-symbols-outlined">public</span></a>
+<a class="hover:text-vibrant-orange transition-colors" href="#"><span class="material-symbols-outlined">share</span></a>
+<a class="hover:text-vibrant-orange transition-colors" href="#"><span class="material-symbols-outlined">rss_feed</span></a>
+</div>
+</div>
+</footer>
+<script>
+        function switchTab(tabName) {
+            // Hide all contents
+            document.querySelectorAll('.tab-content').forEach(content => {
+                content.classList.add('hidden');
+            });
+            // Reset all tab styles
+            document.querySelectorAll('[id^="tab-"]').forEach(tab => {
+                tab.classList.remove('active-tab');
+                tab.classList.add('text-on-surface-variant');
+            });
+            
+            // Show target content
+            document.getElementById('content-' + tabName).classList.remove('hidden');
+            // Set active tab style
+            document.getElementById('tab-' + tabName).classList.add('active-tab');
+            document.getElementById('tab-' + tabName).classList.remove('text-on-surface-variant');
+        }
+
+        // Animation for fadeIn
+        const style = document.createElement('style');
+        style.textContent = `
+            @keyframes fadeIn {
+                from { opacity: 0; transform: translateY(10px); }
+                to { opacity: 1; transform: translateY(0); }
+            }
+            .animate-fadeIn {
+                animation: fadeIn 0.4s ease-out forwards;
+            }
+        `;
+        document.head.appendChild(style);
+    </script>
+</body></html>

@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+
+<html class="light" lang="vi"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Sản phẩm In ấn | PrintPro Service</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&amp;family=Hanken+Grotesk:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "vibrant-orange": "#FF6B00",
+                        "primary-fixed": "#e1e0ff",
+                        "on-secondary-fixed": "#351000",
+                        "surface": "#f8f9fa",
+                        "surface-container-low": "#f3f4f5",
+                        "surface-container": "#edeeef",
+                        "on-primary-container": "#9da1ff",
+                        "surface-bright": "#f8f9fa",
+                        "on-background": "#191c1d",
+                        "error": "#ba1a1a",
+                        "on-primary": "#ffffff",
+                        "outline-variant": "#c7c5d4",
+                        "on-primary-fixed": "#04006d",
+                        "ink-black": "#1A1A1A",
+                        "on-tertiary-fixed-variant": "#00504b",
+                        "surface-tint": "#4f54b4",
+                        "tertiary-fixed": "#76f7eb",
+                        "primary-container": "#2e3192",
+                        "on-secondary-container": "#572000",
+                        "error-container": "#ffdad6",
+                        "secondary-fixed-dim": "#ffb693",
+                        "on-surface": "#191c1d",
+                        "on-secondary-fixed-variant": "#7a3000",
+                        "background": "#f8f9fa",
+                        "surface-container-highest": "#e1e3e4",
+                        "surface-variant": "#e1e3e4",
+                        "on-secondary": "#ffffff",
+                        "secondary-container": "#fe6b00",
+                        "on-surface-variant": "#464652",
+                        "paper-white": "#FFFFFF",
+                        "surface-dim": "#d9dadb",
+                        "tertiary": "#002f2b",
+                        "tertiary-container": "#004742",
+                        "deep-navy": "#2E3192",
+                        "primary-fixed-dim": "#c0c1ff",
+                        "on-tertiary": "#ffffff",
+                        "surface-container-lowest": "#ffffff",
+                        "primary": "#15157d",
+                        "inverse-on-surface": "#f0f1f2",
+                        "on-tertiary-fixed": "#00201e",
+                        "inverse-primary": "#c0c1ff",
+                        "tertiary-fixed-dim": "#56dacf",
+                        "surface-container-high": "#e7e8e9",
+                        "on-primary-fixed-variant": "#373a9b",
+                        "inverse-surface": "#2e3132",
+                        "error-red": "#DD3333",
+                        "outline": "#777683",
+                        "secondary-fixed": "#ffdbcc",
+                        "on-tertiary-container": "#2fbdb2",
+                        "on-error-container": "#93000a",
+                        "on-error": "#ffffff",
+                        "secondary": "#a04100"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "spacing": {
+                        "container-max": "1200px",
+                        "margin-mobile": "16px",
+                        "gutter": "24px",
+                        "margin-desktop": "64px",
+                        "base": "8px"
+                    },
+                    "fontFamily": {
+                        "body-lg": ["Hanken Grotesk"],
+                        "body-md": ["Hanken Grotesk"],
+                        "label-sm": ["Hanken Grotesk"],
+                        "display-lg": ["Montserrat"],
+                        "headline-md": ["Montserrat"],
+                        "label-lg": ["Hanken Grotesk"],
+                        "headline-lg-mobile": ["Montserrat"],
+                        "headline-lg": ["Montserrat"]
+                    },
+                    "fontSize": {
+                        "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
+                        "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                        "label-sm": ["12px", {"lineHeight": "16px", "fontWeight": "500"}],
+                        "display-lg": ["48px", {"lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                        "headline-md": ["24px", {"lineHeight": "32px", "fontWeight": "600"}],
+                        "label-lg": ["14px", {"lineHeight": "20px", "letterSpacing": "0.05em", "fontWeight": "600"}],
+                        "headline-lg-mobile": ["24px", {"lineHeight": "32px", "fontWeight": "600"}],
+                        "headline-lg": ["32px", {"lineHeight": "40px", "fontWeight": "600"}]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .product-card:hover .product-image {
+            transform: scale(1.05);
+        }
+        .sidebar-item:hover .sidebar-icon {
+            color: #FF6B00;
+        }
+    </style>
+</head>
+<body class="bg-background text-on-background font-body-md">
+<!-- TopNavBar -->
+<header class="bg-paper-white dark:bg-ink-black shadow-sm fixed top-0 w-full z-50">
+<div class="flex justify-between items-center px-margin-desktop w-full max-w-container-max mx-auto h-20">
+<div class="font-display-lg text-headline-md font-bold text-deep-navy dark:text-primary-fixed">
+                PrintPro
+            </div>
+<nav class="hidden md:flex items-center gap-8">
+<a class="text-on-surface-variant dark:text-surface-variant hover:text-vibrant-orange transition-colors duration-200 font-body-md text-body-md" href="#">Trang chủ</a>
+<a class="text-on-surface-variant dark:text-surface-variant hover:text-vibrant-orange transition-colors duration-200 font-body-md text-body-md" href="#">Giới thiệu</a>
+<a class="text-vibrant-orange font-bold border-b-2 border-vibrant-orange pb-1 font-body-md text-body-md" href="#">Sản phẩm In ấn</a>
+<a class="text-on-surface-variant dark:text-surface-variant hover:text-vibrant-orange transition-colors duration-200 font-body-md text-body-md" href="#">Bảng giá</a>
+<a class="text-on-surface-variant dark:text-surface-variant hover:text-vibrant-orange transition-colors duration-200 font-body-md text-body-md" href="#">Tin tức</a>
+<a class="text-on-surface-variant dark:text-surface-variant hover:text-vibrant-orange transition-colors duration-200 font-body-md text-body-md" href="#">Liên hệ</a>
+</nav>
+<div class="flex items-center gap-6">
+<div class="flex gap-4">
+<span class="material-symbols-outlined text-deep-navy cursor-pointer scale-95 active:opacity-80 transition-transform">person</span>
+<span class="material-symbols-outlined text-deep-navy cursor-pointer scale-95 active:opacity-80 transition-transform">shopping_cart</span>
+</div>
+<button class="bg-vibrant-orange text-white px-6 py-2 rounded-lg font-label-lg hover:bg-opacity-90 transition-all scale-95 active:opacity-80">
+                    Nhận báo giá
+                </button>
+</div>
+</div>
+</header>
+<main class="pt-32 pb-20 max-w-container-max mx-auto px-margin-desktop min-h-screen">
+<!-- Breadcrumb -->
+<nav class="mb-12">
+<ol class="flex items-center gap-2 font-label-lg text-label-lg text-outline">
+<li class="hover:text-deep-navy transition-colors"><a href="#">TRANG CHỦ</a></li>
+<li>/</li>
+<li class="text-deep-navy font-bold">CỬA HÀNG</li>
+</ol>
+</nav>
+<div class="flex flex-col md:flex-row gap-gutter">
+<!-- Sidebar (Left 1/4) -->
+<aside class="w-full md:w-1/4">
+<div class="mb-6">
+<h2 class="font-headline-md text-headline-md text-deep-navy mb-2">DANH MỤC SẢN PHẨM</h2>
+<div class="w-12 h-1 bg-vibrant-orange"></div>
+</div>
+<ul class="flex flex-col border-t border-surface-container-highest">
+<li class="sidebar-item border-b border-surface-container-highest">
+<a class="flex items-center gap-3 py-4 text-on-surface-variant hover:text-vibrant-orange transition-colors font-body-md" href="#">
+<span class="material-symbols-outlined text-[20px] sidebar-icon">menu_book</span>
+                            Catalogue
+                        </a>
+</li>
+<li class="sidebar-item border-b border-surface-container-highest">
+<a class="flex items-center gap-3 py-4 text-on-surface-variant hover:text-vibrant-orange transition-colors font-body-md" href="#">
+<span class="material-symbols-outlined text-[20px] sidebar-icon">receipt_long</span>
+                            Hóa đơn
+                        </a>
+</li>
+<li class="sidebar-item border-b border-surface-container-highest">
+<a class="flex items-center gap-3 py-4 text-on-surface-variant hover:text-vibrant-orange transition-colors font-body-md" href="#">
+<span class="material-symbols-outlined text-[20px] sidebar-icon">package_2</span>
+                            Hộp giấy
+                        </a>
+</li>
+<li class="sidebar-item border-b border-surface-container-highest">
+<a class="flex items-center gap-3 py-4 text-on-surface-variant hover:text-vibrant-orange transition-colors font-body-md" href="#">
+<span class="material-symbols-outlined text-[20px] sidebar-icon">shopping_bag</span>
+                            Túi giấy
+                        </a>
+</li>
+<li class="sidebar-item border-b border-surface-container-highest">
+<a class="flex items-center gap-3 py-4 text-on-surface-variant hover:text-vibrant-orange transition-colors font-body-md" href="#">
+<span class="material-symbols-outlined text-[20px] sidebar-icon">label</span>
+                            Nhãn Decal
+                        </a>
+</li>
+<li class="sidebar-item border-b border-surface-container-highest">
+<a class="flex items-center gap-3 py-4 text-on-surface-variant hover:text-vibrant-orange transition-colors font-body-md" href="#">
+<span class="material-symbols-outlined text-[20px] sidebar-icon">mail</span>
+                            Thiệp mời
+                        </a>
+</li>
+<li class="sidebar-item border-b border-surface-container-highest">
+<a class="flex items-center gap-3 py-4 text-on-surface-variant hover:text-vibrant-orange transition-colors font-body-md" href="#">
+<span class="material-symbols-outlined text-[20px] sidebar-icon">badge</span>
+                            In name card
+                        </a>
+</li>
+<li class="sidebar-item border-b border-surface-container-highest">
+<a class="flex items-center gap-3 py-4 text-on-surface-variant hover:text-vibrant-orange transition-colors font-body-md" href="#">
+<span class="material-symbols-outlined text-[20px] sidebar-icon">layers</span>
+                            In tờ gấp
+                        </a>
+</li>
+<li class="sidebar-item border-b border-surface-container-highest">
+<a class="flex items-center gap-3 py-4 text-on-surface-variant hover:text-vibrant-orange transition-colors font-body-md" href="#">
+<span class="material-symbols-outlined text-[20px] sidebar-icon">drafts</span>
+                            In Bao Thư
+                        </a>
+</li>
+<li class="sidebar-item border-b border-surface-container-highest">
+<a class="flex items-center gap-3 py-4 text-on-surface-variant hover:text-vibrant-orange transition-colors font-body-md" href="#">
+<span class="material-symbols-outlined text-[20px] sidebar-icon">confirmation_number</span>
+                            In Phiếu Quà Tặng
+                        </a>
+</li>
+<li class="sidebar-item border-b border-surface-container-highest">
+<a class="flex items-center gap-3 py-4 text-vibrant-orange font-bold font-body-md" href="#">
+                            Xem tất cả
+                        </a>
+</li>
+</ul>
+</aside>
+<!-- Product Grid (Right 3/4) -->
+<section class="w-full md:w-3/4">
+<!-- Filter Bar -->
+<div class="flex flex-col sm:flex-row justify-between items-start sm:items-center mb-8 pb-4 border-b border-surface-container-highest gap-4">
+<p class="text-on-surface-variant font-body-md">Hiển thị 1–12 của 48 sản phẩm</p>
+<div class="flex items-center gap-3">
+<label class="text-label-sm uppercase tracking-wider text-outline">Sắp xếp theo:</label>
+<select class="bg-transparent border-none text-deep-navy font-bold focus:ring-0 cursor-pointer text-body-md">
+<option>Phổ biến nhất</option>
+<option>Mới nhất</option>
+<option>Giá: Thấp đến Cao</option>
+<option>Giá: Cao đến Thấp</option>
+</select>
+</div>
+</div>
+<!-- Grid -->
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+<!-- Product Card 1 -->
+<div class="product-card group bg-paper-white p-6 shadow-sm hover:shadow-lg transition-all duration-300 flex flex-col h-full rounded-lg">
+<div class="overflow-hidden mb-6 bg-surface-container aspect-square rounded-lg">
+<img class="product-image w-full h-full object-cover transition-transform duration-500" data-alt="A professional high-quality product photo of premium business cards with elegant typography and deep navy finish, arranged neatly on a minimalist white surface. The lighting is soft and natural, emphasizing the texture of the luxury paper stock. Modern minimalist aesthetic for a corporate printing service." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAxdHHhr7il-_6Xm5Ul_7DR8l-RnjDIGZ0KygA1K7--kWj7FabntmeNoRcGtf2q4MmMftyOAZiEIy5W7omKy8d8kexR2VQxWfUBe_dNKS9icoANZZ8-kcbVqoxaPKQCSr-koH5MGRbh-FoFldmnf51N3a-gcHC70lZnI1-IGgNh-8mbDXNE7BFipSS-5pzwtv9gYM2wAwvPKBV-mL_-vuJAOmwxrgzlPNDSaAnvDBTVIdbluooSi9i9cg"/>
+</div>
+<h3 class="font-headline-md text-deep-navy mb-2 leading-tight">Name Card Cao Cấp</h3>
+<p class="text-on-surface-variant text-body-md mb-6 flex-grow">Giấy mỹ thuật 300gsm, cán màng mờ, in 2 mặt sắc nét.</p>
+<button class="w-full py-3 border border-deep-navy text-deep-navy font-label-lg hover:bg-deep-navy hover:text-white transition-colors uppercase tracking-widest">Xem chi tiết</button>
+</div>
+<!-- Product Card 2 -->
+<div class="product-card group bg-paper-white p-6 shadow-sm hover:shadow-lg transition-all duration-300 flex flex-col h-full rounded-lg">
+<div class="overflow-hidden mb-6 bg-surface-container aspect-square rounded-lg">
+<img class="product-image w-full h-full object-cover transition-transform duration-500" data-alt="A sophisticated presentation of professional product catalogues with vibrant orange accents and clean layouts, displayed in a bright minimalist studio setting. The catalogue covers feature high-gloss finishes and architectural photography. Pristine white background, architectural shadows, professional print portfolio style." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAM8x4Jxic2AQdZEmpjOesegkjBSBqvslS-7kx2z8f8LIec1YAHLUyOJ2mYp2ZJXAgOnMyIvKuwdPmAx1o8Zn4ZopTTfVf4QkKFNW99sFI_lqEF6HvuteGVRUCCdG9GpnBElBSD9Tsl3S8iropobEBAGCdFcZc0yhFMr4txoGqMs61TR0RMtcEjyc3eh49Ukor8MkDZNqiEoCB81yHAXaTCM7x7CnYEPLepUm57TgiNSoIZTDVtUBtWRA"/>
+</div>
+<h3 class="font-headline-md text-deep-navy mb-2 leading-tight">Catalogue Doanh Nghiệp</h3>
+<p class="text-on-surface-variant text-body-md mb-6 flex-grow">Khổ A4, đóng kim hoặc keo gáy, màu sắc trung thực.</p>
+<button class="w-full py-3 border border-deep-navy text-deep-navy font-label-lg hover:bg-deep-navy hover:text-white transition-colors uppercase tracking-widest">Xem chi tiết</button>
+</div>
+<!-- Product Card 3 -->
+<div class="product-card group bg-paper-white p-6 shadow-sm hover:shadow-lg transition-all duration-300 flex flex-col h-full rounded-lg">
+<div class="overflow-hidden mb-6 bg-surface-container aspect-square rounded-lg">
+<img class="product-image w-full h-full object-cover transition-transform duration-500" data-alt="Eco-friendly kraft paper gift bags with minimalist branding and rope handles, standing on a light wood surface. The design is clean and modern, representing sustainable packaging solutions for high-end retail. Neutral tones, soft overhead lighting, premium commercial photography aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuB1FswSd6Oa3_caQgRqfVj7-vA8ZM2fk8quVnjzIX2E1uYFMFTc_WN0pP3n1WokX3T8nWlP9Q1EAo6ODpasPswSeeZPObxeVLGtBz3gCERLw2NcYpVXeZGpRyoYM-h-jN6iqZ73E3522mwYPPLf5JZ4kYgmOBoQncKDs4CxRqHCYO8vZwLXAc9wzThJ3szo2Iz2ZL7tM8NPfz0tUqYGLW4nSSRH4PRr5EpQ_q96A_qU4RHW6sEzvjXTcw"/>
+</div>
+<h3 class="font-headline-md text-deep-navy mb-2 leading-tight">Túi Giấy Kraft</h3>
+<p class="text-on-surface-variant text-body-md mb-6 flex-grow">Chất liệu thân thiện, chịu lực tốt, in logo theo yêu cầu.</p>
+<button class="w-full py-3 border border-deep-navy text-deep-navy font-label-lg hover:bg-deep-navy hover:text-white transition-colors uppercase tracking-widest">Xem chi tiết</button>
+</div>
+<!-- Product Card 4 -->
+<div class="product-card group bg-paper-white p-6 shadow-sm hover:shadow-lg transition-all duration-300 flex flex-col h-full rounded-lg">
+<div class="overflow-hidden mb-6 bg-surface-container aspect-square rounded-lg">
+<img class="product-image w-full h-full object-cover transition-transform duration-500" data-alt="Close up of high-resolution decal labels with vibrant colors and metallic foil details, partially peeled from a backing sheet. The focus is sharp on the print quality and intricate design. Bright, clean background with subtle reflections, conveying precision and high-tech printing capabilities." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBjxfpg5R6jqYkLPafLmrbO0mDRci5ON0Tjuv8VFDgQ8awQNjXMQMGKRTy8hGh8RH81AYTqMy_eve4jVNshbJ88FKdkZFDmq2fh1_K0cGbd2iijHgZhz9tW7llrcwrmdHBxc_Amow1cod6UOU2ldQHNTVKA2g3j41eMeO3n_ShDQe3duudk6JkOXesO9CHFGxf0kLUvpx97tLp_jdn4qYhv55GlIB1wS0wrn_O-87g4I2IIzXUwt926Kg"/>
+</div>
+<h3 class="font-headline-md text-deep-navy mb-2 leading-tight">Nhãn Decal Cuộn</h3>
+<p class="text-on-surface-variant text-body-md mb-6 flex-grow">Chống nước, độ bám dính cao, bế hình theo file thiết kế.</p>
+<button class="w-full py-3 border border-deep-navy text-deep-navy font-label-lg hover:bg-deep-navy hover:text-white transition-colors uppercase tracking-widest">Xem chi tiết</button>
+</div>
+<!-- Product Card 5 -->
+<div class="product-card group bg-paper-white p-6 shadow-sm hover:shadow-lg transition-all duration-300 flex flex-col h-full rounded-lg">
+<div class="overflow-hidden mb-6 bg-surface-container aspect-square rounded-lg">
+<img class="product-image w-full h-full object-cover transition-transform duration-500" data-alt="Minimalist design of professional tri-fold brochures for a tech company, featuring geometric patterns in deep navy and vibrant orange. The brochures are fanned out on a light grey concrete surface, showing both sides of the print. Sharp focus, professional lighting, modern editorial style." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDbglSo0PwCB-RWsoqhtTKinDZniVgnxFEpeiTU9N57HUIeHS4P2t9IrUHc_e8LIecu627NW7NisR747vEBrz7exq4YWTy7aO8PyS3Ws63XEOn1Oic7lV4m9DS0_jLrtUZOq4k4ahy7fS8RSuABYMSRVGCxjXIec_9XLL1lTCimo3zqnNufZX2RvCDen3n-7HkD7wXVGXuTF8jaroTHHqJQbG9libskjuT3AMnj3tRneakNoWVomQSCvQ"/>
+</div>
+<h3 class="font-headline-md text-deep-navy mb-2 leading-tight">Tờ Gấp / Brochure</h3>
+<p class="text-on-surface-variant text-body-md mb-6 flex-grow">Giấy Couche 150gsm, cấn 2 đường, in offset chất lượng cao.</p>
+<button class="w-full py-3 border border-deep-navy text-deep-navy font-label-lg hover:bg-deep-navy hover:text-white transition-colors uppercase tracking-widest">Xem chi tiết</button>
+</div>
+<!-- Product Card 6 -->
+<div class="product-card group bg-paper-white p-6 shadow-sm hover:shadow-lg transition-all duration-300 flex flex-col h-full rounded-lg">
+<div class="overflow-hidden mb-6 bg-surface-container aspect-square rounded-lg">
+<img class="product-image w-full h-full object-cover transition-transform duration-500" data-alt="Elegant branded envelopes and letterheads for a luxury brand, featuring embossed logos and sophisticated typography. The stationery is arranged in a flat lay composition on a textured white paper background. Minimalist aesthetic, high-end feel, soft shadows, pristine corporate identity presentation." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBWFr8oHmtEw4S6gnXyHrRIK9A1HAQESp2Pp2o6fDqUA_W6_eDSl1TO9YtneWSdMALPjDUPNyJCGscZn7g3swjb46udGtr3pH9AFvfuUbPmEXdOy5VdU-wX7NdqJiNi9w7hoBUpK4y7_dLdNuZtQTI6zLJKr6l2iv-KyrdsmxovqfIUTAH_cqJ5T2FKgSDAfsZn7pI4JzMiBH3aSNYSiPKcmlLj9I_x83iUxVzhOYMCYmrGr9DBDKugLw"/>
+</div>
+<h3 class="font-headline-md text-deep-navy mb-2 leading-tight">Bao Thư Văn Phòng</h3>
+<p class="text-on-surface-variant text-body-md mb-6 flex-grow">Nắp dán keo sẵn, nhiều kích thước chuẩn (12x22, 16x23, 25x35).</p>
+<button class="w-full py-3 border border-deep-navy text-deep-navy font-label-lg hover:bg-deep-navy hover:text-white transition-colors uppercase tracking-widest">Xem chi tiết</button>
+</div>
+</div>
+<!-- Pagination -->
+<div class="mt-16 flex justify-center items-center gap-4">
+<a class="w-10 h-10 flex items-center justify-center rounded-lg bg-deep-navy text-white font-bold transition-transform active:scale-90" href="#">1</a>
+<a class="w-10 h-10 flex items-center justify-center rounded-lg border border-surface-container-highest hover:border-deep-navy hover:text-deep-navy transition-all font-body-md" href="#">2</a>
+<a class="w-10 h-10 flex items-center justify-center rounded-lg border border-surface-container-highest hover:border-deep-navy hover:text-deep-navy transition-all font-body-md" href="#">3</a>
+<span class="text-outline">...</span>
+<a class="px-6 h-10 flex items-center justify-center rounded-lg border border-surface-container-highest hover:bg-vibrant-orange hover:border-vibrant-orange hover:text-white transition-all font-label-lg uppercase tracking-wide" href="#">Tiếp</a>
+</div>
+</section>
+</div>
+</main>
+<!-- SideNavBar (Floating Support) -->
+<div class="fixed bottom-8 right-8 flex flex-col items-center gap-4 z-50">
+<div class="hidden group-hover:block absolute right-16 bottom-0 bg-white shadow-lg p-4 rounded-lg w-48 text-deep-navy font-label-lg mb-4">
+            Hỗ trợ trực tuyến
+            <p class="text-label-sm font-normal text-outline">Liên hệ ngay với chúng tôi</p>
+</div>
+<a class="bg-vibrant-orange text-white rounded-full p-4 shadow-lg hover:scale-110 transition-transform animate-bounce hover:animate-none group relative" href="https://zalo.me" target="_blank">
+<span class="material-symbols-outlined">chat</span>
+</a>
+<a class="bg-deep-navy text-white rounded-full p-4 shadow-lg hover:scale-110 transition-transform group relative" href="tel:0123456789">
+<span class="material-symbols-outlined">call</span>
+</a>
+</div>
+<!-- Footer -->
+<footer class="bg-ink-black dark:bg-black text-paper-white mt-auto">
+<div class="grid grid-cols-1 md:grid-cols-4 gap-gutter px-margin-desktop py-20 max-w-container-max mx-auto">
+<div class="flex flex-col gap-6">
+<div class="font-display-lg text-headline-md text-paper-white font-bold">PrintPro</div>
+<p class="text-surface-variant font-body-md opacity-80 leading-relaxed">Đối tác in ấn tin cậy cho doanh nghiệp của bạn. Chất lượng hàng đầu, thời gian nhanh chóng.</p>
+</div>
+<div class="flex flex-col gap-4">
+<h4 class="font-headline-md text-[18px] mb-2">Liên Hệ</h4>
+<div class="flex flex-col gap-3 text-surface-variant font-body-md">
+<p class="flex items-center gap-2 hover:text-primary-fixed transition-colors cursor-pointer"><span class="material-symbols-outlined text-[18px]">location_on</span> 123 Đường In Ấn, Q. Tân Bình, TP.HCM</p>
+<p class="flex items-center gap-2 hover:text-primary-fixed transition-colors cursor-pointer"><span class="material-symbols-outlined text-[18px]">call</span> 0909 123 456</p>
+<p class="flex items-center gap-2 hover:text-primary-fixed transition-colors cursor-pointer"><span class="material-symbols-outlined text-[18px]">mail</span> contact@printpro.vn</p>
+<p class="flex items-center gap-2 hover:text-primary-fixed transition-colors cursor-pointer"><span class="material-symbols-outlined text-[18px]">map</span> Xem Bản đồ</p>
+</div>
+</div>
+<div class="flex flex-col gap-4">
+<h4 class="font-headline-md text-[18px] mb-2">Sản Phẩm</h4>
+<div class="flex flex-col gap-3 text-surface-variant font-body-md">
+<a class="hover:text-primary-fixed transition-colors" href="#">In Name Card</a>
+<a class="hover:text-primary-fixed transition-colors" href="#">In Catalogue</a>
+<a class="hover:text-primary-fixed transition-colors" href="#">In Túi Giấy</a>
+<a class="hover:text-primary-fixed transition-colors" href="#">In Hộp Giấy</a>
+</div>
+</div>
+<div class="flex flex-col gap-4">
+<h4 class="font-headline-md text-[18px] mb-2">Chính Sách</h4>
+<div class="flex flex-col gap-3 text-surface-variant font-body-md">
+<a class="hover:text-primary-fixed transition-colors" href="#">Chính sách bảo mật</a>
+<a class="hover:text-primary-fixed transition-colors" href="#">Chính sách đổi trả</a>
+<a class="hover:text-primary-fixed transition-colors" href="#">Hướng dẫn thanh toán</a>
+<a class="hover:text-primary-fixed transition-colors" href="#">Vận chuyển &amp; Giao nhận</a>
+</div>
+</div>
+</div>
+<div class="border-t border-white/10 py-8 px-margin-desktop text-center text-surface-variant font-body-md">
+            © 2024 PrintPro Service. All rights reserved.
+        </div>
+</footer>
+<script>
+        // Micro-interaction for smooth scrolling and header transparency on scroll
+        window.addEventListener('scroll', () => {
+            const header = document.querySelector('header');
+            if (window.scrollY > 20) {
+                header.classList.add('shadow-md');
+                header.classList.remove('shadow-sm');
+            } else {
+                header.classList.add('shadow-sm');
+                header.classList.remove('shadow-md');
+            }
+        });
+
+        // Simple active state toggle for sidebar
+        const sidebarItems = document.querySelectorAll('.sidebar-item a');
+        sidebarItems.forEach(item => {
+            item.addEventListener('click', (e) => {
+                sidebarItems.forEach(i => i.classList.remove('text-vibrant-orange', 'font-bold'));
+                item.classList.add('text-vibrant-orange', 'font-bold');
+            });
+        });
+    </script>
+</body></html>

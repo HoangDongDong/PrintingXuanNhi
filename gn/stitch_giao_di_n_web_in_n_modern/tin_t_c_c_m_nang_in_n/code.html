@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+
+<html class="light" lang="vi"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Tin tức In ấn &amp; Khuyến mãi | PrintPro</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&amp;family=Hanken+Grotesk:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "vibrant-orange": "#FF6B00",
+                        "primary-fixed": "#e1e0ff",
+                        "on-secondary-fixed": "#351000",
+                        "surface": "#f8f9fa",
+                        "surface-container-low": "#f3f4f5",
+                        "surface-container": "#edeeef",
+                        "on-primary-container": "#9da1ff",
+                        "surface-bright": "#f8f9fa",
+                        "on-background": "#191c1d",
+                        "error": "#ba1a1a",
+                        "on-primary": "#ffffff",
+                        "outline-variant": "#c7c5d4",
+                        "on-primary-fixed": "#04006d",
+                        "ink-black": "#1A1A1A",
+                        "on-tertiary-fixed-variant": "#00504b",
+                        "surface-tint": "#4f54b4",
+                        "tertiary-fixed": "#76f7eb",
+                        "primary-container": "#2e3192",
+                        "on-secondary-container": "#572000",
+                        "error-container": "#ffdad6",
+                        "secondary-fixed-dim": "#ffb693",
+                        "on-surface": "#191c1d",
+                        "on-secondary-fixed-variant": "#7a3000",
+                        "background": "#f8f9fa",
+                        "surface-container-highest": "#e1e3e4",
+                        "surface-variant": "#e1e3e4",
+                        "on-secondary": "#ffffff",
+                        "secondary-container": "#fe6b00",
+                        "on-surface-variant": "#464652",
+                        "paper-white": "#FFFFFF",
+                        "surface-dim": "#d9dadb",
+                        "tertiary": "#002f2b",
+                        "tertiary-container": "#004742",
+                        "deep-navy": "#2E3192",
+                        "primary-fixed-dim": "#c0c1ff",
+                        "on-tertiary": "#ffffff",
+                        "surface-container-lowest": "#ffffff",
+                        "primary": "#15157d",
+                        "inverse-on-surface": "#f0f1f2",
+                        "on-tertiary-fixed": "#00201e",
+                        "inverse-primary": "#c0c1ff",
+                        "tertiary-fixed-dim": "#56dacf",
+                        "surface-container-high": "#e7e8e9",
+                        "on-primary-fixed-variant": "#373a9b",
+                        "inverse-surface": "#2e3132",
+                        "error-red": "#DD3333",
+                        "outline": "#777683",
+                        "secondary-fixed": "#ffdbcc",
+                        "on-tertiary-container": "#2fbdb2",
+                        "on-error-container": "#93000a",
+                        "on-error": "#ffffff",
+                        "secondary": "#a04100"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "spacing": {
+                        "container-max": "1200px",
+                        "margin-mobile": "16px",
+                        "gutter": "24px",
+                        "margin-desktop": "64px",
+                        "base": "8px"
+                    },
+                    "fontFamily": {
+                        "body-lg": ["Hanken Grotesk"],
+                        "body-md": ["Hanken Grotesk"],
+                        "label-sm": ["Hanken Grotesk"],
+                        "display-lg": ["Montserrat"],
+                        "headline-md": ["Montserrat"],
+                        "label-lg": ["Hanken Grotesk"],
+                        "headline-lg-mobile": ["Montserrat"],
+                        "headline-lg": ["Montserrat"]
+                    },
+                    "fontSize": {
+                        "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
+                        "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                        "label-sm": ["12px", {"lineHeight": "16px", "fontWeight": "500"}],
+                        "display-lg": ["48px", {"lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                        "headline-md": ["24px", {"lineHeight": "32px", "fontWeight": "600"}],
+                        "label-lg": ["14px", {"lineHeight": "20px", "letterSpacing": "0.05em", "fontWeight": "600"}],
+                        "headline-lg-mobile": ["24px", {"lineHeight": "32px", "fontWeight": "600"}],
+                        "headline-lg": ["32px", {"lineHeight": "40px", "fontWeight": "600"}]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        body {
+            background-color: #f8f9fa;
+            color: #191c1d;
+            font-family: 'Hanken Grotesk', sans-serif;
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .line-clamp-2 {
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+        }
+        .line-clamp-3 {
+            display: -webkit-box;
+            -webkit-line-clamp: 3;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+        }
+        .custom-shadow {
+            box-shadow: 0 8px 20px rgba(46, 49, 146, 0.04);
+        }
+        .hover-lift {
+            transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+        }
+        .hover-lift:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 12px 24px rgba(46, 49, 146, 0.08);
+        }
+    </style>
+</head>
+<body class="bg-surface selection:bg-vibrant-orange selection:text-white">
+<!-- TopNavBar -->
+<nav class="docked full-width top-0 z-50 bg-paper-white dark:bg-ink-black shadow-sm h-20 flex items-center sticky">
+<div class="flex justify-between items-center px-margin-desktop w-full max-w-container-max mx-auto">
+<div class="flex items-center gap-8">
+<a class="font-display-lg text-headline-md font-bold text-deep-navy dark:text-primary-fixed" href="#">PrintPro</a>
+<div class="hidden md:flex gap-6 items-center">
+<a class="text-on-surface-variant hover:text-vibrant-orange transition-colors duration-200 font-body-md text-body-md" href="#">Trang chủ</a>
+<a class="text-on-surface-variant hover:text-vibrant-orange transition-colors duration-200 font-body-md text-body-md" href="#">Giới thiệu</a>
+<a class="text-on-surface-variant hover:text-vibrant-orange transition-colors duration-200 font-body-md text-body-md" href="#">Sản phẩm In ấn</a>
+<a class="text-on-surface-variant hover:text-vibrant-orange transition-colors duration-200 font-body-md text-body-md" href="#">Bảng giá</a>
+<a class="text-vibrant-orange font-bold border-b-2 border-vibrant-orange pb-1 font-body-md text-body-md" href="#">Tin tức</a>
+<a class="text-on-surface-variant hover:text-vibrant-orange transition-colors duration-200 font-body-md text-body-md" href="#">Liên hệ</a>
+</div>
+</div>
+<div class="flex items-center gap-4">
+<div class="hidden lg:flex items-center bg-surface-container-low px-4 py-2 rounded-full border border-outline-variant">
+<span class="material-symbols-outlined text-outline">search</span>
+<input class="bg-transparent border-none focus:ring-0 text-label-sm font-label-sm w-48" placeholder="Tìm kiếm tin tức..." type="text"/>
+</div>
+<button class="material-symbols-outlined text-deep-navy scale-95 active:opacity-80 transition-transform">person</button>
+<div class="relative">
+<button class="material-symbols-outlined text-deep-navy scale-95 active:opacity-80 transition-transform">shopping_cart</button>
+<span class="absolute -top-1 -right-1 bg-vibrant-orange text-white text-[10px] w-4 h-4 flex items-center justify-center rounded-full">0</span>
+</div>
+<button class="bg-deep-navy text-white px-6 py-2 rounded-lg font-label-lg text-label-lg hover:bg-primary transition-colors">Nhận báo giá</button>
+</div>
+</div>
+</nav>
+<main class="max-w-container-max mx-auto px-margin-desktop py-16">
+<!-- Page Title -->
+<header class="text-center mb-16 space-y-4">
+<h1 class="font-display-lg text-display-lg text-deep-navy">Tin tức In ấn &amp; Khuyến mãi</h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl mx-auto">Cập nhật những xu hướng thiết kế mới nhất, kiến thức kỹ thuật in ấn chuyên sâu và các chương trình ưu đãi độc quyền từ PrintPro.</p>
+</header>
+<!-- Featured Post Section -->
+<section class="mb-20">
+<article class="group relative overflow-hidden rounded-xl bg-white custom-shadow grid grid-cols-1 lg:grid-cols-12 gap-0">
+<div class="lg:col-span-8 overflow-hidden">
+<div class="w-full h-full min-h-[400px] bg-cover bg-center group-hover:scale-105 transition-transform duration-700 ease-out" data-alt="A high-end professional printing workshop scene with large-scale offset printing machines producing vibrant colorful brochures. The lighting is crisp and clean, reflecting a professional industrial setting. Sophisticated deep navy and white tones dominate the environment, suggesting technical precision and high-quality production standards." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuB3p6090xSNje00UCnFe_138kLD45BhQyZLuNw8zs_o1cHitMV4iMqxWcqM-n7R97-h9gQ-u4NUD84wbHy3_wr0dZz_7KDX3RpSA2OC0S1iNHIowauHZ6X41L9hVNSaUTNLBfYqvMb9CiM0amYRArWJMskIg0LK3LpTRT1lGEyNpmakN5sPSP1nMlYplrWj4D0Js_NauuOIoJd1klETWtkIvW9eQt87AYM9Qz5n7ZhdPPsut6amXW8L7g')">
+</div>
+</div>
+<div class="lg:col-span-4 p-10 flex flex-col justify-center bg-white">
+<div class="flex items-center gap-3 mb-4">
+<span class="bg-primary-fixed text-deep-navy px-3 py-1 rounded-full text-label-sm font-label-sm">Kiến thức</span>
+<span class="text-outline text-label-sm font-label-sm">24 Tháng 5, 2024</span>
+</div>
+<h2 class="font-headline-lg text-headline-lg text-deep-navy mb-4 leading-tight">Xu hướng thiết kế bao bì bền vững năm 2024: Khi vẻ đẹp đi đôi với môi trường</h2>
+<p class="font-body-md text-body-md text-on-surface-variant mb-8 line-clamp-3">Tìm hiểu cách các doanh nghiệp đang chuyển dịch sang sử dụng vật liệu in ấn tái chế và mực in thực vật để vừa bảo vệ môi trường vừa nâng tầm thương hiệu chuyên nghiệp.</p>
+<a class="inline-flex items-center gap-2 text-vibrant-orange font-bold font-label-lg text-label-lg hover:underline group" href="#">
+                        Đọc tiếp
+                        <span class="material-symbols-outlined transition-transform group-hover:translate-x-1">arrow_forward</span>
+</a>
+</div>
+</article>
+</section>
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-gutter">
+<!-- Blog Grid Section -->
+<div class="lg:col-span-8 space-y-12">
+<div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+<!-- Post 1 -->
+<article class="bg-white rounded-xl overflow-hidden hover-lift custom-shadow group">
+<div class="aspect-video overflow-hidden">
+<img class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" data-alt="A close-up artistic shot of premium business cards with gold foil stamping on thick, textured paper stock. The lighting is soft and directional, highlighting the metallic sheen and the sophisticated paper grain. The color palette includes deep navy and shimmering gold accents, conveying a sense of luxury and executive professionalism." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBus0ur1DXq7OlJiAlO-rj9cxRA1bed2fvvyo5gjQB50w7fcfE2EF0qnmR9BKQ7DF6F3-XxJvZm5Y-SilpSPYtOw4Pt7fzVrydl5aFMVjZzpoBqH1Zw4EL8LUG8Ngv6FUHH7jIc3cEoF70K-l2mF95ymvlAlmWawD0tJGMLV-ZCpm10voki3jYg8X-vUSgkHzlkbbeTCmIvvglGeRlkk6xtMXeAgFu6-fmZOBeobYhcR3ogVxewXCzn-A"/>
+</div>
+<div class="p-6">
+<div class="flex justify-between items-center mb-3">
+<span class="text-vibrant-orange font-bold text-label-sm font-label-sm uppercase">Khuyến mãi</span>
+<span class="text-outline text-label-sm font-label-sm">20 Tháng 5, 2024</span>
+</div>
+<h3 class="font-headline-md text-headline-md text-deep-navy mb-3 line-clamp-2">Ưu đãi 20% cho tất cả các gói in danh thiếp cao cấp trong tháng 6</h3>
+<p class="font-body-md text-body-md text-on-surface-variant line-clamp-3 mb-4">Nâng tầm vị thế cá nhân với dòng danh thiếp ép kim, dập nổi hoặc phủ UV định hình. Chương trình áp dụng cho đơn hàng từ 5 hộp...</p>
+</div>
+</article>
+<!-- Post 2 -->
+<article class="bg-white rounded-xl overflow-hidden hover-lift custom-shadow group">
+<div class="aspect-video overflow-hidden">
+<img class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" data-alt="A vibrant collage of colorful large format posters displayed in a modern creative studio. The designs featured on the posters are abstract and geometric, using a bright and energetic color palette. The room is filled with natural daylight, emphasizing the sharp resolution and color accuracy of the prints." src="https://lh3.googleusercontent.com/aida-public/AB6AXuA4CfjaT-yiB8WocHFHrXtDdkjsjAOgL6IySzm3WM6iSLovU1YaZPJN8OWcphs4kdNXa_jsR9IaZ7IXrL7Zh6w4zmGwBJFAyxQqDB2D1MCfrCVvktvGRTNw9b-Gx9naxVXA8OUBvOCbV-bvQ4TirrJfLn16O_MYpjrw8xap2DRGvp90wP_hCeB2BpLcxJWWaaorrrPnlfCAt56nBdg2pZ-lFfpvlId8tTO23F_Jjr1LHqnARBrN3Yaz-w"/>
+</div>
+<div class="p-6">
+<div class="flex justify-between items-center mb-3">
+<span class="text-deep-navy font-bold text-label-sm font-label-sm uppercase">Kỹ thuật</span>
+<span class="text-outline text-label-sm font-label-sm">18 Tháng 5, 2024</span>
+</div>
+<h3 class="font-headline-md text-headline-md text-deep-navy mb-3 line-clamp-2">Cách chuẩn bị file thiết kế in khổ lớn không bị vỡ hình</h3>
+<p class="font-body-md text-body-md text-on-surface-variant line-clamp-3 mb-4">Lỗi phổ biến nhất khi in poster hoặc standee là độ phân giải không đủ. Bài viết hướng dẫn cách setup thông số DPI chuẩn nhất cho từng kích thước...</p>
+</div>
+</article>
+<!-- Post 3 -->
+<article class="bg-white rounded-xl overflow-hidden hover-lift custom-shadow group">
+<div class="aspect-video overflow-hidden">
+<img class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" data-alt="A modern office workspace showing a professional marketing team reviewing a set of high-quality corporate brochures and brand identity materials. The table is clean and minimalist, with a focus on the tactile quality of the printed materials. The atmosphere is collaborative and professional, lit by bright, even interior office lighting." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBa4Z8X4kz_uncu3XqWtwKQMcA8m5CS7Y3-rEpTHmEuqJwYhMDJQ9SkNysneG0M3Mkdg_oWLWxVNFuSX7CbekndQ8unGyhL1b1NfG-SzlTvhB2RNNKDyyWUI41bCS3LxwpGPqDMLAVRoBsgyeWRrQUsz4Xsl9XEcYBagvGRj0427KvPzFNOOfZfOMfVfxGSOtVGkwIc1GTzIun2wUmpovyOc9_i490-NvE6Kr6oNOSaeDXEBQeM2BW3Ww"/>
+</div>
+<div class="p-6">
+<div class="flex justify-between items-center mb-3">
+<span class="text-vibrant-orange font-bold text-label-sm font-label-sm uppercase">Cảm hứng</span>
+<span class="text-outline text-label-sm font-label-sm">15 Tháng 5, 2024</span>
+</div>
+<h3 class="font-headline-md text-headline-md text-deep-navy mb-3 line-clamp-2">Top 10 mẫu Brochure ấn tượng dành cho ngành Bất động sản</h3>
+<p class="font-body-md text-body-md text-on-surface-variant line-clamp-3 mb-4">Khám phá các bố cục Layout sang trọng, cách kết hợp màu sắc và chất liệu giấy giúp dự án của bạn thu hút nhà đầu tư ngay từ cái nhìn đầu tiên...</p>
+</div>
+</article>
+<!-- Post 4 -->
+<article class="bg-white rounded-xl overflow-hidden hover-lift custom-shadow group">
+<div class="aspect-video overflow-hidden">
+<img class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" data-alt="Macro photography of CMYK printing dots on a white surface, showing the technical precision of a high-end printing process. The image has a clean, scientific aesthetic with vibrant cyan, magenta, yellow, and black colors arranged in a precise pattern. The background is a crisp white, emphasizing the technical clarity and modern minimalist style." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAfSEDzsDRK5V7ow_MZazhGOQKEa0Fxz3Fg2h6rBPWEX5w1E8YXv1lYeW6lrV6s5D5ulCQsBpxJboCO2h2AsMGrE2u7K5TeTcbvThor_5OYZGwQrwEpWKhqW9dD9GTHgzUtPyqXgMmRHTi2msJsUAp1ykgTkv6ALikQH1XvYKhodUVekYjO0aIe_yxVTVPkAPyrynP-Y_7mHevKHU_Gxv2koPkM4J6-3wRQ9lbzOSehXq4dym142fXtbg"/>
+</div>
+<div class="p-6">
+<div class="flex justify-between items-center mb-3">
+<span class="text-deep-navy font-bold text-label-sm font-label-sm uppercase">Kiến thức</span>
+<span class="text-outline text-label-sm font-label-sm">12 Tháng 5, 2024</span>
+</div>
+<h3 class="font-headline-md text-headline-md text-deep-navy mb-3 line-clamp-2">Phân biệt hệ màu CMYK và RGB: Tại sao in ra lại khác màu trên màn hình?</h3>
+<p class="font-body-md text-body-md text-on-surface-variant line-clamp-3 mb-4">Tìm hiểu nguyên lý hiển thị màu sắc và cách chuyển đổi profile màu chuẩn xác nhất để sản phẩm thực tế giống 99% so với bản thiết kế trên máy tính...</p>
+</div>
+</article>
+</div>
+<!-- Pagination -->
+<div class="flex justify-center items-center gap-2 pt-12">
+<button class="w-10 h-10 flex items-center justify-center rounded-lg border border-outline-variant hover:border-vibrant-orange hover:text-vibrant-orange transition-colors">
+<span class="material-symbols-outlined">chevron_left</span>
+</button>
+<button class="w-10 h-10 flex items-center justify-center rounded-lg bg-vibrant-orange text-white font-bold">1</button>
+<button class="w-10 h-10 flex items-center justify-center rounded-lg border border-outline-variant hover:border-vibrant-orange hover:text-vibrant-orange transition-colors">2</button>
+<button class="w-10 h-10 flex items-center justify-center rounded-lg border border-outline-variant hover:border-vibrant-orange hover:text-vibrant-orange transition-colors">3</button>
+<span class="px-2">...</span>
+<button class="w-10 h-10 flex items-center justify-center rounded-lg border border-outline-variant hover:border-vibrant-orange hover:text-vibrant-orange transition-colors">8</button>
+<button class="w-10 h-10 flex items-center justify-center rounded-lg border border-outline-variant hover:border-vibrant-orange hover:text-vibrant-orange transition-colors">
+<span class="material-symbols-outlined">chevron_right</span>
+</button>
+</div>
+</div>
+<!-- Right Sidebar -->
+<aside class="lg:col-span-4 space-y-10">
+<!-- Search Box (Sidebar) -->
+<div class="bg-white p-8 rounded-xl custom-shadow">
+<h4 class="font-headline-md text-headline-md text-deep-navy mb-6">Tìm kiếm</h4>
+<div class="relative">
+<input class="w-full bg-surface-container-low border-outline-variant rounded-lg px-4 py-3 focus:ring-2 focus:ring-vibrant-orange focus:border-vibrant-orange transition-all" placeholder="Nhập từ khóa..." type="text"/>
+<button class="absolute right-3 top-1/2 -translate-y-1/2 text-outline hover:text-vibrant-orange">
+<span class="material-symbols-outlined">search</span>
+</button>
+</div>
+</div>
+<!-- Popular Posts -->
+<div class="bg-white p-8 rounded-xl custom-shadow">
+<h4 class="font-headline-md text-headline-md text-deep-navy mb-6">Bài viết xem nhiều nhất</h4>
+<div class="space-y-6">
+<a class="flex gap-4 group" href="#">
+<div class="w-20 h-20 flex-shrink-0 rounded-lg overflow-hidden">
+<img class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300" data-alt="A professional studio photo of various paper sample booklets with different textures and weights. The colors are neutral and sophisticated, suggesting a vast array of high-quality material choices for printing." src="https://lh3.googleusercontent.com/aida-public/AB6AXuC_DsSUa1eAanHAfSL_T0D8LNql6X7xclJPI7sWpBIhMpoRElDufFMoBL9sqWu-szwFt47-gtsDALSiQZN1l4xWOg5dRvPr0mil2jPuBC2Lao3bPbPiTeDkj4Umg6FzVbFjmUBtnOqFyxtAh5ViHAylmru5D9X7BuI86DJ9-lvcJak771AAg7XdtZOQkr6oAygJy0m9-ZYWK6vE2fDlV1f9zh_d_zLOaL2qglwDSW0N0jgZo58XZoJK0A"/>
+</div>
+<div>
+<h5 class="font-label-lg text-label-lg text-deep-navy group-hover:text-vibrant-orange transition-colors line-clamp-2">Lựa chọn loại giấy phù hợp cho catalogue doanh nghiệp</h5>
+<span class="text-outline text-label-sm font-label-sm">1.2k lượt xem</span>
+</div>
+</a>
+<a class="flex gap-4 group" href="#">
+<div class="w-20 h-20 flex-shrink-0 rounded-lg overflow-hidden">
+<img class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300" data-alt="Close up of a precision digital printing nozzle applying vibrant UV ink to a hard surface. The image captures the high-tech, precise movement of the machine with vibrant colored droplets and a soft metallic background." src="https://lh3.googleusercontent.com/aida-public/AB6AXuD-VB-vjOtZcLvfBrnX7OP4gM6ktcx_wz37dARhdqkruplJdkyhZ-nXGYVuEUBWFKRwIhYfTYYNM6Katgx8QKqg2BrLVt_SV-x924m_xvD9rCkvY_UsLlWMR2Ie4QFYqxYB2mw2KsGpom-JuyqB2tlUl_PnkDnacKDqXYM1j0hfwlNcPKjn04RNBwTzJgflsPkTAIZ5t3l-7TE9FBwGPW3VIH9mqRE5yb6sfus9xy7UCT6YSLpknR8_og"/>
+</div>
+<div>
+<h5 class="font-label-lg text-label-lg text-deep-navy group-hover:text-vibrant-orange transition-colors line-clamp-2">Công nghệ in UV là gì? Những ưu điểm vượt trội bạn cần biết</h5>
+<span class="text-outline text-label-sm font-label-sm">950 lượt xem</span>
+</div>
+</a>
+<a class="flex gap-4 group" href="#">
+<div class="w-20 h-20 flex-shrink-0 rounded-lg overflow-hidden">
+<img class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300" data-alt="A modern designer's workspace with a high-resolution monitor displaying a complex brand style guide. The setting is clean, featuring minimalist desk accessories and professional lighting, conveying a sense of creative expert design." src="https://lh3.googleusercontent.com/aida-public/AB6AXuC6enLbNHyeuhOYfArdqYKfMQ8eUnKQeJ0YdCPDXUFpFLAjlAHYyjNtRq1YdJ6Yd1jGZwH_pRUREzx08jvtI_zcX5-UD6o9S3tbKVOIpt8g4F-gSKyjc0TKez9nFFpFYUHxWn9UAxxr5OHvE-IBdkriJR-mxW20GCgAy17CRnBlXsO2eySuWp3KNb4mVtKa2yORKVA4mRqvlcg28MKxUfAgBhbabPdMyWxg2Rj5OTk2ln2XQi0hPH_6wA"/>
+</div>
+<div>
+<h5 class="font-label-lg text-label-lg text-deep-navy group-hover:text-vibrant-orange transition-colors line-clamp-2">5 nguyên tắc vàng trong thiết kế nhận diện thương hiệu</h5>
+<span class="text-outline text-label-sm font-label-sm">840 lượt xem</span>
+</div>
+</a>
+</div>
+</div>
+<!-- Newsletter Card -->
+<div class="bg-deep-navy p-8 rounded-xl custom-shadow text-white relative overflow-hidden">
+<div class="relative z-10">
+<h4 class="font-headline-md text-headline-md mb-4">Đăng ký nhận tin</h4>
+<p class="font-body-md text-body-md text-primary-fixed mb-6">Nhận thông báo về các bài viết mới nhất và chương trình khuyến mãi sớm nhất.</p>
+<form class="space-y-4">
+<input class="w-full bg-white/10 border-white/20 text-white placeholder:text-white/50 rounded-lg px-4 py-3 focus:ring-2 focus:ring-vibrant-orange focus:bg-white/20 transition-all" placeholder="Email của bạn" type="email"/>
+<button class="w-full bg-vibrant-orange hover:bg-secondary-container text-white font-bold py-3 rounded-lg transition-colors scale-95 active:scale-90">Đăng ký ngay</button>
+</form>
+</div>
+<div class="absolute -bottom-10 -right-10 w-40 h-40 bg-vibrant-orange/10 rounded-full blur-3xl"></div>
+</div>
+</aside>
+</div>
+</main>
+<!-- Footer -->
+<footer class="bg-ink-black dark:bg-black text-paper-white full-width">
+<div class="grid grid-cols-1 md:grid-cols-4 gap-gutter px-margin-desktop py-20 max-w-container-max mx-auto">
+<div class="space-y-6">
+<h3 class="font-display-lg text-headline-md text-paper-white">PrintPro</h3>
+<p class="font-body-md text-body-md text-surface-variant opacity-80">Giải pháp in ấn chuyên nghiệp cho mọi nhu cầu. Chúng tôi cam kết chất lượng vượt trội và thời gian giao hàng nhanh nhất.</p>
+</div>
+<div class="space-y-6">
+<h4 class="font-label-lg text-label-lg uppercase tracking-wider text-vibrant-orange">Liên hệ</h4>
+<ul class="space-y-4 font-body-md text-body-md">
+<li class="flex items-start gap-3 opacity-80 hover:opacity-100 transition-opacity">
+<span class="material-symbols-outlined text-vibrant-orange">location_on</span>
+<span>123 Đường In Ấn, Quận 1, TP. Hồ Chí Minh</span>
+</li>
+<li class="flex items-center gap-3 opacity-80 hover:opacity-100 transition-opacity">
+<span class="material-symbols-outlined text-vibrant-orange">call</span>
+<span>0123 456 789</span>
+</li>
+<li class="flex items-center gap-3 opacity-80 hover:opacity-100 transition-opacity">
+<span class="material-symbols-outlined text-vibrant-orange">mail</span>
+<span>info@printpro.vn</span>
+</li>
+</ul>
+</div>
+<div class="space-y-6">
+<h4 class="font-label-lg text-label-lg uppercase tracking-wider text-vibrant-orange">Hỗ trợ khách hàng</h4>
+<ul class="space-y-4 font-body-md text-body-md">
+<li><a class="text-surface-variant hover:text-primary-fixed transition-colors" href="#">Chính sách bảo mật</a></li>
+<li><a class="text-surface-variant hover:text-primary-fixed transition-colors" href="#">Chính sách đổi trả</a></li>
+<li><a class="text-surface-variant hover:text-primary-fixed transition-colors" href="#">Hướng dẫn đặt hàng</a></li>
+<li><a class="text-surface-variant hover:text-primary-fixed transition-colors" href="#">Câu hỏi thường gặp</a></li>
+</ul>
+</div>
+<div class="space-y-6">
+<h4 class="font-label-lg text-label-lg uppercase tracking-wider text-vibrant-orange">Kết nối</h4>
+<div class="flex gap-4">
+<a class="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-vibrant-orange transition-colors" href="#">
+<span class="material-symbols-outlined">face_nod</span>
+</a>
+<a class="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-vibrant-orange transition-colors" href="#">
+<span class="material-symbols-outlined">share</span>
+</a>
+</div>
+</div>
+</div>
+<div class="border-t border-white/10 py-8 px-margin-desktop text-center">
+<p class="font-body-md text-body-md text-surface-variant opacity-60">© 2024 PrintPro Service. All rights reserved.</p>
+</div>
+</footer>
+<!-- SideNavBar (Floating Actions) -->
+<div class="fixed bottom-8 right-8 flex flex-col items-center gap-4 z-50">
+<a class="bg-deep-navy text-white rounded-full p-4 shadow-lg hover:scale-110 transition-transform animate-bounce hover:animate-none flex items-center justify-center" href="#">
+<span class="material-symbols-outlined">call</span>
+</a>
+<a class="bg-vibrant-orange text-white rounded-full p-4 shadow-lg hover:scale-110 transition-transform flex items-center justify-center" href="#">
+<span class="material-symbols-outlined">chat</span>
+</a>
+</div>
+<script>
+        // Simple micro-interaction for navbar transparency shift on scroll
+        window.addEventListener('scroll', () => {
+            const nav = document.querySelector('nav');
+            if (window.scrollY > 20) {
+                nav.classList.add('shadow-md');
+            } else {
+                nav.classList.remove('shadow-md');
+            }
+        });
+    </script>
+</body></html>

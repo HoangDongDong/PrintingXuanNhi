@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+
+<html class="light" lang="vi"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Về Chúng Tôi | PrintPro Service</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&amp;family=Hanken+Grotesk:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "outline": "#777683",
+                    "on-error-container": "#93000a",
+                    "surface-variant": "#e1e3e4",
+                    "on-error": "#ffffff",
+                    "on-background": "#191c1d",
+                    "primary-container": "#2e3192",
+                    "on-secondary-fixed-variant": "#7a3000",
+                    "vibrant-orange": "#FF6B00",
+                    "inverse-primary": "#c0c1ff",
+                    "error": "#ba1a1a",
+                    "surface-container-high": "#e7e8e9",
+                    "inverse-on-surface": "#f0f1f2",
+                    "on-tertiary-fixed-variant": "#00504b",
+                    "on-primary-fixed": "#04006d",
+                    "on-secondary-fixed": "#351000",
+                    "outline-variant": "#c7c5d4",
+                    "on-secondary-container": "#572000",
+                    "surface-tint": "#4f54b4",
+                    "error-container": "#ffdad6",
+                    "background": "#f8f9fa",
+                    "primary": "#15157d",
+                    "surface": "#f8f9fa",
+                    "on-primary": "#ffffff",
+                    "on-surface-variant": "#464652",
+                    "surface-dim": "#d9dadb",
+                    "tertiary-fixed": "#76f7eb",
+                    "on-tertiary-fixed": "#00201e",
+                    "ink-black": "#1A1A1A",
+                    "secondary-container": "#fe6b00",
+                    "paper-white": "#FFFFFF",
+                    "on-surface": "#191c1d",
+                    "primary-fixed-dim": "#c0c1ff",
+                    "on-tertiary-container": "#2fbdb2",
+                    "on-tertiary": "#ffffff",
+                    "tertiary": "#002f2b",
+                    "tertiary-container": "#004742",
+                    "deep-navy": "#2E3192",
+                    "on-primary-fixed-variant": "#373a9b",
+                    "surface-container-lowest": "#ffffff",
+                    "secondary-fixed-dim": "#ffb693",
+                    "tertiary-fixed-dim": "#56dacf",
+                    "surface-container-highest": "#e1e3e4",
+                    "surface-bright": "#f8f9fa",
+                    "primary-fixed": "#e1e0ff",
+                    "surface-container-low": "#f3f4f5",
+                    "on-primary-container": "#9da1ff",
+                    "surface-container": "#edeeef",
+                    "secondary-fixed": "#ffdbcc",
+                    "error-red": "#DD3333",
+                    "inverse-surface": "#2e3132",
+                    "secondary": "#a04100",
+                    "on-secondary": "#ffffff"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.125rem",
+                    "lg": "0.25rem",
+                    "xl": "0.5rem",
+                    "full": "0.75rem"
+            },
+            "spacing": {
+                    "container-max": "1200px",
+                    "margin-desktop": "64px",
+                    "base": "8px",
+                    "margin-mobile": "16px",
+                    "gutter": "24px"
+            },
+            "fontFamily": {
+                    "headline-md": ["Montserrat"],
+                    "headline-lg": ["Montserrat"],
+                    "label-lg": ["Hanken Grotesk"],
+                    "display-lg": ["Montserrat"],
+                    "body-md": ["Hanken Grotesk"],
+                    "body-lg": ["Hanken Grotesk"],
+                    "label-sm": ["Hanken Grotesk"]
+            }
+          }
+        }
+      }
+    </script>
+<style>
+        body { font-family: 'Hanken Grotesk', sans-serif; }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .glass-header {
+            backdrop-filter: blur(8px);
+            background-color: rgba(255, 255, 255, 0.9);
+        }
+        .hero-gradient {
+            background: linear-gradient(0deg, rgba(46, 49, 146, 0.7) 0%, rgba(46, 49, 146, 0.3) 100%);
+        }
+        .logo-carousel {
+            animation: scroll 30s linear infinite;
+        }
+        @keyframes scroll {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-50%); }
+        }
+        .fade-in-up {
+            animation: fadeInUp 0.8s ease-out forwards;
+        }
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+    </style>
+</head>
+<body class="bg-background text-on-background selection:bg-vibrant-orange selection:text-white">
+<!-- TopNavBar -->
+<header class="fixed top-0 left-0 right-0 z-[100] shadow-sm bg-paper-white h-20 transition-all duration-300">
+<div class="flex justify-between items-center px-margin-desktop w-full max-w-container-max mx-auto h-full">
+<!-- Brand Identity -->
+<a class="font-display-lg text-headline-md font-bold text-deep-navy" href="#">PrintPro</a>
+<!-- Desktop Navigation -->
+<nav class="hidden md:flex items-center gap-8">
+<a class="font-body-md text-body-md text-on-surface-variant hover:text-vibrant-orange transition-colors duration-200" href="#">Trang chủ</a>
+<a class="font-body-md text-body-md text-vibrant-orange font-bold border-b-2 border-vibrant-orange pb-1" href="#">Giới thiệu</a>
+<a class="font-body-md text-body-md text-on-surface-variant hover:text-vibrant-orange transition-colors duration-200" href="#">Sản phẩm In ấn</a>
+<a class="font-body-md text-body-md text-on-surface-variant hover:text-vibrant-orange transition-colors duration-200" href="#">Bảng giá</a>
+<a class="font-body-md text-body-md text-on-surface-variant hover:text-vibrant-orange transition-colors duration-200" href="#">Tin tức</a>
+<a class="font-body-md text-body-md text-on-surface-variant hover:text-vibrant-orange transition-colors duration-200" href="#">Liên hệ</a>
+</nav>
+<!-- Actions -->
+<div class="flex items-center gap-6">
+<div class="hidden lg:flex items-center gap-4">
+<button class="text-on-surface-variant hover:text-vibrant-orange transition-transform active:scale-95">
+<span class="material-symbols-outlined" data-icon="person">person</span>
+</button>
+<button class="text-on-surface-variant hover:text-vibrant-orange transition-transform active:scale-95">
+<span class="material-symbols-outlined" data-icon="shopping_cart">shopping_cart</span>
+</button>
+</div>
+<button class="bg-deep-navy text-paper-white px-6 py-2.5 rounded-lg font-label-lg hover:bg-opacity-90 transition-all active:scale-95">
+                    Nhận báo giá
+                </button>
+</div>
+</div>
+</header>
+<main class="pt-20 overflow-hidden">
+<!-- Hero Banner -->
+<section class="relative h-[716px] flex items-center justify-center">
+<div class="absolute inset-0 z-0" data-alt="A wide-angle, high-definition photograph of a modern, clean industrial printing facility. Massive high-speed digital presses and offset printing machines are arranged in neat rows. Soft daylight floods through large windows, highlighting the surgical precision and white surfaces of the factory floor. The lighting is bright and clean, emphasizing a high-end corporate and professional atmosphere consistent with deep navy and vibrant orange brand colors." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCRIAzqf4yEhlwIqo13R06azRCycCREMcDV0IjRwqeuuXqhKmSD99_XjTE2-je8iZ9TKpRV82RHaAOZU4Afh4K4kPjaBL8oNt8m11bcRFFcrLs0AYN1_hdef-nyuhE0jF-V9DkfR1ezGRZuz1GSNMu9AXhhJaR5GHbjPV42GF5b8aAZ-v_9qTHafmqZx9q1B6C8rqjgTIcbQEBquYz4PeOGM1cxwSrFUArQi6MiRwerjTNohZcbhKHdNQ')">
+<div class="absolute inset-0 hero-gradient"></div>
+</div>
+<div class="relative z-10 text-center px-4 max-w-4xl fade-in-up">
+<span class="inline-block px-4 py-1 mb-6 rounded-full bg-vibrant-orange text-white font-label-lg uppercase tracking-wider">Tinh hoa in ấn</span>
+<h1 class="font-display-lg text-white text-[48px] md:text-[64px] mb-6 leading-tight drop-shadow-lg">
+                    Về Chúng Tôi <br/> <span class="text-vibrant-orange font-light italic text-[36px] md:text-[52px]">Tận tâm trong từng bản in</span>
+</h1>
+<p class="font-body-lg text-white/90 text-lg md:text-xl max-w-2xl mx-auto leading-relaxed">
+                    Sứ mệnh của chúng tôi là biến ý tưởng của bạn thành hiện thực sắc nét nhất thông qua công nghệ in ấn tiên tiến hàng đầu thế giới.
+                </p>
+</div>
+</section>
+<!-- Story Section -->
+<section class="py-24 px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto">
+<div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+<!-- Image Side -->
+<div class="relative group">
+<div class="absolute -top-6 -left-6 w-32 h-32 bg-vibrant-orange/10 -z-10 rounded-xl"></div>
+<div class="overflow-hidden rounded-xl shadow-xl">
+<img class="w-full h-auto object-cover transform group-hover:scale-105 transition-transform duration-700" data-alt="A macro close-up shot of a sophisticated robotic printing head in action, spraying vibrant cyan and magenta inks onto premium textured paper. The focus is razor-sharp on the mechanical details and the ink droplets. The lighting is cinematic with deep blue shadows and bright orange highlights, reflecting a high-precision, technical aesthetic within a minimalist industrial setting." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDROIOhQYaZBnfVNWmgZpJ5Cjy8AmTfUutaSR5PumYmpip2X9QpAgDVOi94WN9GEoSXt8k-_yhVrkzKjUojzZQflHUJsSOifvJQBhUEDWJdLCm4PqeIqe7zJ3KJgEQSB60Tjl1ru_eu0gysZHEx9Od8kOKkgvKC3e-a3Rbb_NNhacCxUptew9wl5GvIiA1CJGEqJqcoIQupjZesZ3kDT7CxdUGJ8OAtSbVPwqT2hGhu-Y69H5gVXicd0w"/>
+</div>
+<div class="absolute -bottom-6 -right-6 w-48 h-48 border-2 border-deep-navy/10 -z-10 rounded-xl"></div>
+</div>
+<!-- Text Side -->
+<div class="space-y-8">
+<div class="space-y-2">
+<h2 class="font-headline-lg text-headline-lg text-deep-navy">Câu Chuyện Của Chúng Tôi</h2>
+<div class="h-1.5 w-20 bg-vibrant-orange rounded-full"></div>
+</div>
+<div class="space-y-6">
+<div>
+<h3 class="font-headline-md text-headline-md text-on-surface mb-3 flex items-center gap-3">
+<span class="material-symbols-outlined text-vibrant-orange" data-icon="history">history</span> Lịch sử hình thành
+                            </h3>
+<p class="font-body-md text-on-surface-variant leading-relaxed">
+                                Được thành lập từ năm 2014, PrintPro khởi đầu từ một xưởng in gia đình với niềm đam mê bất tận với màu sắc và chất liệu giấy. Sau một thập kỷ không ngừng đổi mới, chúng tôi đã vươn mình thành đơn vị dẫn đầu thị trường in ấn kỹ thuật số.
+                            </p>
+</div>
+<div>
+<h3 class="font-headline-md text-headline-md text-on-surface mb-3 flex items-center gap-3">
+<span class="material-symbols-outlined text-vibrant-orange" data-icon="visibility">visibility</span> Tầm nhìn
+                            </h3>
+<p class="font-body-md text-on-surface-variant leading-relaxed">
+                                Trở thành đối tác in ấn chiến lược hàng đầu tại Đông Nam Á, nơi công nghệ hiện đại và sự sáng tạo nghệ thuật hòa quyện để tạo ra những sản phẩm vượt mong đợi.
+                            </p>
+</div>
+<div>
+<h3 class="font-headline-md text-headline-md text-on-surface mb-3 flex items-center gap-3">
+<span class="material-symbols-outlined text-vibrant-orange" data-icon="rocket_launch">rocket_launch</span> Sứ mệnh
+                            </h3>
+<p class="font-body-md text-on-surface-variant leading-relaxed">
+                                Cung cấp giải pháp in ấn toàn diện với chất lượng hoàn hảo, thời gian thần tốc và chi phí tối ưu, giúp khách hàng khẳng định vị thế thương hiệu trên thị trường.
+                            </p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Stats Section -->
+<section class="bg-deep-navy py-20">
+<div class="px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto">
+<div class="grid grid-cols-2 lg:grid-cols-4 gap-8 text-center">
+<div class="p-8 rounded-xl bg-white/5 border border-white/10 hover:bg-white/10 transition-colors group">
+<span class="material-symbols-outlined text-vibrant-orange text-5xl mb-4 inline-block group-hover:scale-110 transition-transform" data-icon="award_star">award_star</span>
+<div class="font-display-lg text-headline-lg text-white mb-1">10+</div>
+<div class="font-label-lg text-surface-variant uppercase">Năm kinh nghiệm</div>
+</div>
+<div class="p-8 rounded-xl bg-white/5 border border-white/10 hover:bg-white/10 transition-colors group">
+<span class="material-symbols-outlined text-vibrant-orange text-5xl mb-4 inline-block group-hover:scale-110 transition-transform" data-icon="sentiment_satisfied">sentiment_satisfied</span>
+<div class="font-display-lg text-headline-lg text-white mb-1">5000+</div>
+<div class="font-label-lg text-surface-variant uppercase">Khách hàng hài lòng</div>
+</div>
+<div class="p-8 rounded-xl bg-white/5 border border-white/10 hover:bg-white/10 transition-colors group">
+<span class="material-symbols-outlined text-vibrant-orange text-5xl mb-4 inline-block group-hover:scale-110 transition-transform" data-icon="groups">groups</span>
+<div class="font-display-lg text-headline-lg text-white mb-1">50+</div>
+<div class="font-label-lg text-surface-variant uppercase">Nhân viên tận tâm</div>
+</div>
+<div class="p-8 rounded-xl bg-white/5 border border-white/10 hover:bg-white/10 transition-colors group">
+<span class="material-symbols-outlined text-vibrant-orange text-5xl mb-4 inline-block group-hover:scale-110 transition-transform" data-icon="verified_user">verified_user</span>
+<div class="font-display-lg text-headline-lg text-white mb-1">100%</div>
+<div class="font-label-lg text-surface-variant uppercase">Cam kết chất lượng</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Partners Carousel -->
+<section class="py-24 overflow-hidden bg-surface-container-low">
+<div class="px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto mb-12">
+<div class="text-center">
+<h2 class="font-headline-lg text-headline-lg text-deep-navy mb-4">Đối tác Tin Cậy</h2>
+<p class="font-body-md text-on-surface-variant">Đồng hành cùng sự thành công của hơn 500+ doanh nghiệp trong và ngoài nước.</p>
+</div>
+</div>
+<div class="relative flex overflow-x-hidden">
+<div class="logo-carousel flex items-center gap-24 whitespace-nowrap py-4">
+<!-- Brand Logos (duplicated for infinite loop) -->
+<div class="flex items-center gap-24 grayscale opacity-50 hover:grayscale-0 hover:opacity-100 transition-all">
+<img class="h-12 w-auto" data-alt="A minimalist, black and white professional vector logo for a high-end corporate brand, presented on a clean transparent background." src="https://lh3.googleusercontent.com/aida-public/AB6AXuA-dVXiZslIHAD_AKhmCuVSZqImljp2vdi9utdJk-ufw7J0AqOtT6qBrREUtxJvkdCHPH47t3rgxL8UKevOXBvaEhxg6a7rtuaTF8-wmtynGssKpyQMYezrqTsD6Nd3Q9ICetPVuzp6Ok6Bnjqjuk1oaBeDzLvkYROEZoee65no1cXzUp-mnxlcrCzaQ2mVWc-OMSCR46Zdv-Z9maTkkuBtrP6kMNMYs-5QP49U7Ul1jR061HBMs0j7sQ"/>
+<img class="h-10 w-auto" data-alt="A modern tech company logo, monochrome black, clean lines, minimalist sans-serif typography, architectural style." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAaqkeIcA50kQba7ol1pRFNYkGoB8gGsT5ib-Ne3TxRyOGhRRjFWwBkY55AnEwOJbV31MdW69wKe0gLlPmC2EZjpOwKkG25_795gw-ov59LicRS1l9PH1SfWVjNsyfp5W6g2apMaa34PpjdPdPoKO_Yz_UfFYDtaraduQLk9Bp1U6mSl-BS74o2Cdo4hdlZAC8eCSwOo7MF-yn3k2cJAW4wRrq8zEgn02lTdmpgTVL49sW3dXNnxZ4rfA"/>
+<img class="h-14 w-auto" data-alt="An elegant luxury fashion brand logo, black and white icon with refined serif font, sophisticated and minimal." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDHdbJEFMwotoZ3-C0LSgG0CB-fGiE2G31kHZxmijbciPyQS7xjyKwX2FTg0sxWcHie8t10_-L9N-8GyJO3MzWG85OCou0MnT4HvURJTuiqWkixZPCEt3wk0kUHhmYELJKB2n7w3boHL71XQfGMwi96i1DVhYCsM10hT6LXdddfu2Hri1i8ywXZCPmtnFfAJe5HfI5pAGYm362LW5YZ-OrRhs1XA7jdX34ZGh4A9HdRk5QunBWBbzkMmA"/>
+<img class="h-12 w-auto" data-alt="A global logistics company logo in monochrome, emphasizing movement and efficiency through abstract geometric shapes." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDHsg_K3y6J9vDHGMH5P0SuPcZtLTYarvnH6bj7erv6mVXFzJg2u7-xqHvmmu9QwBxZ10bIg1C2e1K7EiR9P5mD9lPPm8V_FF7aNE7Iaxo4wC9BKnlFJsT6C7eh5U6RLwCW4bpXJH4jyrhsZPQqnU3g6RX7b2Phulbt13Hl5pxngLMCJgHS98aIV3aSJZEe0oQMvIX_H0gDnOnhM1-iF3g5OvWpbRxXxw966LJJ8ssUP0FiiExfoS_wFQ"/>
+<img class="h-11 w-auto" data-alt="A creative agency logo, bold minimalist typography, stark black on white, high-contrast professional look." src="https://lh3.googleusercontent.com/aida-public/AB6AXuA0sjm06uUN8I3uUOm9fexTdy8OZFlvBQguyu3oZbSQBaM0FtG6Z0H5qr3ECkVpF6XkBXqQ7BQRCcub4cu2Mn8POxy8hj92hyFOFAJroLpxu_Klcog6lBCs9sGcsVfhwK7eMMLGAezB2H4bBhgFxSwi-VC5pRSLENFDftnSgVsoifz9Be5cnBRwT8RRaGIVSQQo9QWNukImS3H0K7DkKZNPhtHsiw9fCUP38UWv5KCmS5Y1kKmYMQpi-w"/>
+<img class="h-12 w-auto" data-alt="Innovative pharmaceutical company logo, clean medical cross abstract icon in solid black, professional and sterile aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAGBnUoOMy1CA8VNbfyKwloxDt1a33qaUtZO3jzkFTEo0lpIt8wxjrJLUUC5NeT4g9fxrnrjTHdC9aNlbjHpV8EjKw2o_cSTR8Lvl9etPLUXA8t2BH89oh_Duc1EB43a9-Driy8GWx5PYrUSiWaVsNt5zUnib3x_gddJyHxqTKmKvzZ0DjuBiqxf1c6DsFmYIA5tDaG3ZO4vf-hIcDqDwcYlFbEFOkRq3Pcxb3fP6YXcS1VYM7PeUWitQ"/>
+</div>
+<div class="flex items-center gap-24 grayscale opacity-50 hover:grayscale-0 hover:opacity-100 transition-all">
+<img class="h-12 w-auto" data-alt="A minimalist, black and white professional vector logo for a high-end corporate brand, presented on a clean transparent background." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCeLo5RvUBcVFYxzRz5EFCvkgpVzGdoRYwYxKwgpI98D8wlpjJYdYWmIQ20U41wnjdrMDucue62VAK6oP0SJ1rEusrn16YSTrUIPsl24f3cHfMMv5Sbw03nxOB9HuNhpnl4ESvG6LKbnuKRSsRxnjwl2mw7078C2sfm9XPvsWLSLp9r6yCjMzkEXRpjQBLXm1eMnybkfjc0qhTKPjgEPaadwsyuGuvDw2TS92SY1ugScGQ_X4n5S5N3JQ"/>
+<img class="h-10 w-auto" data-alt="A modern tech company logo, monochrome black, clean lines, minimalist sans-serif typography, architectural style." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCQ4k7n4E1Ebee0jeyQ2n3_F2jujfGcOB8fBEXcVidmjQNS2esrJxRLs-zJpCd_3SNXk65KPTpLbN8nJAmOv5_a0hNZBzD1BAtyWFxi28ezXHHpR4tgWZkMZHViBGsSvbnk6JlKJJTADYLHm--IWVapLhzbDkJfM43apEP4YYbYjdQrno4fheA6mR4IDRtCsPYM-WjfFIf45oa5XnkRXqeEnBc8L1Hc1NDmlAFNByhtHqro1XXRWNnF4w"/>
+<img class="h-14 w-auto" data-alt="An elegant luxury fashion brand logo, black and white icon with refined serif font, sophisticated and minimal." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDfggjqc5CMt5BBT_Me2q1Oc-6g4VNYaVzDW5O_Q4tSWFCNXa5GKMyyXUofS5I_VUQU-97kIRBT9CCnGGkENR1ZeYQAdi56rb2jOH8b08AIG_vuZciyR1A0WY9LM_VDoYUTYO6yhATRcYuIsWiro8dkty-dAjkTGp0ABri0e-0kW59rRTMGQbLlSCRN0f_Ft8Z5uZR-JtVMNDMmziuU2wU-qhuSOO2rPj_kmL6qOY0UQnyGlIfghTM3sw"/>
+<img class="h-12 w-auto" data-alt="A global logistics company logo in monochrome, emphasizing movement and efficiency through abstract geometric shapes." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDyXrobhbla5K_ap7NfZts4Ch441x2PgksBFr5bzJqqxBjqj7CCfeJW2MMmyoAccKRyfqE7eSkk0dvL0PKkw51AzwFumSMjUt-j4bt2MtpE3RNKaQ-w6zhxM0ndCH6IS5Nhsgorz3gi2LfLvGW8wsGZZtqkLn63KJrSsFKaC5aCkvIDYYuVqoYbTJPcgz7fzYFqj0OuWl4m-QNZhE6fibGla5BMpevkRCRDiZP7PAQHsnJelc3zdksBhw"/>
+<img class="h-11 w-auto" data-alt="A creative agency logo, bold minimalist typography, stark black on white, high-contrast professional look." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCXp_rU_Lyjf46XtXDkPJ0JE6pxy3P7Po-R-a2K7tHxV6f3fdMUduIMbJ76aGvQG-S0VXEZuvd4eF7Z5u5zoUfEPZ075xRn6XmIikHQ9tK73sgwMzoSF9EhMFN1sLTXTp0ozRZTF3Hb8B9IQXMCyk_UqG9_gIKHHywfCKOzqjLMoecx_k1ZYpFFccacC-hV0NLcdKKgArXBd2BcuupF8Kp_6_Jnl_mWG2zeensVTt5ojNdKK07KnlmAhQ"/>
+<img class="h-12 w-auto" data-alt="Innovative pharmaceutical company logo, clean medical cross abstract icon in solid black, professional and sterile aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDqZwXgMg65BelEfYZmNc3UCGvxFxt5XHSQetFGRyJrsNH9YKFnuxMByQA7H74PzGBwYwJRFPdiDOXPKWMFEhBXWfQLzek-HPTE7kbOFjQ5kdfCO5bjyRSeNX034gjC0wnbSg5ADxmSSo5PUXItlJo9e2amcFa12yTst_Ph8D1BCbab0BHiTGvGN18_BpODO0rcglPEzsGIi-c-3IJhIUSblioEpVkHSqBjxfL8qQxbyDEmZXDMbOI3Rg"/>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- SideNavBar (Floating Support) -->
+<div class="fixed bottom-8 right-8 flex flex-col items-center gap-4 z-50">
+<div class="hidden group-hover:block absolute right-16 bottom-0 mb-2">
+<div class="bg-deep-navy text-white px-4 py-2 rounded-lg text-sm whitespace-nowrap shadow-xl">
+                Hỗ trợ trực tuyến
+            </div>
+</div>
+<a class="bg-vibrant-orange text-white rounded-full p-4 shadow-lg hover:scale-110 transition-transform animate-bounce hover:animate-none flex items-center justify-center" href="#">
+<span class="material-symbols-outlined" data-icon="chat">chat</span>
+</a>
+<a class="bg-deep-navy text-white rounded-full p-4 shadow-lg hover:scale-110 transition-transform flex items-center justify-center" href="tel:19000000">
+<span class="material-symbols-outlined" data-icon="call">call</span>
+</a>
+</div>
+<!-- Footer -->
+<footer class="bg-ink-black text-paper-white">
+<div class="grid grid-cols-1 md:grid-cols-4 gap-gutter px-margin-desktop py-20 max-w-container-max mx-auto">
+<div class="col-span-1 md:col-span-1">
+<div class="font-display-lg text-headline-md text-paper-white mb-6">PrintPro</div>
+<p class="text-surface-variant font-body-md leading-relaxed mb-6">
+                    Đối tác in ấn chuyên nghiệp, đồng hành cùng sự thành công của doanh nghiệp bạn với chất lượng vượt trội.
+                </p>
+<div class="flex gap-4">
+<a class="text-surface-variant hover:text-vibrant-orange transition-colors" href="#"><span class="material-symbols-outlined">face_nod</span></a>
+<a class="text-surface-variant hover:text-vibrant-orange transition-colors" href="#"><span class="material-symbols-outlined">alternate_email</span></a>
+</div>
+</div>
+<div>
+<h4 class="font-headline-md text-[18px] mb-6 uppercase tracking-wider text-white">Liên hệ</h4>
+<ul class="space-y-4 font-body-md text-surface-variant">
+<li class="flex items-start gap-3">
+<span class="material-symbols-outlined text-vibrant-orange text-[20px]">location_on</span>
+<span>123 Đường In Ấn, Quận Cầu Giấy, Hà Nội</span>
+</li>
+<li class="flex items-center gap-3">
+<span class="material-symbols-outlined text-vibrant-orange text-[20px]">call</span>
+<span>024.1234.5678</span>
+</li>
+<li class="flex items-center gap-3">
+<span class="material-symbols-outlined text-vibrant-orange text-[20px]">mail</span>
+<span>contact@printpro.vn</span>
+</li>
+</ul>
+</div>
+<div>
+<h4 class="font-headline-md text-[18px] mb-6 uppercase tracking-wider text-white">Thông tin</h4>
+<ul class="space-y-4 font-body-md text-surface-variant">
+<li><a class="hover:text-vibrant-orange transition-colors" href="#">Giới thiệu</a></li>
+<li><a class="hover:text-vibrant-orange transition-colors" href="#">Dịch vụ in ấn</a></li>
+<li><a class="hover:text-vibrant-orange transition-colors" href="#">Tin tức &amp; Sự kiện</a></li>
+<li><a class="hover:text-vibrant-orange transition-colors" href="#">Tuyển dụng</a></li>
+</ul>
+</div>
+<div>
+<h4 class="font-headline-md text-[18px] mb-6 uppercase tracking-wider text-white">Chính sách</h4>
+<ul class="space-y-4 font-body-md text-surface-variant">
+<li><a class="hover:text-vibrant-orange transition-colors" href="#">Chính sách bảo mật</a></li>
+<li><a class="hover:text-vibrant-orange transition-colors" href="#">Chính sách đổi trả</a></li>
+<li><a class="hover:text-vibrant-orange transition-colors" href="#">Quy định thanh toán</a></li>
+<li><a class="hover:text-vibrant-orange transition-colors" href="#">Khiếu nại - Phản hồi</a></li>
+</ul>
+</div>
+</div>
+<div class="border-t border-white/10 py-8 px-margin-desktop text-center text-surface-variant font-body-md">
+            © 2024 PrintPro Service. All rights reserved.
+        </div>
+</footer>
+<script>
+        // Scroll interaction for Header
+        window.addEventListener('scroll', () => {
+            const header = document.querySelector('header');
+            if (window.scrollY > 50) {
+                header.classList.add('glass-header', 'h-16');
+                header.classList.remove('h-20');
+            } else {
+                header.classList.remove('glass-header', 'h-16');
+                header.classList.add('h-20');
+            }
+        });
+
+        // Intersection Observer for animations
+        const observerOptions = {
+            threshold: 0.1
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('fade-in-up');
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('section > div').forEach(el => {
+            el.style.opacity = '0';
+            observer.observe(el);
+        });
+    </script>
+</body></html>
