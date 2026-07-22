@@ -7,11 +7,8 @@ export default function Footer() {
       <div className="grid grid-cols-1 md:grid-cols-4 gap-gutter px-margin-mobile md:px-margin-desktop py-16 max-w-[1200px] mx-auto">
         {/* Brand Column */}
         <div className="space-y-6">
-          <Link to="/" className="flex items-center gap-2">
-            <img src="/logo.png" alt="Xuân Nhĩ Logo" className="h-10 w-10 object-contain bg-white rounded-md p-0.5" />
-            <span className="font-display-lg text-xl font-bold text-paper-white tracking-tight">
-              XUÂN NHI
-            </span>
+          <Link to="/" className="flex items-center">
+            <img src="/logo.png" alt="Xuân Nhĩ Logo" className="h-12 w-auto max-h-12 object-contain bg-white rounded-md p-1" />
           </Link>
           <p className="text-surface-variant text-sm opacity-80 leading-relaxed max-w-xs">
             Đơn vị cung cấp giải pháp in ấn hàng đầu Việt Nam. Cam kết chất lượng, tiến độ và sự hài lòng tuyệt đối của khách hàng.
