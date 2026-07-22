@@ -32,6 +32,11 @@ app.get('/api/health', (req, res) => {
   res.status(200).json({ status: 'ok', message: 'Printing Service API is online' });
 });
 
+// Welcome root endpoint
+app.get('/', (req, res) => {
+  res.status(200).json({ status: 'ok', message: 'Welcome to Printing Xuan Nhi API' });
+});
+
 // API Routes
 app.use('/api/auth', authRoutes);
 app.use('/api/products', productRoutes);
