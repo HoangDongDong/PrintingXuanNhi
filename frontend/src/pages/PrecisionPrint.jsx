@@ -2,21 +2,14 @@ import React, { useState, useEffect } from 'react';
 
 // Real pricing matrices extracted from the "Báo Giá" images
 const PRICING_DATA = {
-  namecard: {
-    title: 'Name Card (Giấy C300 cán mờ)',
-    description: 'Giấy Couches 300gsm cán mờ 2 mặt, kích thước 55x90mm, đóng hộp nhựa 100 cái.',
+  namecard_nhanh: {
+    title: 'Name Card C300 (In nhanh lấy gấp)',
+    description: 'Giấy Couches 300gsm cán mờ 2 mặt, kích thước 55x90mm, in nhanh sắc nét. Giá áp dụng cho 1 nội dung thiết kế.',
     quantities: [1, 2, 3, 5, 10, 20, 50, 100],
     unit: 'Hộp',
     getPrices: (qty, isRoundedCorners) => {
       const basePrices = {
-        1: 120000,
-        2: 90000,
-        3: 70000,
-        5: 50000,
-        10: 45000,
-        20: 40000,
-        50: 35000,
-        100: 30000
+        1: 120000, 2: 90000, 3: 70000, 5: 50000, 10: 45000, 20: 40000, 50: 35000, 100: 30000
       };
       const pricePerUnit = basePrices[qty] || 30000;
       const cornerPrice = isRoundedCorners ? 20000 : 0;
@@ -27,9 +20,25 @@ const PRICING_DATA = {
       };
     }
   },
+  namecard_offset: {
+    title: 'Name Card C300 (In Offset giá tốt)',
+    description: 'Giấy Couches 300gsm cán mờ 2 mặt, kích thước 90x54mm, in ghép bài offset chất lượng cao, thời gian 1-2 ngày.',
+    quantities: [2, 5, 10, 20, 50, 100],
+    unit: 'Hộp',
+    getPrices: (qty) => {
+      const basePrices = {
+        2: 40000, 5: 24000, 10: 17000, 20: 15000, 50: 14000, 100: 13000
+      };
+      const pricePerUnit = basePrices[qty] || 13000;
+      return {
+        unitPrice: pricePerUnit,
+        totalPrice: pricePerUnit * qty
+      };
+    }
+  },
   temnhan_tron: {
-    title: 'Tem Nhãn Hình Tròn/Vuông (Bế demi)',
-    description: 'In tem nhãn hình tròn, hình vuông, bế thành phẩm demi.',
+    title: 'Tem Nhãn Hình Tròn/Vuông (In decal giấy bế thành phẩm)',
+    description: 'In tem nhãn decal giấy hình tròn, hình vuông, bế demi theo kích thước.',
     sizes: ['3x3cm', '4x4cm', '5x5cm', '6x6cm', '7x7cm'],
     quantities: [100, 200, 300, 400, 500, 600, 700, 800, 900, 1000, 1500, 2000, 5000, 10000],
     unit: 'Cái',
@@ -50,7 +59,7 @@ const PRICING_DATA = {
   },
   decal_chunhat: {
     title: 'Nhãn Decal Giấy Chữ Nhật (Laser KTS)',
-    description: 'In kỹ thuật số Laser sắc nét, bế demi đứt nửa hình chữ nhật.',
+    description: 'In nhanh kỹ thuật số Laser sắc nét, bế demi đứt nửa hình chữ nhật.',
     sizes: ['2x3cm', '2.5x3cm', '3x4cm', '3.5x5cm', '4x6cm', '5x8cm', '5.5x9cm'],
     quantities: [100, 200, 300, 500, 800, 1000, 1500, 2000],
     unit: 'Cái',
@@ -73,17 +82,11 @@ const PRICING_DATA = {
   },
   hop_giay: {
     title: 'Hộp Giấy Ivory 300g (18x10x5cm)',
-    description: 'Hộp giấy Ivory 300g, cán màng bóng, bế dán thành phẩm hoàn thiện.',
+    description: 'Hộp giấy mềm Ivory 300g, cán màng bóng, bế dán thành phẩm hoàn thiện.',
     quantities: [500, 1000, 2000, 5000, 10000],
     unit: 'Cái',
     getPrices: (qty) => {
-      const prices = {
-        500: 8000,
-        1000: 5500,
-        2000: 4000,
-        5000: 3000,
-        10000: 2800
-      };
+      const prices = { 500: 8000, 1000: 5500, 2000: 4000, 5000: 3000, 10000: 2800 };
       const unitPrice = prices[qty] || 2800;
       return {
         unitPrice,
@@ -91,9 +94,49 @@ const PRICING_DATA = {
       };
     }
   },
-  catalogue: {
-    title: 'Catalogue A4 (Bìa C250, Ruột C150)',
-    description: 'In nhanh Catalogue A4 số lượng ít, cán màng trang bìa.',
+  hop_biyacung: {
+    title: 'Hộp Giấy Bìa Cứng Cao Cấp (15x9x28cm)',
+    description: 'Chất liệu Ivory/C300, cán mờ 1 mặt chống nước, in offset độ sắc nét cao, thành phẩm đóng thùng carton.',
+    quantities: [100, 200, 300, 500, 1000, 2000, 3000, 5000, 10000],
+    unit: 'Hộp',
+    getPrices: (qty) => {
+      const prices = {
+        100: 25000, 200: 15000, 300: 10500, 500: 7500, 1000: 5400, 2000: 4900, 3000: 4200, 5000: 3850, 10000: 3250
+      };
+      const unitPrice = prices[qty] || 3250;
+      return {
+        unitPrice,
+        totalPrice: unitPrice * qty
+      };
+    }
+  },
+  hop_ghep: {
+    title: 'Hộp Ghép Bài (Giấy Duplex/Ivory 300gsm)',
+    description: 'Bảng giá in hộp ghép, in màu, cán màng, bế dán thành phẩm.',
+    sizes: ['15x15cm', '15x21cm', '21x21cm', '21x32cm', '27x32cm', '26x38cm', '32x43cm', '36x52cm'],
+    quantities: [100, 200, 500, 1000, 2000, 3000, 5000, 10000],
+    unit: 'Hộp',
+    matrix: {
+      '15x15cm': { 100: 750000, 200: 1000000, 500: 1100000, 1000: 1250000, 2000: 1850000, 3000: 2350000, 5000: 3900000, 10000: 7500000 },
+      '15x21cm': { 100: 800000, 200: 1000000, 500: 1150000, 1000: 1450000, 2000: 1900000, 3000: 2450000, 5000: 4050000, 10000: 7900000 },
+      '21x21cm': { 100: 850000, 200: 1250000, 500: 1350000, 1000: 1750000, 2000: 2350000, 3000: 2950000, 5000: 4950000, 10000: 9650000 },
+      '21x32cm': { 100: 900000, 200: 1350000, 500: 1450000, 1000: 1950000, 2000: 3300000, 3000: 4750000, 5000: 7830000, 10000: 15500000 },
+      '27x32cm': { 100: 1450000, 200: 1850000, 500: 1900000, 1000: 2600000, 2000: 4000000, 3000: 5700000, 5000: 9250000, 10000: 18000000 },
+      '26x38cm': { 100: 1550000, 200: 2150000, 500: 2200000, 1000: 3100000, 2000: 4950000, 3000: 6950000, 5000: 11250000, 10000: 21950000 },
+      '32x43cm': { 100: 1650000, 200: 2350000, 500: 2600000, 1000: 3450000, 2000: 5550000, 3000: 7890000, 5000: 13050000, 10000: 24800000 },
+      '36x52cm': { 100: 2370000, 200: 2650000, 500: 3450000, 1000: 4950000, 2000: 7850000, 3000: 11150000, 5000: 18150000, 10000: 34620000 }
+    },
+    getPrices: (size, qty) => {
+      const total = PRICING_DATA.hop_ghep.matrix[size]?.[qty] || 0;
+      return {
+        unitPrice: Math.round(total / qty),
+        totalPrice: total
+      };
+    }
+  },
+  catalogue_nhanh: {
+    title: 'Catalogue A4 (In nhanh số lượng ít)',
+    description: 'In nhanh Catalogue A4, bìa C250, ruột C150, cán màng bìa.',
     pagesList: [12, 16, 20, 24, 28, 32, 36, 40, 44, 48, 52, 56, 60, 64, 68],
     quantities: [1, 10, 20, 50, 100, 200],
     unit: 'Cuốn',
@@ -115,7 +158,33 @@ const PRICING_DATA = {
       68: { 1: 620000, 10: 235000, 20: 190500, 50: 163000, 100: 139400, 200: 94150 }
     },
     getPrices: (pages, qty) => {
-      const unitPrice = PRICING_DATA.catalogue.matrix[pages]?.[qty] || 0;
+      const unitPrice = PRICING_DATA.catalogue_nhanh.matrix[pages]?.[qty] || 0;
+      return {
+        unitPrice,
+        totalPrice: unitPrice * qty
+      };
+    }
+  },
+  catalogue_sll: {
+    title: 'Catalogue A4 (In Offset số lượng lớn)',
+    description: 'In offset số lượng lớn chuyên nghiệp, bìa C300, ruột C150, cán màng bìa.',
+    pagesList: [8, 12, 16, 20, 24, 28, 32, 36, 40, 44],
+    quantities: [500, 1000, 2000, 3000, 5000, 10000],
+    unit: 'Cuốn',
+    matrix: {
+      8: { 500: 8000, 1000: 5300, 2000: 3300, 3000: 2700, 5000: 2500, 10000: 2400 },
+      12: { 500: 12000, 1000: 7000, 2000: 4100, 3000: 3500, 5000: 3200, 10000: 3000 },
+      16: { 500: 14000, 1000: 9000, 2000: 5800, 3000: 4700, 5000: 4400, 10000: 4200 },
+      20: { 500: 15000, 1000: 10000, 2000: 7200, 3000: 5300, 5000: 5000, 10000: 4600 },
+      24: { 500: 17200, 1000: 11500, 2000: 7500, 3000: 6500, 5000: 6200, 10000: 5800 },
+      28: { 500: 19000, 1000: 13000, 2000: 8500, 3000: 7500, 5000: 7200, 10000: 6800 },
+      32: { 500: 25000, 1000: 15000, 2000: 9900, 3000: 8700, 5000: 8300, 10000: 7900 },
+      36: { 500: 30000, 1000: 16500, 2000: 10900, 3000: 9300, 5000: 9000, 10000: 8700 },
+      40: { 500: 33000, 1000: 18000, 2000: 12000, 3000: 10000, 5000: 9700, 10000: 9400 },
+      44: { 500: 36000, 1000: 20000, 2000: 13400, 3000: 11000, 5000: 10600, 10000: 10300 }
+    },
+    getPrices: (pages, qty) => {
+      const unitPrice = PRICING_DATA.catalogue_sll.matrix[pages]?.[qty] || 0;
       return {
         unitPrice,
         totalPrice: unitPrice * qty
@@ -125,7 +194,7 @@ const PRICING_DATA = {
 };
 
 export default function PrecisionPrint() {
-  const [productType, setProductType] = useState('namecard');
+  const [productType, setProductType] = useState('namecard_nhanh');
   const [quantity, setQuantity] = useState(1);
   const [size, setSize] = useState('');
   const [pages, setPages] = useState(12);
@@ -157,16 +226,24 @@ export default function PrecisionPrint() {
   // Recalculate price whenever inputs change
   useEffect(() => {
     let result = { unitPrice: 0, totalPrice: 0 };
-    if (productType === 'namecard') {
-      result = PRICING_DATA.namecard.getPrices(quantity, isRoundedCorners);
+    if (productType === 'namecard_nhanh') {
+      result = PRICING_DATA.namecard_nhanh.getPrices(quantity, isRoundedCorners);
+    } else if (productType === 'namecard_offset') {
+      result = PRICING_DATA.namecard_offset.getPrices(quantity);
     } else if (productType === 'temnhan_tron') {
       result = PRICING_DATA.temnhan_tron.getPrices(size, quantity);
     } else if (productType === 'decal_chunhat') {
       result = PRICING_DATA.decal_chunhat.getPrices(size, quantity);
     } else if (productType === 'hop_giay') {
       result = PRICING_DATA.hop_giay.getPrices(quantity);
-    } else if (productType === 'catalogue') {
-      result = PRICING_DATA.catalogue.getPrices(pages, quantity);
+    } else if (productType === 'hop_biyacung') {
+      result = PRICING_DATA.hop_biyacung.getPrices(quantity);
+    } else if (productType === 'hop_ghep') {
+      result = PRICING_DATA.hop_ghep.getPrices(size, quantity);
+    } else if (productType === 'catalogue_nhanh') {
+      result = PRICING_DATA.catalogue_nhanh.getPrices(pages, quantity);
+    } else if (productType === 'catalogue_sll') {
+      result = PRICING_DATA.catalogue_sll.getPrices(pages, quantity);
     }
     setPricingInfo(result);
   }, [productType, quantity, size, pages, isRoundedCorners]);
@@ -204,11 +281,15 @@ export default function PrecisionPrint() {
                 onChange={(e) => setProductType(e.target.value)}
                 className="w-full border border-slate-200 dark:border-slate-800 dark:bg-slate-950 rounded-xl p-3 text-sm focus:border-deep-navy transition-all outline-none bg-white font-medium"
               >
-                <option value="namecard">Name Card Cao Cấp (C300)</option>
-                <option value="temnhan_tron">Tem Nhãn Tròn / Vuông</option>
-                <option value="decal_chunhat">Tem Nhãn Decal Chữ Nhật</option>
-                <option value="hop_giay">In Hộp Giấy (Ivory 300g)</option>
-                <option value="catalogue">In Catalogue A4</option>
+                <option value="namecard_nhanh">Name Card C300 (In nhanh lấy gấp)</option>
+                <option value="namecard_offset">Name Card C300 (In Offset giá tốt)</option>
+                <option value="temnhan_tron">Tem Nhãn Tròn / Vuông (Demi)</option>
+                <option value="decal_chunhat">Decal Giấy Chữ Nhật (Laser KTS)</option>
+                <option value="hop_giay">In Hộp Giấy Ivory 300g (Mềm)</option>
+                <option value="hop_biyacung">Hộp Giấy Bìa Cứng Cao Cấp (15x9x28cm)</option>
+                <option value="hop_ghep">Hộp Ghép Bài (Duplex/Ivory 300g)</option>
+                <option value="catalogue_nhanh">Catalogue A4 (In nhanh SLL ít)</option>
+                <option value="catalogue_sll">Catalogue A4 (In Offset SLL lớn)</option>
               </select>
             </div>
 
@@ -268,7 +349,7 @@ export default function PrecisionPrint() {
           </div>
 
           {/* Special Add-on Options */}
-          {productType === 'namecard' && (
+          {productType === 'namecard_nhanh' && (
             <div className="pt-4 border-t border-slate-100 dark:border-slate-800/80">
               <label className="flex items-center space-x-3 cursor-pointer select-none">
                 <input
@@ -305,7 +386,7 @@ export default function PrecisionPrint() {
                   <span className="font-bold">{size}</span>
                 </div>
               )}
-              {productType === 'catalogue' && (
+              {activeProduct.pagesList && (
                 <div className="flex justify-between">
                   <span className="opacity-75">Số trang:</span>
                   <span className="font-bold">{pages} trang</span>
