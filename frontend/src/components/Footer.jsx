@@ -8,7 +8,7 @@ export default function Footer() {
         {/* Brand Column */}
         <div className="space-y-6">
           <Link to="/" className="flex items-center">
-            <img src="/logo.png" alt="Xuân Nhĩ Logo" className="h-12 w-auto max-h-12 object-contain bg-white rounded-md p-1" />
+            <img src="/logo.png" alt="Xuân Nhĩ Logo" className="h-20 w-auto max-h-20 object-contain bg-white rounded-xl p-1.5" />
           </Link>
           <p className="text-surface-variant text-sm opacity-80 leading-relaxed max-w-xs">
             Đơn vị cung cấp giải pháp in ấn hàng đầu Việt Nam. Cam kết chất lượng, tiến độ và sự hài lòng tuyệt đối của khách hàng.

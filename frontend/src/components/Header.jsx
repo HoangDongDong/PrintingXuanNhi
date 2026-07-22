@@ -20,7 +20,7 @@ export default function Header() {
         {/* Brand Logo */}
         <div className="flex items-center gap-8">
           <Link to="/" className="flex items-center">
-            <img src="/logo.png" alt="Xuân Nhĩ Logo" className="h-12 w-auto max-h-12 object-contain" />
+            <img src="/logo.png" alt="Xuân Nhĩ Logo" className="h-16 w-auto max-h-16 object-contain" />
           </Link>
           
           {/* Navigation Links (Desktop) */}
