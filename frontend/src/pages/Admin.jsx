@@ -5,9 +5,35 @@ import {
   AlertCircle, Trash2, ArrowLeft, Edit3, Briefcase, MapPin, 
   ClipboardList, Settings, Eye 
 } from 'lucide-react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 
 export default function Admin() {
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    const token = localStorage.getItem('token');
+    const userStr = localStorage.getItem('user');
+    if (!token || !userStr) {
+      navigate('/login');
+      return;
+    }
+    try {
+      const user = JSON.parse(userStr);
+      if (user.role !== 'admin') {
+        alert('Bạn không có quyền truy cập trang quản trị!');
+        navigate('/');
+      }
+    } catch (e) {
+      navigate('/login');
+    }
+  }, [navigate]);
+
+  const handleLogout = () => {
+    localStorage.removeItem('token');
+    localStorage.removeItem('user');
+    navigate('/login');
+  };
+
   const [activeTab, setActiveTab] = useState('products');
   
   // Products State
@@ -237,6 +263,12 @@ export default function Admin() {
           <h1 className="text-3xl font-extrabold tracking-tight text-deep-navy dark:text-slate-150">Hệ Thống Quản Trị</h1>
           <p className="text-sm text-slate-400 mt-1">Cập nhật sản phẩm, bảng giá và tuyển dụng cho website Xuân Nhĩ</p>
         </div>
+        <button 
+          onClick={handleLogout}
+          className="px-5 py-2.5 bg-red-600 hover:bg-red-700 text-white rounded-xl text-xs font-bold transition-all shadow-md flex items-center justify-center gap-1.5 self-start sm:self-center"
+        >
+          Đăng xuất
+        </button>
       </div>
 
       {/* Tabs Switcher */}
