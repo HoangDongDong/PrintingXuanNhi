@@ -82,17 +82,15 @@ export default function Contact() {
               </div>
             </section>
 
-            {/* Map */}
+             {/* Map */}
             <div className="relative w-full h-[300px] rounded-2xl overflow-hidden shadow-sm border border-surface-container">
-              <div 
-                className="w-full h-full bg-cover bg-center" 
-                style={{ backgroundImage: "url('https://lh3.googleusercontent.com/aida-public/AB6AXuBC4v2yG-VSx6QgKD_UX6ke-Gka5sT4iOD7YZmUuclC7KP6ScH-_1CLxd53RUMyC_JJ685eV2w1FyIlmhQlkhD_PdHZ72ZM_TL3dRXGv7nKdxiG8ppWzxu8GUfPI7bQHm2UHj2duOadi74iDa8fNXhBmhrvA-q-PeajM6WHMekcP8pb43kNqCeImdzmScp1Hh0MBxsDwkqgAa_V9uxEStGJjnl-xuJO7LSHb9AF20f2CAdrPWYv9uNVYQ')" }}
-              >
-                <div className="absolute inset-0 bg-deep-navy/5"></div>
-                <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">
-                  <span className="material-symbols-outlined text-vibrant-orange text-5xl animate-bounce">location_on</span>
-                </div>
-              </div>
+              <iframe 
+                src="https://maps.google.com/maps?q=58/7A%20Đường%20Tân%20Lập%201,%20Tăng%20Nhơn%20Phú,%20Quận%209,%20Hồ%20Chí%20Minh&t=&z=16&ie=UTF8&iwloc=&output=embed"
+                className="w-full h-full border-0"
+                allowFullScreen="" 
+                loading="lazy"
+                title="Bản đồ chỉ đường In Ấn Xuân Nhĩ"
+              ></iframe>
             </div>
           </div>
 

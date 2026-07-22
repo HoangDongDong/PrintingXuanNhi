@@ -56,10 +56,14 @@ export default function Footer() {
         {/* Links Column 3 */}
         <div className="space-y-6">
           <h4 className="font-bold text-lg text-white">Bản đồ</h4>
-          <div className="w-full aspect-video rounded-lg overflow-hidden bg-surface-variant">
-            <div className="w-full h-full grayscale opacity-50 flex items-center justify-center bg-zinc-800">
-              <span className="material-symbols-outlined text-4xl text-paper-white">map</span>
-            </div>
+          <div className="w-full aspect-video rounded-lg overflow-hidden bg-surface-variant h-[150px]">
+            <iframe 
+              src="https://maps.google.com/maps?q=58/7A%20Đường%20Tân%20Lập%201,%20Tăng%20Nhơn%20Phú,%20Quận%209,%20Hồ%20Chí%20Minh&t=&z=16&ie=UTF8&iwloc=&output=embed"
+              className="w-full h-full border-0"
+              allowFullScreen="" 
+              loading="lazy"
+              title="Bản đồ đường đi đến In Ấn Xuân Nhĩ"
+            ></iframe>
           </div>
         </div>
       </div>
