@@ -31,7 +31,7 @@ export default function Header() {
                 <Link
                   key={item.name}
                   to={item.path}
-                  className={`font-body-md text-base font-medium transition-colors duration-200 py-4 ${
+                  className={`font-body-md text-sm md:text-base font-medium uppercase tracking-wider transition-colors duration-200 py-4 ${
                     isActive 
                       ? 'text-vibrant-orange font-bold border-b-2 border-vibrant-orange' 
                       : 'text-on-surface-variant hover:text-vibrant-orange hover:font-semibold'
