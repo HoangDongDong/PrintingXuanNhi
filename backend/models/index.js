@@ -4,6 +4,7 @@ const Product = require('./product');
 const Category = require('./category');
 const Job = require('./job');
 const Application = require('./application');
+const PricingSheet = require('./pricingSheet');
 
 // Define Associations
 Category.hasMany(Product, { foreignKey: 'category_id', as: 'products' });
@@ -19,7 +20,8 @@ const db = {
   Product,
   Category,
   Job,
-  Application
+  Application,
+  PricingSheet
 };
 
 module.exports = db;

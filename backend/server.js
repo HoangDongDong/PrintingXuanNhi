@@ -5,6 +5,7 @@ const authRoutes = require('./routes/authRoutes');
 const productRoutes = require('./routes/productRoutes');
 const categoryRoutes = require('./routes/categoryRoutes');
 const jobRoutes = require('./routes/jobRoutes');
+const pricingSheetRoutes = require('./routes/pricingSheetRoutes');
 const errorHandler = require('./middlewares/errorHandler');
 require('dotenv').config();
 
@@ -43,6 +44,7 @@ app.use('/api/auth', authRoutes);
 app.use('/api/products', productRoutes);
 app.use('/api/categories', categoryRoutes);
 app.use('/api/jobs', jobRoutes);
+app.use('/api/pricing-sheets', pricingSheetRoutes);
 
 // Unhandled route handler
 app.use((req, res, next) => {
@@ -405,6 +407,22 @@ async function seedInitialData() {
         }
       ]);
       console.log('🌱 Seeded default jobs.');
+    }
+
+    const sheetCount = await db.PricingSheet.count();
+    if (sheetCount === 0) {
+      await db.PricingSheet.bulkCreate([
+        { title: 'Bảng Báo Giá 01', description: 'Báo giá chi tiết các hạng mục in ấn & gia công phổ thông.', imageUrl: '/baogia/z7781495653654_42fda5e372f92182ee30494d86c9566a.jpg', category: 'general' },
+        { title: 'Bảng Báo Giá 02', description: 'Báo giá chi tiết quy cách chất liệu và dịch vụ gia công thêm.', imageUrl: '/baogia/z7781495653870_7e4ff90e60a18cbfe83313a870f5f98a.jpg', category: 'general' },
+        { title: 'Bảng Báo Giá 03', description: 'Bảng giá in Offset số lượng lớn các ấn phẩm văn phòng.', imageUrl: '/baogia/z7781495662873_72f22d3d440d5a3d6b4065594844bd3a.jpg', category: 'office' },
+        { title: 'Bảng Báo Giá 04', description: 'Báo giá nhanh các loại danh thiếp, tờ rơi cơ bản.', imageUrl: '/baogia/z7781495670655_d2cda0cf6f3499fd4108cbe20c0cf08c.jpg', category: 'namecard' },
+        { title: 'Bảng Báo Giá 05', description: 'Bảng giá quy chuẩn kích thước túi giấy và hộp giấy.', imageUrl: '/baogia/z7781495671536_72c07cf3de0f16a18c02d09f34a823d2.jpg', category: 'package' },
+        { title: 'Bảng Báo Giá 06', description: 'Báo giá các loại nhãn decal, tem bảo hành, sticker.', imageUrl: '/baogia/z7781495672841_a15a24a933049314f2c940f02d52a755.jpg', category: 'decal' },
+        { title: 'Bảng Báo Giá 07', description: 'Báo giá in ấn bao thư, catalogue doanh nghiệp.', imageUrl: '/baogia/z7781495683380_e537bfaa6e3e2955cc954b7d81fe4e80.jpg', category: 'office' },
+        { title: 'Bảng Báo Giá 08', description: 'Báo giá in bạt hiflex, pp, decal quảng cáo ngoài trời.', imageUrl: '/baogia/z7781495690105_da543b24a496a73656713a7163029406.jpg', category: 'advertise' },
+        { title: 'Bảng Báo Giá 09', description: 'Báo giá thiệp mời, biểu mẫu kế toán, phiếu thu chi.', imageUrl: '/baogia/z7781495693291_d4ab81e23404654cb109200845f22290.jpg', category: 'office' }
+      ]);
+      console.log('🌱 Seeded default pricing sheets.');
     }
   } catch (error) {
     console.error('⚠️ Seeding error:', error);

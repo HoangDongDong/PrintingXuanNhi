@@ -160,3 +160,46 @@ exports.sendQuoteRequest = async (req, res, next) => {
     next(error);
   }
 };
+
+exports.updateJob = async (req, res, next) => {
+  try {
+    const job = await Job.findByPk(req.params.id);
+    if (!job) {
+      return res.status(404).json({ message: 'Job not found' });
+    }
+
+    const { title, type, category, location, salary, icon, description, requirements, benefits, status } = req.body;
+    await job.update({
+      title: title !== undefined ? title : job.title,
+      type: type !== undefined ? type : job.type,
+      category: category !== undefined ? category : job.category,
+      location: location !== undefined ? location : job.location,
+      salary: salary !== undefined ? salary : job.salary,
+      icon: icon !== undefined ? icon : job.icon,
+      description: description !== undefined ? description : job.description,
+      requirements: requirements !== undefined ? requirements : job.requirements,
+      benefits: benefits !== undefined ? benefits : job.benefits,
+      status: status !== undefined ? status : job.status
+    });
+
+    return res.status(200).json({
+      message: 'Job updated successfully',
+      job
+    });
+  } catch (error) {
+    next(error);
+  }
+};
+
+exports.deleteJob = async (req, res, next) => {
+  try {
+    const job = await Job.findByPk(req.params.id);
+    if (!job) {
+      return res.status(404).json({ message: 'Job not found' });
+    }
+    await job.destroy();
+    return res.status(200).json({ message: 'Job deleted successfully' });
+  } catch (error) {
+    next(error);
+  }
+};

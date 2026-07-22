@@ -47,3 +47,41 @@ exports.getProductById = async (req, res, next) => {
     next(error);
   }
 };
+
+exports.updateProduct = async (req, res, next) => {
+  try {
+    const product = await Product.findByPk(req.params.id);
+    if (!product) {
+      return res.status(404).json({ message: 'Product not found' });
+    }
+
+    const { title, description, price, imageUrl, isFeatured } = req.body;
+    await product.update({
+      title: title !== undefined ? title : product.title,
+      description: description !== undefined ? description : product.description,
+      price: price !== undefined ? parseFloat(price) : product.price,
+      imageUrl: imageUrl !== undefined ? imageUrl : product.imageUrl,
+      isFeatured: isFeatured !== undefined ? isFeatured : product.isFeatured
+    });
+
+    return res.status(200).json({
+      message: 'Product updated successfully',
+      product
+    });
+  } catch (error) {
+    next(error);
+  }
+};
+
+exports.deleteProduct = async (req, res, next) => {
+  try {
+    const product = await Product.findByPk(req.params.id);
+    if (!product) {
+      return res.status(404).json({ message: 'Product not found' });
+    }
+    await product.destroy();
+    return res.status(200).json({ message: 'Product deleted successfully' });
+  } catch (error) {
+    next(error);
+  }
+};
