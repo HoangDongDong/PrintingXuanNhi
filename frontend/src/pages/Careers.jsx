@@ -1,47 +1,60 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
+import axios from 'axios';
 
 export default function Careers() {
   const [activeCategory, setActiveCategory] = useState('all');
+  const [jobs, setJobs] = useState([]);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
 
-  const jobs = [
-    {
-      id: 1,
-      title: 'Nhân viên Thiết kế Đồ họa',
-      type: 'Full-time',
-      category: 'design',
-      location: 'Quận 7, TP. HCM',
-      salary: 'Thỏa thuận',
-      icon: 'palette',
-      bgColor: 'bg-primary-50 dark:bg-primary-950/20',
-      textColor: 'text-primary-600 dark:text-primary-400'
-    },
-    {
-      id: 2,
-      title: 'Chuyên viên Vận hành Máy in',
-      type: 'Full-time',
-      category: 'operation',
-      location: 'KCN Tân Thuận, TP. HCM',
-      salary: 'Thỏa thuận',
-      icon: 'settings',
-      bgColor: 'bg-indigo-50 dark:bg-indigo-950/20',
-      textColor: 'text-indigo-600 dark:text-indigo-400'
-    },
-    {
-      id: 3,
-      title: 'Nhân viên Kinh doanh',
-      type: 'Full-time',
-      category: 'sales',
-      location: 'Quận 1, TP. HCM',
-      salary: 'Lương + Hoa hồng',
-      icon: 'store',
-      bgColor: 'bg-vibrant-orange/10',
-      textColor: 'text-vibrant-orange'
+  useEffect(() => {
+    const fetchJobs = async () => {
+      try {
+        const res = await axios.get('/api/jobs');
+        setJobs(res.data);
+        setLoading(false);
+      } catch (err) {
+        console.error('Error fetching jobs:', err);
+        setError('Không thể tải danh sách tuyển dụng. Vui lòng thử lại sau.');
+        setLoading(false);
+      }
+    };
+    fetchJobs();
+  }, []);
+
+  const getCategoryStyle = (category) => {
+    switch (category) {
+      case 'design':
+        return {
+          bgColor: 'bg-primary-50 dark:bg-primary-950/20',
+          textColor: 'text-primary-600 dark:text-primary-400'
+        };
+      case 'operation':
+        return {
+          bgColor: 'bg-indigo-50 dark:bg-indigo-950/20',
+          textColor: 'text-indigo-600 dark:text-indigo-400'
+        };
+      case 'sales':
+      default:
+        return {
+          bgColor: 'bg-vibrant-orange/10',
+          textColor: 'text-vibrant-orange'
+        };
     }
-  ];
+  };
 
   const filteredJobs = activeCategory === 'all'
     ? jobs
     : jobs.filter(job => job.category === activeCategory);
+
+  if (loading) {
+    return (
+      <div className="animate-fadeIn max-w-[1200px] mx-auto px-4 md:px-8 py-24 text-center">
+        <div className="inline-block w-8 h-8 border-4 border-deep-navy border-t-transparent rounded-full animate-spin"></div>
+        <p className="mt-4 text-on-surface-variant">Đang tải danh sách tuyển dụng...</p>
+      </div>
+    );
+  }
 
   return (
     <div className="animate-fadeIn max-w-[1200px] mx-auto px-4 md:px-8 py-8">
@@ -156,37 +169,45 @@ export default function Careers() {
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-          {filteredJobs.map((job) => (
-            <div 
-              key={job.id} 
-              className="bg-white dark:bg-slate-900 border border-slate-100 dark:border-slate-800/80 rounded-2xl p-6 shadow-sm hover:shadow-md hover:-translate-y-1 transition-all duration-300 flex flex-col justify-between"
-            >
-              <div>
-                <div className="flex justify-between items-start mb-6">
-                  <div className={`w-12 h-12 ${job.bgColor} ${job.textColor} flex items-center justify-center rounded-xl`}>
-                    <span className="material-symbols-outlined text-2xl">{job.icon}</span>
-                  </div>
-                  <span className="text-xs font-bold bg-vibrant-orange/10 text-vibrant-orange px-3 py-1 rounded-full">
-                    {job.type}
-                  </span>
-                </div>
-                <h4 className="text-xl font-bold text-deep-navy dark:text-slate-200 mb-4">{job.title}</h4>
-                <div className="space-y-2.5 mb-6 text-sm text-on-surface-variant">
-                  <div className="flex items-center">
-                    <span className="material-symbols-outlined text-lg mr-2">location_on</span>
-                    <span>{job.location}</span>
-                  </div>
-                  <div className="flex items-center">
-                    <span className="material-symbols-outlined text-lg mr-2">payments</span>
-                    <span>{job.salary}</span>
-                  </div>
-                </div>
-              </div>
-              <button className="w-full py-3 mt-4 border border-deep-navy text-deep-navy hover:bg-deep-navy hover:text-white dark:border-primary-400 dark:text-primary-400 dark:hover:bg-primary-400 dark:hover:text-slate-950 rounded-xl font-bold text-sm transition-all duration-200">
-                Ứng tuyển ngay
-              </button>
+          {error && (
+            <div className="col-span-3 text-center py-6 text-red-500 font-medium">
+              {error}
             </div>
-          ))}
+          )}
+          {!error && filteredJobs.map((job) => {
+            const style = getCategoryStyle(job.category);
+            return (
+              <div 
+                key={job.id} 
+                className="bg-white dark:bg-slate-900 border border-slate-100 dark:border-slate-800/80 rounded-2xl p-6 shadow-sm hover:shadow-md hover:-translate-y-1 transition-all duration-300 flex flex-col justify-between"
+              >
+                <div>
+                  <div className="flex justify-between items-start mb-6">
+                    <div className={`w-12 h-12 ${style.bgColor} ${style.textColor} flex items-center justify-center rounded-xl`}>
+                      <span className="material-symbols-outlined text-2xl">{job.icon || 'work'}</span>
+                    </div>
+                    <span className="text-xs font-bold bg-vibrant-orange/10 text-vibrant-orange px-3 py-1 rounded-full">
+                      {job.type}
+                    </span>
+                  </div>
+                  <h4 className="text-xl font-bold text-deep-navy dark:text-slate-200 mb-4">{job.title}</h4>
+                  <div className="space-y-2.5 mb-6 text-sm text-on-surface-variant">
+                    <div className="flex items-center">
+                      <span className="material-symbols-outlined text-lg mr-2">location_on</span>
+                      <span>{job.location}</span>
+                    </div>
+                    <div className="flex items-center">
+                      <span className="material-symbols-outlined text-lg mr-2">payments</span>
+                      <span>{job.salary}</span>
+                    </div>
+                  </div>
+                </div>
+                <button className="w-full py-3 mt-4 border border-deep-navy text-deep-navy hover:bg-deep-navy hover:text-white dark:border-primary-400 dark:text-primary-400 dark:hover:bg-primary-400 dark:hover:text-slate-950 rounded-xl font-bold text-sm transition-all duration-200">
+                  Ứng tuyển ngay
+                </button>
+              </div>
+            );
+          })}
           {filteredJobs.length === 0 && (
             <div className="col-span-3 text-center py-12 text-on-surface-variant">
               Hiện tại chưa có vị trí tuyển dụng mới ở mục này.
