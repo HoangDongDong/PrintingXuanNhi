@@ -13,6 +13,7 @@ import News from './pages/News';
 import Contact from './pages/Contact';
 import PrecisionPrint from './pages/PrecisionPrint';
 import Careers from './pages/Careers';
+import Profile from './pages/Profile';
 
 function App() {
   return (
@@ -35,6 +36,7 @@ function App() {
             <Route path="/tuyen-dung" element={<Careers />} />
             <Route path="/admin" element={<Admin />} />
             <Route path="/login" element={<Login />} />
+            <Route path="/ho-so" element={<Profile />} />
           </Routes>
         </main>
         
