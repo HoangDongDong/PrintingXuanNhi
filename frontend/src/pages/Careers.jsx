@@ -44,7 +44,7 @@ export default function Careers() {
     : jobs.filter(job => job.category === activeCategory);
 
   return (
-    <div className="animate-fadeIn">
+    <div className="animate-fadeIn max-w-[1200px] mx-auto px-4 md:px-8 py-8">
       {/* 2. Hero Section */}
       <section className="relative h-[450px] md:h-[500px] flex items-center overflow-hidden rounded-3xl mb-16 shadow-lg">
         <div className="absolute inset-0 z-0">
