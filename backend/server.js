@@ -361,6 +361,49 @@ async function seedInitialData() {
       ]);
       console.log('🌱 Seeded default products matching frontend modern UI.');
     }
+
+    const jobCount = await db.Job.count();
+    if (jobCount === 0) {
+      await db.Job.bulkCreate([
+        {
+          title: 'Nhân viên Thiết kế Đồ họa',
+          type: 'Full-time',
+          category: 'design',
+          location: 'Quận 7, TP. HCM',
+          salary: 'Thỏa thuận',
+          icon: 'palette',
+          description: 'Thiết kế các ấn phẩm in ấn quảng cáo, bao bì, nhãn mác...',
+          requirements: 'Có kinh nghiệm sử dụng Illustrator, Photoshop, Indesign...',
+          benefits: 'Môi trường làm việc năng động, bảo hiểm đầy đủ...',
+          status: 'active'
+        },
+        {
+          title: 'Chuyên viên Vận hành Máy in',
+          type: 'Full-time',
+          category: 'operation',
+          location: 'KCN Tân Thuận, TP. HCM',
+          salary: 'Thỏa thuận',
+          icon: 'settings',
+          description: 'Vận hành và bảo trì hệ thống máy in kỹ thuật số, in offset...',
+          requirements: 'Có kinh nghiệm vận hành máy in tối thiểu 1 năm...',
+          benefits: 'Lương thưởng xứng đáng, có phụ cấp độc hại...',
+          status: 'active'
+        },
+        {
+          title: 'Nhân viên Kinh doanh',
+          type: 'Full-time',
+          category: 'sales',
+          location: 'Quận 1, TP. HCM',
+          salary: 'Lương + Hoa hồng',
+          icon: 'store',
+          description: 'Tìm kiếm khách hàng doanh nghiệp, tư vấn dịch vụ in ấn...',
+          requirements: 'Kỹ năng giao tiếp tốt, chăm chỉ, nhanh nhẹn...',
+          benefits: 'Hoa hồng hấp dẫn theo doanh số, không giới hạn...',
+          status: 'active'
+        }
+      ]);
+      console.log('🌱 Seeded default jobs.');
+    }
   } catch (error) {
     console.error('⚠️ Seeding error:', error);
   }
