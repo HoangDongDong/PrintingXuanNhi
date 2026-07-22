@@ -12,6 +12,7 @@ import Pricing from './pages/Pricing';
 import News from './pages/News';
 import Contact from './pages/Contact';
 import PrecisionPrint from './pages/PrecisionPrint';
+import Careers from './pages/Careers';
 
 function App() {
   return (
@@ -31,6 +32,7 @@ function App() {
             <Route path="/tin-tuc" element={<News />} />
             <Route path="/lien-he" element={<Contact />} />
             <Route path="/tinh-gia" element={<PrecisionPrint />} />
+            <Route path="/tuyen-dung" element={<Careers />} />
             <Route path="/admin" element={<Admin />} />
             <Route path="/login" element={<Login />} />
           </Routes>

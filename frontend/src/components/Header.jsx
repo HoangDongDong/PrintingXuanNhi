@@ -10,6 +10,7 @@ export default function Header() {
     { name: 'Sản phẩm In ấn', path: '/san-pham' },
     { name: 'Bảng giá', path: '/bang-gia' },
     { name: 'Tin tức', path: '/tin-tuc' },
+    { name: 'Tuyển dụng', path: '/tuyen-dung' },
     { name: 'Liên hệ', path: '/lien-he' }
   ];
 
