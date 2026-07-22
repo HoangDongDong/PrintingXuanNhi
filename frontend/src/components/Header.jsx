@@ -23,17 +23,17 @@ export default function Header() {
           </Link>
           
           {/* Navigation Links (Desktop) */}
-          <div className="hidden lg:flex items-center gap-6">
+          <div className="hidden lg:flex items-center gap-8">
             {navItems.map((item) => {
               const isActive = location.pathname === item.path;
               return (
                 <Link
                   key={item.name}
                   to={item.path}
-                  className={`font-body-md text-sm transition-colors duration-200 py-4 ${
+                  className={`font-body-md text-base font-medium transition-colors duration-200 py-4 ${
                     isActive 
                       ? 'text-vibrant-orange font-bold border-b-2 border-vibrant-orange' 
-                      : 'text-on-surface-variant hover:text-vibrant-orange'
+                      : 'text-on-surface-variant hover:text-vibrant-orange hover:font-semibold'
                   }`}
                 >
                   {item.name}
