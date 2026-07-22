@@ -30,7 +30,7 @@ export default function Header() {
                 <Link
                   key={item.name}
                   to={item.path}
-                  className={`font-body-md text-sm transition-colors duration-200 py-1 ${
+                  className={`font-body-md text-sm transition-colors duration-200 py-4 ${
                     isActive 
                       ? 'text-vibrant-orange font-bold border-b-2 border-vibrant-orange' 
                       : 'text-on-surface-variant hover:text-vibrant-orange'
@@ -45,16 +45,6 @@ export default function Header() {
 
         {/* Actions */}
         <div className="flex items-center gap-4">
-          {/* Search Bar */}
-          <div className="hidden md:flex items-center bg-surface-container rounded-full px-4 py-2 border border-outline-variant focus-within:border-deep-navy transition-colors text-sm">
-            <span className="material-symbols-outlined text-outline text-md mr-1">search</span>
-            <input 
-              className="bg-transparent border-none focus:ring-0 text-xs w-36 outline-none" 
-              placeholder="Tìm kiếm dịch vụ..." 
-              type="text"
-            />
-          </div>
-          
           <div className="flex items-center gap-3">
             <Link to="/login" className="material-symbols-outlined p-2 text-deep-navy hover:bg-surface-container rounded-full transition-all scale-95 active:opacity-80">
               person
