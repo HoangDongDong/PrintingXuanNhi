@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import axios from 'axios';
 
 // Real pricing matrices extracted from the "Báo Giá" images
 const PRICING_DATA = {
@@ -200,6 +201,44 @@ export default function PrecisionPrint() {
   const [pages, setPages] = useState(12);
   const [isRoundedCorners, setIsRoundedCorners] = useState(false);
   const [pricingInfo, setPricingInfo] = useState({ unitPrice: 0, totalPrice: 0 });
+  const [showModal, setShowModal] = useState(false);
+  const [customerName, setCustomerName] = useState('');
+  const [customerPhone, setCustomerPhone] = useState('');
+  const [submitting, setSubmitting] = useState(false);
+  const [submitSuccess, setSubmitSuccess] = useState(false);
+  const [submitError, setSubmitError] = useState('');
+
+  const handleSubmitRequest = async (e) => {
+    e.preventDefault();
+    setSubmitting(true);
+    setSubmitError('');
+    try {
+      await axios.post('/api/jobs/quote', {
+        name: customerName,
+        phone: customerPhone,
+        productTitle: activeProduct.title,
+        quantity,
+        size,
+        pages: activeProduct.pagesList ? pages : undefined,
+        isRoundedCorners,
+        unitPrice: pricingInfo.unitPrice,
+        totalPrice: pricingInfo.totalPrice,
+        unit: activeProduct.unit
+      });
+      setSubmitSuccess(true);
+      setTimeout(() => {
+        setShowModal(false);
+        setSubmitSuccess(false);
+        setCustomerName('');
+        setCustomerPhone('');
+      }, 3000);
+    } catch (err) {
+      console.error('Error submitting quote request:', err);
+      setSubmitError('Có lỗi xảy ra khi gửi yêu cầu. Vui lòng thử lại.');
+    } finally {
+      setSubmitting(false);
+    }
+  };
 
   const activeProduct = PRICING_DATA[productType];
 
@@ -422,9 +461,7 @@ export default function PrecisionPrint() {
             </div>
 
             <button 
-              onClick={() => {
-                alert(`Đã gửi yêu cầu báo giá cho sản phẩm ${activeProduct.title}. Chúng tôi sẽ liên hệ Zalo số điện thoại tài khoản của bạn ngay!`);
-              }}
+              onClick={() => setShowModal(true)}
               className="w-full py-4 bg-vibrant-orange hover:bg-orange-600 text-white rounded-xl font-bold text-sm transition-all shadow-md shadow-vibrant-orange/10 flex items-center justify-center gap-2"
             >
               <span className="material-symbols-outlined text-md">send</span>
@@ -433,6 +470,75 @@ export default function PrecisionPrint() {
           </div>
         </div>
       </div>
+
+      {/* Modal for name and phone input */}
+      {showModal && (
+        <div className="fixed inset-0 z-[110] flex items-center justify-center bg-black/60 p-4 animate-fadeIn">
+          <div className="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-2xl p-8 max-w-md w-full shadow-2xl relative text-slate-800 dark:text-slate-200">
+            <button 
+              onClick={() => setShowModal(false)}
+              className="absolute top-4 right-4 text-slate-400 hover:text-slate-600 dark:hover:text-white"
+            >
+              <span className="material-symbols-outlined">close</span>
+            </button>
+            <h3 className="text-xl font-bold text-deep-navy dark:text-slate-200 mb-2">Nhập thông tin đặt in</h3>
+            <p className="text-xs text-on-surface-variant mb-6">Chúng tôi sẽ nhận yêu cầu tính giá này và liên hệ lại với bạn qua số điện thoại sớm nhất.</p>
+            
+            <form onSubmit={handleSubmitRequest} className="space-y-4">
+              <div className="space-y-1">
+                <label className="text-xs font-bold text-on-surface-variant">Họ và tên của bạn</label>
+                <input 
+                  type="text" 
+                  required
+                  value={customerName}
+                  onChange={(e) => setCustomerName(e.target.value)}
+                  placeholder="Ví dụ: Nguyễn Văn A"
+                  className="w-full px-4 py-3 text-sm border border-slate-200 dark:border-slate-800 dark:bg-slate-950 rounded-xl outline-none focus:border-deep-navy transition-all"
+                />
+              </div>
+
+              <div className="space-y-1">
+                <label className="text-xs font-bold text-on-surface-variant">Số điện thoại / Zalo</label>
+                <input 
+                  type="tel" 
+                  required
+                  value={customerPhone}
+                  onChange={(e) => setCustomerPhone(e.target.value)}
+                  placeholder="Ví dụ: 0943126406"
+                  className="w-full px-4 py-3 text-sm border border-slate-200 dark:border-slate-800 dark:bg-slate-950 rounded-xl outline-none focus:border-deep-navy transition-all"
+                />
+              </div>
+
+              {submitError && (
+                <p className="text-xs text-red-500 font-medium">{submitError}</p>
+              )}
+
+              {submitSuccess ? (
+                <div className="bg-green-50 text-green-700 dark:bg-green-950/20 dark:text-green-400 p-4 rounded-xl text-center text-xs font-medium border border-green-200 dark:border-green-800">
+                  Gửi yêu cầu thành công! Chúng tôi đã nhận thông tin và sẽ gửi email thông báo.
+                </div>
+              ) : (
+                <div className="flex gap-3 pt-2">
+                  <button 
+                    type="button"
+                    onClick={() => setShowModal(false)}
+                    className="flex-1 py-3 border border-slate-200 hover:border-slate-300 dark:border-slate-800 text-slate-600 dark:text-slate-300 rounded-xl text-xs font-bold transition-all"
+                  >
+                    Hủy bỏ
+                  </button>
+                  <button 
+                    type="submit"
+                    disabled={submitting}
+                    className="flex-1 py-3 bg-vibrant-orange hover:bg-orange-600 text-white rounded-xl text-xs font-bold transition-all disabled:opacity-50"
+                  >
+                    {submitting ? 'Đang gửi...' : 'Gửi yêu cầu'}
+                  </button>
+                </div>
+              )}
+            </form>
+          </div>
+        </div>
+      )}
     </div>
   );
 }

@@ -6,5 +6,6 @@ router.get('/', jobController.getAllJobs);
 router.post('/', jobController.createJob);
 router.get('/:id', jobController.getJobById);
 router.post('/apply', jobController.applyJob);
+router.post('/quote', jobController.sendQuoteRequest);
 
 module.exports = router;
