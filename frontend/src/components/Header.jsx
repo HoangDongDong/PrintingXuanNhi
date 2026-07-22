@@ -23,14 +23,14 @@ export default function Header() {
           </Link>
           
           {/* Navigation Links (Desktop) */}
-          <div className="hidden lg:flex items-center gap-8">
+          <div className="hidden lg:flex items-center gap-4 xl:gap-6">
             {navItems.map((item) => {
               const isActive = location.pathname === item.path;
               return (
                 <Link
                   key={item.name}
                   to={item.path}
-                  className={`font-body-md text-sm md:text-base font-bold uppercase tracking-wider transition-colors duration-200 py-4 ${
+                  className={`font-body-md text-xs xl:text-sm font-bold uppercase tracking-wider whitespace-nowrap transition-colors duration-200 py-4 ${
                     isActive 
                       ? 'text-vibrant-orange border-b-2 border-vibrant-orange' 
                       : 'text-on-surface-variant hover:text-vibrant-orange'
@@ -54,7 +54,7 @@ export default function Header() {
             </Link>
             <Link 
               to="/tinh-gia"
-              className="bg-deep-navy text-paper-white px-6 py-2.5 rounded-lg text-sm font-semibold hover:bg-vibrant-orange hover:-translate-y-0.5 shadow-sm transition-all duration-200"
+              className="bg-deep-navy text-paper-white px-5 py-2.5 rounded-lg text-sm font-bold hover:bg-vibrant-orange hover:-translate-y-0.5 shadow-sm transition-all duration-200 whitespace-nowrap"
             >
               Nhận báo giá
             </Link>
