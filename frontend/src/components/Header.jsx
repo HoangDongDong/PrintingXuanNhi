@@ -18,8 +18,11 @@ export default function Header() {
       <nav className="flex justify-between items-center px-margin-mobile md:px-margin-desktop w-full max-w-[1200px] mx-auto h-full">
         {/* Brand Logo */}
         <div className="flex items-center gap-8">
-          <Link to="/" className="font-display-lg text-2xl font-bold text-deep-navy">
-            PrintPro
+          <Link to="/" className="flex items-center gap-2">
+            <img src="/logo.png" alt="Xuân Nhĩ Logo" className="h-10 w-10 object-contain" />
+            <span className="font-display-lg text-xl font-bold text-deep-navy tracking-tight">
+              XUÂN NHI
+            </span>
           </Link>
           
           {/* Navigation Links (Desktop) */}

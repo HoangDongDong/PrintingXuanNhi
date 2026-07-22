@@ -7,8 +7,11 @@ export default function Footer() {
       <div className="grid grid-cols-1 md:grid-cols-4 gap-gutter px-margin-mobile md:px-margin-desktop py-16 max-w-[1200px] mx-auto">
         {/* Brand Column */}
         <div className="space-y-6">
-          <Link to="/" className="font-display-lg text-2xl font-bold text-paper-white block">
-            PrintPro
+          <Link to="/" className="flex items-center gap-2">
+            <img src="/logo.png" alt="Xuân Nhĩ Logo" className="h-10 w-10 object-contain bg-white rounded-md p-0.5" />
+            <span className="font-display-lg text-xl font-bold text-paper-white tracking-tight">
+              XUÂN NHI
+            </span>
           </Link>
           <p className="text-surface-variant text-sm opacity-80 leading-relaxed max-w-xs">
             Đơn vị cung cấp giải pháp in ấn hàng đầu Việt Nam. Cam kết chất lượng, tiến độ và sự hài lòng tuyệt đối của khách hàng.
@@ -65,7 +68,7 @@ export default function Footer() {
       </div>
       
       <div className="border-t border-surface-variant/20 px-margin-mobile md:px-margin-desktop py-8 max-w-[1200px] mx-auto text-center md:text-left text-xs">
-        <p className="text-surface-variant opacity-60">© 2026 PrintPro Service. All rights reserved.</p>
+        <p className="text-surface-variant opacity-60">© 2026 In Ấn Xuân Nhĩ. All rights reserved.</p>
       </div>
 
       {/* Floating Action Buttons */}
