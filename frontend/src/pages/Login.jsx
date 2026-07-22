@@ -99,14 +99,6 @@ export default function Login() {
             <span>{loading ? 'Đang xác thực...' : 'Đăng Nhập'}</span>
           </button>
         </form>
-
-        <div className="mt-6 pt-6 border-t border-slate-100 dark:border-slate-800 text-xs text-slate-400 space-y-2">
-          <p className="font-semibold text-slate-500 dark:text-slate-300">Tài khoản demo:</p>
-          <ul className="list-disc pl-4 space-y-1">
-            <li>Email: <code className="text-primary-500 bg-slate-50 dark:bg-slate-800 px-1 py-0.5 rounded">inanxuannhi@gmail.com</code> / Pass: <code className="text-primary-500 bg-slate-50 dark:bg-slate-800 px-1 py-0.5 rounded">admin123</code></li>
-            <li>Email: <code className="text-primary-500 bg-slate-50 dark:bg-slate-800 px-1 py-0.5 rounded">nguyenvana@gmail.com</code> / Pass: <code className="text-primary-500 bg-slate-50 dark:bg-slate-800 px-1 py-0.5 rounded">customer123</code></li>
-          </ul>
-        </div>
       </div>
     </div>
   );
