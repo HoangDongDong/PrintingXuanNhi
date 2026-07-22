@@ -9,7 +9,6 @@ export default function Header() {
     { name: 'Giới thiệu', path: '/gioi-thieu' },
     { name: 'Sản phẩm In ấn', path: '/san-pham' },
     { name: 'Bảng giá', path: '/bang-gia' },
-    { name: 'Tin tức', path: '/tin-tuc' },
     { name: 'Tuyển dụng', path: '/tuyen-dung' },
     { name: 'Liên hệ', path: '/lien-he' }
   ];
@@ -31,10 +30,10 @@ export default function Header() {
                 <Link
                   key={item.name}
                   to={item.path}
-                  className={`font-body-md text-sm md:text-base font-medium uppercase tracking-wider transition-colors duration-200 py-4 ${
+                  className={`font-body-md text-sm md:text-base font-bold uppercase tracking-wider transition-colors duration-200 py-4 ${
                     isActive 
-                      ? 'text-vibrant-orange font-bold border-b-2 border-vibrant-orange' 
-                      : 'text-on-surface-variant hover:text-vibrant-orange hover:font-semibold'
+                      ? 'text-vibrant-orange border-b-2 border-vibrant-orange' 
+                      : 'text-on-surface-variant hover:text-vibrant-orange'
                   }`}
                 >
                   {item.name}
